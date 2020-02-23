@@ -457,7 +457,7 @@ Partial Class FixedLogEntry
         '
         'ButtonSaveEdit
         '
-        Me.ButtonSaveEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.ButtonSaveEdit.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonSaveEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSaveEdit.Location = New System.Drawing.Point(442, 585)
         Me.ButtonSaveEdit.Name = "ButtonSaveEdit"
@@ -531,7 +531,7 @@ Partial Class FixedLogEntry
         '
         'btnPost
         '
-        Me.btnPost.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnPost.BackColor = System.Drawing.Color.SkyBlue
         Me.btnPost.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPost.Location = New System.Drawing.Point(878, 585)
         Me.btnPost.Name = "btnPost"
@@ -554,7 +554,7 @@ Partial Class FixedLogEntry
         '
         'ButtonEdit
         '
-        Me.ButtonEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.ButtonEdit.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEdit.Location = New System.Drawing.Point(741, 585)
         Me.ButtonEdit.Name = "ButtonEdit"
@@ -649,7 +649,7 @@ Partial Class FixedLogEntry
         '
         'ButtonClear
         '
-        Me.ButtonClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.ButtonClear.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonClear.Location = New System.Drawing.Point(596, 585)
         Me.ButtonClear.Name = "ButtonClear"
@@ -660,7 +660,7 @@ Partial Class FixedLogEntry
         '
         'ButtonEditNext
         '
-        Me.ButtonEditNext.BackColor = System.Drawing.Color.LimeGreen
+        Me.ButtonEditNext.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonEditNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEditNext.Location = New System.Drawing.Point(155, 585)
         Me.ButtonEditNext.Name = "ButtonEditNext"
@@ -671,7 +671,7 @@ Partial Class FixedLogEntry
         '
         'ButtonEditPrevious
         '
-        Me.ButtonEditPrevious.BackColor = System.Drawing.Color.LimeGreen
+        Me.ButtonEditPrevious.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonEditPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEditPrevious.Location = New System.Drawing.Point(296, 585)
         Me.ButtonEditPrevious.Name = "ButtonEditPrevious"
