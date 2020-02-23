@@ -1,0 +1,838 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FixedLogEntry
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblCall = New System.Windows.Forms.Label()
+        Me.cmbMOperation = New System.Windows.Forms.ComboBox()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.cmbMState = New System.Windows.Forms.ComboBox()
+        Me.cmbMCounty = New System.Windows.Forms.ComboBox()
+        Me.cmbxMCLine = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cmbxMode = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cmbxBand = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.cmbxFrequency = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.dataGrid1 = New System.Windows.Forms.DataGridView()
+        Me.cmbHState = New System.Windows.Forms.ComboBox()
+        Me.cmbxHCounty = New System.Windows.Forms.ComboBox()
+        Me.cmbxCLine = New System.Windows.Forms.ComboBox()
+        Me.cmbFixedOperation = New System.Windows.Forms.ComboBox()
+        Me.txtCall = New System.Windows.Forms.TextBox()
+        Me.txtMrst = New System.Windows.Forms.TextBox()
+        Me.txtHrst = New System.Windows.Forms.TextBox()
+        Me.lblState = New System.Windows.Forms.Label()
+        Me.lblCounty = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblCLine = New System.Windows.Forms.Label()
+        Me.lblMrst = New System.Windows.Forms.Label()
+        Me.lblHrst = New System.Windows.Forms.Label()
+        Me.lblOper = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.gbxMobile = New System.Windows.Forms.GroupBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnMobilePost = New System.Windows.Forms.Button()
+        Me.txtTime = New System.Windows.Forms.TextBox()
+        Me.lblFormat = New System.Windows.Forms.Label()
+        Me.lblTime2 = New System.Windows.Forms.Label()
+        Me.txtDate = New System.Windows.Forms.TextBox()
+        Me.LblDate2 = New System.Windows.Forms.Label()
+        Me.lblDFormat = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.btnLogIt = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.btnSpot = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxMobile.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(642, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(410, 75)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = " Log Entry Form"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Road_Runner_Logger.My.Resources.Resources.detective_in_bushes_with_dog2
+        Me.PictureBox1.Location = New System.Drawing.Point(1650, 11)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(240, 155)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'lblCall
+        '
+        Me.lblCall.AutoSize = True
+        Me.lblCall.BackColor = System.Drawing.Color.Transparent
+        Me.lblCall.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCall.Location = New System.Drawing.Point(791, 86)
+        Me.lblCall.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCall.Name = "lblCall"
+        Me.lblCall.Size = New System.Drawing.Size(101, 51)
+        Me.lblCall.TabIndex = 2
+        Me.lblCall.Text = "Call"
+        '
+        'cmbMOperation
+        '
+        Me.cmbMOperation.AllowDrop = True
+        Me.cmbMOperation.AutoCompleteCustomSource.AddRange(New String() {"Fixed", "Mobile", "Portable"})
+        Me.cmbMOperation.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbMOperation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbMOperation.FormattingEnabled = True
+        Me.cmbMOperation.Items.AddRange(New Object() {"F", "M", "P"})
+        Me.cmbMOperation.Location = New System.Drawing.Point(598, 327)
+        Me.cmbMOperation.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmbMOperation.Name = "cmbMOperation"
+        Me.cmbMOperation.Size = New System.Drawing.Size(52, 33)
+        Me.cmbMOperation.TabIndex = 3
+        '
+        'btnExit
+        '
+        Me.btnExit.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnExit.Location = New System.Drawing.Point(1708, 904)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(182, 47)
+        Me.btnExit.TabIndex = 4
+        Me.btnExit.Text = "Main Menu"
+        Me.btnExit.UseVisualStyleBackColor = False
+        '
+        'cmbMState
+        '
+        Me.cmbMState.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbMState.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbMState.FormattingEnabled = True
+        Me.cmbMState.Location = New System.Drawing.Point(169, 53)
+        Me.cmbMState.Name = "cmbMState"
+        Me.cmbMState.Size = New System.Drawing.Size(64, 33)
+        Me.cmbMState.TabIndex = 5
+        Me.cmbMState.Text = "Mi"
+        '
+        'cmbMCounty
+        '
+        Me.cmbMCounty.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbMCounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbMCounty.FormattingEnabled = True
+        Me.cmbMCounty.Location = New System.Drawing.Point(252, 54)
+        Me.cmbMCounty.Name = "cmbMCounty"
+        Me.cmbMCounty.Size = New System.Drawing.Size(227, 33)
+        Me.cmbMCounty.TabIndex = 6
+        Me.cmbMCounty.Text = "Delta"
+        '
+        'cmbxMCLine
+        '
+        Me.cmbxMCLine.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbxMCLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbxMCLine.FormattingEnabled = True
+        Me.cmbxMCLine.Items.AddRange(New Object() {"Menomonee", "Schoolcraft", "Marquette"})
+        Me.cmbxMCLine.Location = New System.Drawing.Point(225, 115)
+        Me.cmbxMCLine.Name = "cmbxMCLine"
+        Me.cmbxMCLine.Size = New System.Drawing.Size(281, 33)
+        Me.cmbxMCLine.TabIndex = 7
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(541, 293)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(152, 20)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Mobile Operation"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(175, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 20)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "State"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(332, 31)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 20)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "County"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(311, 89)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(109, 20)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "County Line"
+        '
+        'cmbxMode
+        '
+        Me.cmbxMode.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbxMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbxMode.FormattingEnabled = True
+        Me.cmbxMode.Items.AddRange(New Object() {"SSB", "CW", "AM", "AMTOR", "ATV", "CHIP", "CLOVER", "CONTESTIA", "DOMINO", "DSSTV", "DV", "FM", "FSK31", "FT8", "GTOR", "HAMDRM", "HELL", "HFSK", "JT65", "JT9", "MFSK", "MT63", "OLIVIA", "PACKET", "PAX", "PSK", "Q15", "ROS", "RTTY", "SSTV", "THOR", "THROB"})
+        Me.cmbxMode.Location = New System.Drawing.Point(1235, 83)
+        Me.cmbxMode.Name = "cmbxMode"
+        Me.cmbxMode.Size = New System.Drawing.Size(121, 33)
+        Me.cmbxMode.TabIndex = 9
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(1263, 60)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(54, 20)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Mode"
+        '
+        'cmbxBand
+        '
+        Me.cmbxBand.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbxBand.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbxBand.FormattingEnabled = True
+        Me.cmbxBand.Items.AddRange(New Object() {"20", "40", "80", "70 CM", "1.25", "2", "6", "10", "12", "15", "17", "30", "60", "160"})
+        Me.cmbxBand.Location = New System.Drawing.Point(1235, 143)
+        Me.cmbxBand.Name = "cmbxBand"
+        Me.cmbxBand.Size = New System.Drawing.Size(121, 33)
+        Me.cmbxBand.TabIndex = 10
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(1263, 120)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(52, 20)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "Band"
+        '
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.BackColor = System.Drawing.Color.Transparent
+        Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.Location = New System.Drawing.Point(792, 137)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(108, 46)
+        Me.lblDate.TabIndex = 11
+        Me.lblDate.Text = "Date"
+        '
+        'lblTime
+        '
+        Me.lblTime.AutoSize = True
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTime.Location = New System.Drawing.Point(792, 217)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(209, 46)
+        Me.lblTime.TabIndex = 11
+        Me.lblTime.Text = "Time UTC"
+        '
+        'cmbxFrequency
+        '
+        Me.cmbxFrequency.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbxFrequency.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbxFrequency.FormattingEnabled = True
+        Me.cmbxFrequency.Items.AddRange(New Object() {"14.336", "7.188", "52.525", "28.336", "24.950", "21.338", "18.136", "3.901", "1.950"})
+        Me.cmbxFrequency.Location = New System.Drawing.Point(1445, 83)
+        Me.cmbxFrequency.Name = "cmbxFrequency"
+        Me.cmbxFrequency.Size = New System.Drawing.Size(121, 33)
+        Me.cmbxFrequency.TabIndex = 12
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(1455, 60)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(96, 20)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "Frequency"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'dataGrid1
+        '
+        Me.dataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGrid1.Location = New System.Drawing.Point(12, 534)
+        Me.dataGrid1.Name = "dataGrid1"
+        Me.dataGrid1.RowTemplate.Height = 24
+        Me.dataGrid1.Size = New System.Drawing.Size(1890, 364)
+        Me.dataGrid1.TabIndex = 13
+        '
+        'cmbHState
+        '
+        Me.cmbHState.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbHState.FormattingEnabled = True
+        Me.cmbHState.Location = New System.Drawing.Point(702, 324)
+        Me.cmbHState.Name = "cmbHState"
+        Me.cmbHState.Size = New System.Drawing.Size(98, 39)
+        Me.cmbHState.TabIndex = 14
+        '
+        'cmbxHCounty
+        '
+        Me.cmbxHCounty.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbxHCounty.FormattingEnabled = True
+        Me.cmbxHCounty.Location = New System.Drawing.Point(847, 327)
+        Me.cmbxHCounty.Name = "cmbxHCounty"
+        Me.cmbxHCounty.Size = New System.Drawing.Size(336, 39)
+        Me.cmbxHCounty.TabIndex = 14
+        '
+        'cmbxCLine
+        '
+        Me.cmbxCLine.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbxCLine.FormattingEnabled = True
+        Me.cmbxCLine.Location = New System.Drawing.Point(847, 409)
+        Me.cmbxCLine.Name = "cmbxCLine"
+        Me.cmbxCLine.Size = New System.Drawing.Size(336, 39)
+        Me.cmbxCLine.TabIndex = 14
+        '
+        'cmbFixedOperation
+        '
+        Me.cmbFixedOperation.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.cmbFixedOperation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbFixedOperation.FormattingEnabled = True
+        Me.cmbFixedOperation.Items.AddRange(New Object() {"F", "P", "R"})
+        Me.cmbFixedOperation.Location = New System.Drawing.Point(62, 53)
+        Me.cmbFixedOperation.Name = "cmbFixedOperation"
+        Me.cmbFixedOperation.Size = New System.Drawing.Size(54, 33)
+        Me.cmbFixedOperation.TabIndex = 14
+        Me.cmbFixedOperation.Text = "F"
+        '
+        'txtCall
+        '
+        Me.txtCall.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.txtCall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCall.Location = New System.Drawing.Point(215, 377)
+        Me.txtCall.Name = "txtCall"
+        Me.txtCall.Size = New System.Drawing.Size(275, 38)
+        Me.txtCall.TabIndex = 15
+        Me.txtCall.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtMrst
+        '
+        Me.txtMrst.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.txtMrst.Location = New System.Drawing.Point(1568, 293)
+        Me.txtMrst.Name = "txtMrst"
+        Me.txtMrst.Size = New System.Drawing.Size(100, 38)
+        Me.txtMrst.TabIndex = 15
+        Me.txtMrst.Text = "59"
+        Me.txtMrst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtHrst
+        '
+        Me.txtHrst.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.txtHrst.Location = New System.Drawing.Point(1566, 343)
+        Me.txtHrst.Name = "txtHrst"
+        Me.txtHrst.Size = New System.Drawing.Size(100, 38)
+        Me.txtHrst.TabIndex = 15
+        Me.txtHrst.Text = "59"
+        Me.txtHrst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblState
+        '
+        Me.lblState.AutoSize = True
+        Me.lblState.BackColor = System.Drawing.Color.Transparent
+        Me.lblState.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.lblState.Location = New System.Drawing.Point(712, 293)
+        Me.lblState.Name = "lblState"
+        Me.lblState.Size = New System.Drawing.Size(53, 20)
+        Me.lblState.TabIndex = 16
+        Me.lblState.Text = "State"
+        '
+        'lblCounty
+        '
+        Me.lblCounty.AutoSize = True
+        Me.lblCounty.BackColor = System.Drawing.Color.Transparent
+        Me.lblCounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.lblCounty.Location = New System.Drawing.Point(944, 292)
+        Me.lblCounty.Name = "lblCounty"
+        Me.lblCounty.Size = New System.Drawing.Size(67, 20)
+        Me.lblCounty.TabIndex = 16
+        Me.lblCounty.Text = "County"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Location = New System.Drawing.Point(116, 380)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(93, 32)
+        Me.Label11.TabIndex = 16
+        Me.Label11.Text = "Call/s"
+        '
+        'lblCLine
+        '
+        Me.lblCLine.AutoSize = True
+        Me.lblCLine.BackColor = System.Drawing.Color.Transparent
+        Me.lblCLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.lblCLine.Location = New System.Drawing.Point(922, 374)
+        Me.lblCLine.Name = "lblCLine"
+        Me.lblCLine.Size = New System.Drawing.Size(109, 20)
+        Me.lblCLine.TabIndex = 16
+        Me.lblCLine.Text = "County Line"
+        '
+        'lblMrst
+        '
+        Me.lblMrst.AutoSize = True
+        Me.lblMrst.BackColor = System.Drawing.Color.Transparent
+        Me.lblMrst.Location = New System.Drawing.Point(1432, 296)
+        Me.lblMrst.Name = "lblMrst"
+        Me.lblMrst.Size = New System.Drawing.Size(121, 32)
+        Me.lblMrst.TabIndex = 16
+        Me.lblMrst.Text = "My RST"
+        '
+        'lblHrst
+        '
+        Me.lblHrst.AutoSize = True
+        Me.lblHrst.BackColor = System.Drawing.Color.Transparent
+        Me.lblHrst.Location = New System.Drawing.Point(1430, 346)
+        Me.lblHrst.Name = "lblHrst"
+        Me.lblHrst.Size = New System.Drawing.Size(126, 32)
+        Me.lblHrst.TabIndex = 16
+        Me.lblHrst.Text = "His RST"
+        '
+        'lblOper
+        '
+        Me.lblOper.AutoSize = True
+        Me.lblOper.BackColor = System.Drawing.Color.Transparent
+        Me.lblOper.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOper.Location = New System.Drawing.Point(1455, 124)
+        Me.lblOper.Name = "lblOper"
+        Me.lblOper.Size = New System.Drawing.Size(91, 20)
+        Me.lblOper.TabIndex = 16
+        Me.lblOper.Text = "Operation"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(5, -3)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(170, 24)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "Your Contact Info"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(5, 216)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(175, 24)
+        Me.Label10.TabIndex = 18
+        Me.Label10.Text = "Their Contact Info"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.Final_2
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 182)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(1878, 32)
+        Me.PictureBox2.TabIndex = 19
+        Me.PictureBox2.TabStop = False
+        '
+        'gbxMobile
+        '
+        Me.gbxMobile.Controls.Add(Me.btnDelete)
+        Me.gbxMobile.Controls.Add(Me.btnAdd)
+        Me.gbxMobile.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxMobile.Location = New System.Drawing.Point(1312, 420)
+        Me.gbxMobile.Name = "gbxMobile"
+        Me.gbxMobile.Size = New System.Drawing.Size(275, 94)
+        Me.gbxMobile.TabIndex = 21
+        Me.gbxMobile.TabStop = False
+        Me.gbxMobile.Text = "Mobile Logging Controls"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.Red
+        Me.btnDelete.Location = New System.Drawing.Point(156, 35)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(85, 49)
+        Me.btnDelete.TabIndex = 0
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAdd.Location = New System.Drawing.Point(22, 35)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(95, 49)
+        Me.btnAdd.TabIndex = 0
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'btnMobilePost
+        '
+        Me.btnMobilePost.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnMobilePost.Location = New System.Drawing.Point(1445, 904)
+        Me.btnMobilePost.Name = "btnMobilePost"
+        Me.btnMobilePost.Size = New System.Drawing.Size(198, 47)
+        Me.btnMobilePost.TabIndex = 22
+        Me.btnMobilePost.Text = "Post to Log"
+        Me.btnMobilePost.UseVisualStyleBackColor = False
+        '
+        'txtTime
+        '
+        Me.txtTime.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.txtTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTime.Location = New System.Drawing.Point(223, 328)
+        Me.txtTime.Name = "txtTime"
+        Me.txtTime.Size = New System.Drawing.Size(239, 38)
+        Me.txtTime.TabIndex = 23
+        Me.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblFormat
+        '
+        Me.lblFormat.AutoSize = True
+        Me.lblFormat.BackColor = System.Drawing.Color.Transparent
+        Me.lblFormat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFormat.Location = New System.Drawing.Point(273, 307)
+        Me.lblFormat.Name = "lblFormat"
+        Me.lblFormat.Size = New System.Drawing.Size(108, 18)
+        Me.lblFormat.TabIndex = 24
+        Me.lblFormat.Text = "00:00 Format"
+        '
+        'lblTime2
+        '
+        Me.lblTime2.AutoSize = True
+        Me.lblTime2.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime2.Location = New System.Drawing.Point(127, 331)
+        Me.lblTime2.Name = "lblTime2"
+        Me.lblTime2.Size = New System.Drawing.Size(82, 32)
+        Me.lblTime2.TabIndex = 25
+        Me.lblTime2.Text = "Time"
+        '
+        'txtDate
+        '
+        Me.txtDate.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.txtDate.Location = New System.Drawing.Point(223, 266)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.Size = New System.Drawing.Size(239, 38)
+        Me.txtDate.TabIndex = 26
+        Me.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'LblDate2
+        '
+        Me.LblDate2.AutoSize = True
+        Me.LblDate2.BackColor = System.Drawing.Color.Transparent
+        Me.LblDate2.Location = New System.Drawing.Point(130, 269)
+        Me.LblDate2.Name = "LblDate2"
+        Me.LblDate2.Size = New System.Drawing.Size(79, 32)
+        Me.LblDate2.TabIndex = 27
+        Me.LblDate2.Text = "Date"
+        '
+        'lblDFormat
+        '
+        Me.lblDFormat.AutoSize = True
+        Me.lblDFormat.BackColor = System.Drawing.Color.Transparent
+        Me.lblDFormat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDFormat.Location = New System.Drawing.Point(257, 245)
+        Me.lblDFormat.Name = "lblDFormat"
+        Me.lblDFormat.Size = New System.Drawing.Size(149, 18)
+        Me.lblDFormat.TabIndex = 27
+        Me.lblDFormat.Text = "02/25/2018 Format"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(477, 228)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 38)
+        Me.DateTimePicker1.TabIndex = 28
+        Me.DateTimePicker1.Visible = False
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(1312, 12)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(169, 28)
+        Me.CheckBox1.TabIndex = 29
+        Me.CheckBox1.Text = "Running Clock"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'btnLogIt
+        '
+        Me.btnLogIt.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnLogIt.Location = New System.Drawing.Point(1722, 448)
+        Me.btnLogIt.Name = "btnLogIt"
+        Me.btnLogIt.Size = New System.Drawing.Size(153, 66)
+        Me.btnLogIt.TabIndex = 30
+        Me.btnLogIt.Text = "Post"
+        Me.btnLogIt.UseVisualStyleBackColor = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Location = New System.Drawing.Point(755, 919)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(443, 32)
+        Me.Label12.TabIndex = 31
+        Me.Label12.Text = "If you SPOT them they will RUN"
+        '
+        'btnSpot
+        '
+        Me.btnSpot.BackColor = System.Drawing.Color.Yellow
+        Me.btnSpot.Location = New System.Drawing.Point(92, 448)
+        Me.btnSpot.Name = "btnSpot"
+        Me.btnSpot.Size = New System.Drawing.Size(163, 66)
+        Me.btnSpot.TabIndex = 32
+        Me.btnSpot.Text = "Spot"
+        Me.btnSpot.UseVisualStyleBackColor = False
+        Me.btnSpot.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(1722, 359)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(153, 53)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "Log It"
+        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.Visible = False
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Location = New System.Drawing.Point(262, 459)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(250, 55)
+        Me.WebBrowser1.TabIndex = 34
+        Me.WebBrowser1.Visible = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(262, 426)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(144, 27)
+        Me.TextBox1.TabIndex = 39
+        Me.TextBox1.Text = "   (NL)"
+        Me.TextBox1.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(12, 31)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(135, 20)
+        Me.Label13.TabIndex = 40
+        Me.Label13.Text = "Your Operation"
+        '
+        'FixedLogEntry
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(17.0!, 31.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1910, 967)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.WebBrowser1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSpot)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.btnLogIt)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.lblDFormat)
+        Me.Controls.Add(Me.LblDate2)
+        Me.Controls.Add(Me.txtDate)
+        Me.Controls.Add(Me.lblTime2)
+        Me.Controls.Add(Me.lblFormat)
+        Me.Controls.Add(Me.txtTime)
+        Me.Controls.Add(Me.btnMobilePost)
+        Me.Controls.Add(Me.gbxMobile)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblOper)
+        Me.Controls.Add(Me.lblHrst)
+        Me.Controls.Add(Me.lblMrst)
+        Me.Controls.Add(Me.lblCLine)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lblCounty)
+        Me.Controls.Add(Me.lblState)
+        Me.Controls.Add(Me.txtHrst)
+        Me.Controls.Add(Me.txtMrst)
+        Me.Controls.Add(Me.txtCall)
+        Me.Controls.Add(Me.cmbFixedOperation)
+        Me.Controls.Add(Me.cmbxCLine)
+        Me.Controls.Add(Me.cmbxHCounty)
+        Me.Controls.Add(Me.cmbHState)
+        Me.Controls.Add(Me.dataGrid1)
+        Me.Controls.Add(Me.cmbxFrequency)
+        Me.Controls.Add(Me.lblTime)
+        Me.Controls.Add(Me.lblDate)
+        Me.Controls.Add(Me.cmbxBand)
+        Me.Controls.Add(Me.cmbxMode)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.cmbxMCLine)
+        Me.Controls.Add(Me.cmbMCounty)
+        Me.Controls.Add(Me.cmbMState)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.cmbMOperation)
+        Me.Controls.Add(Me.lblCall)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.Name = "FixedLogEntry"
+        Me.Text = "Fixed Log Entry Form"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxMobile.ResumeLayout(False)
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents lblCall As Label
+    Friend WithEvents cmbMOperation As ComboBox
+    Friend WithEvents btnExit As Button
+    Friend WithEvents cmbMState As ComboBox
+    Friend WithEvents cmbMCounty As ComboBox
+    Friend WithEvents cmbxMCLine As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cmbxMode As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents cmbxBand As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lblDate As Label
+    Friend WithEvents lblTime As Label
+    Friend WithEvents cmbxFrequency As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents dataGrid1 As DataGridView
+    Friend WithEvents cmbHState As ComboBox
+    Friend WithEvents cmbxHCounty As ComboBox
+    Friend WithEvents cmbxCLine As ComboBox
+    Friend WithEvents cmbFixedOperation As ComboBox
+    Friend WithEvents txtCall As TextBox
+    Friend WithEvents txtMrst As TextBox
+    Friend WithEvents txtHrst As TextBox
+    Friend WithEvents lblState As Label
+    Friend WithEvents lblCounty As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents lblCLine As Label
+    Friend WithEvents lblMrst As Label
+    Friend WithEvents lblHrst As Label
+    Friend WithEvents lblOper As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents gbxMobile As GroupBox
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnMobilePost As Button
+    Friend WithEvents txtTime As TextBox
+    Friend WithEvents lblFormat As Label
+    Friend WithEvents lblTime2 As Label
+    Friend WithEvents txtDate As TextBox
+    Friend WithEvents LblDate2 As Label
+    Friend WithEvents lblDFormat As Label
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents btnLogIt As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents btnSpot As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label13 As Label
+End Class
