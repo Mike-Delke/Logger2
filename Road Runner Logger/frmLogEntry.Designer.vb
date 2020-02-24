@@ -23,6 +23,8 @@ Partial Class frmLogEntry
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.TimerClock = New System.Windows.Forms.Timer(Me.components)
         Me.btnMobilePost = New System.Windows.Forms.Button()
@@ -118,7 +120,7 @@ Partial Class frmLogEntry
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.BottomRight
         Me.btnExit.Location = New System.Drawing.Point(1708, 904)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(182, 48)
         Me.btnExit.TabIndex = 4
@@ -134,7 +136,7 @@ Partial Class frmLogEntry
         '
         Me.btnMobilePost.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnMobilePost.Location = New System.Drawing.Point(1444, 904)
-        Me.btnMobilePost.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMobilePost.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMobilePost.Name = "btnMobilePost"
         Me.btnMobilePost.Size = New System.Drawing.Size(198, 48)
         Me.btnMobilePost.TabIndex = 22
@@ -145,7 +147,7 @@ Partial Class frmLogEntry
         '
         Me.btnLogIt.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnLogIt.Location = New System.Drawing.Point(1722, 448)
-        Me.btnLogIt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLogIt.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogIt.Name = "btnLogIt"
         Me.btnLogIt.Size = New System.Drawing.Size(152, 66)
         Me.btnLogIt.TabIndex = 30
@@ -157,7 +159,7 @@ Partial Class frmLogEntry
         Me.btnSpot.BackColor = System.Drawing.Color.Yellow
         Me.btnSpot.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSpot.Location = New System.Drawing.Point(444, 310)
-        Me.btnSpot.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSpot.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSpot.Name = "btnSpot"
         Me.btnSpot.Size = New System.Drawing.Size(92, 30)
         Me.btnSpot.TabIndex = 32
@@ -168,7 +170,7 @@ Partial Class frmLogEntry
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.Location = New System.Drawing.Point(1722, 360)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(152, 52)
         Me.Button1.TabIndex = 33
@@ -187,7 +189,7 @@ Partial Class frmLogEntry
         Me.cmbMyState.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMyState.FormattingEnabled = True
         Me.cmbMyState.Location = New System.Drawing.Point(208, 24)
-        Me.cmbMyState.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbMyState.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbMyState.Name = "cmbMyState"
         Me.cmbMyState.Size = New System.Drawing.Size(48, 21)
         Me.cmbMyState.TabIndex = 44
@@ -202,7 +204,7 @@ Partial Class frmLogEntry
         Me.cmbMyCounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMyCounty.FormattingEnabled = True
         Me.cmbMyCounty.Location = New System.Drawing.Point(326, 24)
-        Me.cmbMyCounty.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbMyCounty.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbMyCounty.Name = "cmbMyCounty"
         Me.cmbMyCounty.Size = New System.Drawing.Size(160, 21)
         Me.cmbMyCounty.TabIndex = 45
@@ -216,7 +218,7 @@ Partial Class frmLogEntry
         Me.cmbContactState.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactState.FormattingEnabled = True
         Me.cmbContactState.Location = New System.Drawing.Point(288, 24)
-        Me.cmbContactState.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbContactState.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbContactState.Name = "cmbContactState"
         Me.cmbContactState.Size = New System.Drawing.Size(48, 21)
         Me.cmbContactState.TabIndex = 30
@@ -230,7 +232,7 @@ Partial Class frmLogEntry
         Me.cmbContactCounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactCounty.FormattingEnabled = True
         Me.cmbContactCounty.Location = New System.Drawing.Point(420, 24)
-        Me.cmbContactCounty.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbContactCounty.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbContactCounty.Name = "cmbContactCounty"
         Me.cmbContactCounty.Size = New System.Drawing.Size(160, 21)
         Me.cmbContactCounty.TabIndex = 31
@@ -258,7 +260,7 @@ Partial Class frmLogEntry
         Me.cmbBand.FormattingEnabled = True
         Me.cmbBand.Items.AddRange(New Object() {"20", "30", "40", "80", "2", "6", "10", "12", "15", "17", "60", "160", "70 cm", "1.25"})
         Me.cmbBand.Location = New System.Drawing.Point(574, 88)
-        Me.cmbBand.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbBand.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbBand.Name = "cmbBand"
         Me.cmbBand.Size = New System.Drawing.Size(120, 21)
         Me.cmbBand.TabIndex = 54
@@ -272,7 +274,7 @@ Partial Class frmLogEntry
         Me.cmbMode.FormattingEnabled = True
         Me.cmbMode.Items.AddRange(New Object() {"SSB", "CW", "AM", "AMTOR", "ATV", "CHIP", "CLOVER", "CONTESTIA", "DOMINO", "DSSTV", "DV", "FM", "FSK31", "FT8", "GTOR", "HAMDRM", "HELL", "HFSK", "JT65", "JT9", "MFSK", "MT63", "OLIVIA", "PACKET", "PAX", "PSK", "Q15", "ROS", "RTTY", "SSTV", "THOR", "THROB"})
         Me.cmbMode.Location = New System.Drawing.Point(574, 24)
-        Me.cmbMode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbMode.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbMode.Name = "cmbMode"
         Me.cmbMode.Size = New System.Drawing.Size(120, 21)
         Me.cmbMode.TabIndex = 53
@@ -309,9 +311,9 @@ Partial Class frmLogEntry
         Me.GroupBoxMyParameters.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBoxMyParameters.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBoxMyParameters.Location = New System.Drawing.Point(12, 8)
-        Me.GroupBoxMyParameters.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxMyParameters.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBoxMyParameters.Name = "GroupBoxMyParameters"
-        Me.GroupBoxMyParameters.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxMyParameters.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBoxMyParameters.Size = New System.Drawing.Size(710, 196)
         Me.GroupBoxMyParameters.TabIndex = 44
         Me.GroupBoxMyParameters.TabStop = False
@@ -322,9 +324,9 @@ Partial Class frmLogEntry
         Me.chkBigRig.AutoSize = True
         Me.chkBigRig.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkBigRig.Location = New System.Drawing.Point(188, 88)
-        Me.chkBigRig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkBigRig.Margin = New System.Windows.Forms.Padding(4)
         Me.chkBigRig.Name = "chkBigRig"
-        Me.chkBigRig.Size = New System.Drawing.Size(134, 34)
+        Me.chkBigRig.Size = New System.Drawing.Size(67, 17)
         Me.chkBigRig.TabIndex = 69
         Me.chkBigRig.Text = "Big Rig"
         Me.chkBigRig.UseVisualStyleBackColor = True
@@ -337,7 +339,7 @@ Partial Class frmLogEntry
         Me.cmbSubMode.FormattingEnabled = True
         Me.cmbSubMode.Items.AddRange(New Object() {"SSB", "CW", "AM", "AMTOR", "ATV", "CHIP", "CLOVER", "CONTESTIA", "DOMINO", "DSSTV", "DV", "FM", "FSK31", "FT8", "GTOR", "HAMDRM", "HELL", "HFSK", "JT65", "JT9", "MFSK", "MT63", "OLIVIA", "PACKET", "PAX", "PSK", "Q15", "ROS", "RTTY", "SSTV", "THOR", "THROB"})
         Me.cmbSubMode.Location = New System.Drawing.Point(574, 56)
-        Me.cmbSubMode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbSubMode.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbSubMode.Name = "cmbSubMode"
         Me.cmbSubMode.Size = New System.Drawing.Size(120, 21)
         Me.cmbSubMode.TabIndex = 68
@@ -370,9 +372,9 @@ Partial Class frmLogEntry
         Me.GroupBoxTeamMembers.Controls.Add(Me.ckbPrimaryTeamMember)
         Me.GroupBoxTeamMembers.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBoxTeamMembers.Location = New System.Drawing.Point(310, 88)
-        Me.GroupBoxTeamMembers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxTeamMembers.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBoxTeamMembers.Name = "GroupBoxTeamMembers"
-        Me.GroupBoxTeamMembers.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxTeamMembers.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBoxTeamMembers.Size = New System.Drawing.Size(186, 52)
         Me.GroupBoxTeamMembers.TabIndex = 64
         Me.GroupBoxTeamMembers.TabStop = False
@@ -382,9 +384,9 @@ Partial Class frmLogEntry
         '
         Me.chkSecondaryTeamMember.AutoSize = True
         Me.chkSecondaryTeamMember.Location = New System.Drawing.Point(100, 28)
-        Me.chkSecondaryTeamMember.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkSecondaryTeamMember.Margin = New System.Windows.Forms.Padding(4)
         Me.chkSecondaryTeamMember.Name = "chkSecondaryTeamMember"
-        Me.chkSecondaryTeamMember.Size = New System.Drawing.Size(64, 16)
+        Me.chkSecondaryTeamMember.Size = New System.Drawing.Size(65, 17)
         Me.chkSecondaryTeamMember.TabIndex = 1
         Me.chkSecondaryTeamMember.Text = "N0XYL"
         Me.chkSecondaryTeamMember.UseVisualStyleBackColor = True
@@ -395,9 +397,9 @@ Partial Class frmLogEntry
         Me.ckbPrimaryTeamMember.Checked = True
         Me.ckbPrimaryTeamMember.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ckbPrimaryTeamMember.Location = New System.Drawing.Point(12, 28)
-        Me.ckbPrimaryTeamMember.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ckbPrimaryTeamMember.Margin = New System.Windows.Forms.Padding(4)
         Me.ckbPrimaryTeamMember.Name = "ckbPrimaryTeamMember"
-        Me.ckbPrimaryTeamMember.Size = New System.Drawing.Size(64, 16)
+        Me.ckbPrimaryTeamMember.Size = New System.Drawing.Size(65, 17)
         Me.ckbPrimaryTeamMember.TabIndex = 0
         Me.ckbPrimaryTeamMember.Text = "KB0BA"
         Me.ckbPrimaryTeamMember.UseVisualStyleBackColor = True
@@ -407,9 +409,9 @@ Partial Class frmLogEntry
         Me.chkQrp.AutoSize = True
         Me.chkQrp.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkQrp.Location = New System.Drawing.Point(188, 120)
-        Me.chkQrp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkQrp.Margin = New System.Windows.Forms.Padding(4)
         Me.chkQrp.Name = "chkQrp"
-        Me.chkQrp.Size = New System.Drawing.Size(104, 34)
+        Me.chkQrp.Size = New System.Drawing.Size(52, 17)
         Me.chkQrp.TabIndex = 63
         Me.chkQrp.Text = "QRP"
         Me.chkQrp.UseVisualStyleBackColor = True
@@ -418,7 +420,7 @@ Partial Class frmLogEntry
         '
         Me.txtTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTime.Location = New System.Drawing.Point(52, 88)
-        Me.txtTime.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTime.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTime.Name = "txtTime"
         Me.txtTime.Size = New System.Drawing.Size(40, 19)
         Me.txtTime.TabIndex = 62
@@ -441,7 +443,7 @@ Partial Class frmLogEntry
         '
         Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDate.Location = New System.Drawing.Point(52, 56)
-        Me.txtDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDate.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDate.Name = "txtDate"
         Me.txtDate.Size = New System.Drawing.Size(80, 19)
         Me.txtDate.TabIndex = 60
@@ -468,7 +470,7 @@ Partial Class frmLogEntry
         Me.cmbMyCountyLine.FormattingEnabled = True
         Me.cmbMyCountyLine.Items.AddRange(New Object() {"Menomonee", "Schoolcraft", "Marquette"})
         Me.cmbMyCountyLine.Location = New System.Drawing.Point(252, 56)
-        Me.cmbMyCountyLine.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbMyCountyLine.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbMyCountyLine.Name = "cmbMyCountyLine"
         Me.cmbMyCountyLine.Size = New System.Drawing.Size(232, 21)
         Me.cmbMyCountyLine.TabIndex = 46
@@ -492,7 +494,7 @@ Partial Class frmLogEntry
         Me.cmbMyOperation.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMyOperation.FormattingEnabled = True
         Me.cmbMyOperation.Location = New System.Drawing.Point(52, 24)
-        Me.cmbMyOperation.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbMyOperation.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbMyOperation.Name = "cmbMyOperation"
         Me.cmbMyOperation.Size = New System.Drawing.Size(80, 21)
         Me.cmbMyOperation.TabIndex = 57
@@ -528,9 +530,9 @@ Partial Class frmLogEntry
         Me.chkRunningClock.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkRunningClock.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRunningClock.Location = New System.Drawing.Point(24, 120)
-        Me.chkRunningClock.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkRunningClock.Margin = New System.Windows.Forms.Padding(4)
         Me.chkRunningClock.Name = "chkRunningClock"
-        Me.chkRunningClock.Size = New System.Drawing.Size(238, 38)
+        Me.chkRunningClock.Size = New System.Drawing.Size(119, 19)
         Me.chkRunningClock.TabIndex = 61
         Me.chkRunningClock.Text = "Running Clock"
         Me.chkRunningClock.UseVisualStyleBackColor = True
@@ -542,7 +544,7 @@ Partial Class frmLogEntry
         Me.cmbFrequency.FormattingEnabled = True
         Me.cmbFrequency.Items.AddRange(New Object() {"14.336", "7.188", "52.525", "28.336", "24.950", "21.338", "18.136", "3.901", "1.950"})
         Me.cmbFrequency.Location = New System.Drawing.Point(574, 118)
-        Me.cmbFrequency.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbFrequency.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbFrequency.Name = "cmbFrequency"
         Me.cmbFrequency.Size = New System.Drawing.Size(120, 21)
         Me.cmbFrequency.TabIndex = 56
@@ -601,7 +603,7 @@ Partial Class frmLogEntry
         Me.btnPost.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPost.ForeColor = System.Drawing.Color.White
         Me.btnPost.Location = New System.Drawing.Point(72, 310)
-        Me.btnPost.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPost.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPost.Name = "btnPost"
         Me.btnPost.Size = New System.Drawing.Size(92, 30)
         Me.btnPost.TabIndex = 46
@@ -613,7 +615,7 @@ Partial Class frmLogEntry
         Me.ButtonClear.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonClear.Location = New System.Drawing.Point(196, 310)
-        Me.ButtonClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonClear.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(92, 30)
         Me.ButtonClear.TabIndex = 47
@@ -625,7 +627,7 @@ Partial Class frmLogEntry
         Me.ButtonEdit.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEdit.Location = New System.Drawing.Point(320, 310)
-        Me.ButtonEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonEdit.Name = "ButtonEdit"
         Me.ButtonEdit.Size = New System.Drawing.Size(92, 30)
         Me.ButtonEdit.TabIndex = 48
@@ -640,10 +642,26 @@ Partial Class frmLogEntry
         Me.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight
         Me.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.qsoId, Me.dateCol, Me.time, Me.currentCall, Me.contactCountyID, Me.contactCounty, Me.myCountyId, Me.myCounty, Me.hisRst, Me.myRst, Me.band, Me.frequency, Me.mode, Me.subNode, Me.hisOp, Me.myOp})
         Me.dataGridView.ContextMenuStrip = Me.ContextMenuStripLog
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView.Location = New System.Drawing.Point(-12, 362)
-        Me.dataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.dataGridView.Name = "dataGridView"
         Me.dataGridView.RowTemplate.Height = 24
         Me.dataGridView.Size = New System.Drawing.Size(748, 396)
@@ -662,19 +680,19 @@ Partial Class frmLogEntry
         Me.dateCol.HeaderText = "Date"
         Me.dateCol.Name = "dateCol"
         Me.dateCol.ReadOnly = True
-        Me.dateCol.Width = 59
+        Me.dateCol.Width = 55
         '
         'time
         '
         Me.time.HeaderText = "Time"
         Me.time.Name = "time"
-        Me.time.Width = 59
+        Me.time.Width = 55
         '
         'currentCall
         '
         Me.currentCall.HeaderText = "Call"
         Me.currentCall.Name = "currentCall"
-        Me.currentCall.Width = 53
+        Me.currentCall.Width = 49
         '
         'contactCountyID
         '
@@ -686,7 +704,7 @@ Partial Class frmLogEntry
         '
         Me.contactCounty.HeaderText = "His County"
         Me.contactCounty.Name = "contactCounty"
-        Me.contactCounty.Width = 93
+        Me.contactCounty.Width = 83
         '
         'myCountyId
         '
@@ -698,55 +716,55 @@ Partial Class frmLogEntry
         '
         Me.myCounty.HeaderText = "My County"
         Me.myCounty.Name = "myCounty"
-        Me.myCounty.Width = 91
+        Me.myCounty.Width = 82
         '
         'hisRst
         '
         Me.hisRst.HeaderText = "His RST"
         Me.hisRst.Name = "hisRst"
-        Me.hisRst.Width = 79
+        Me.hisRst.Width = 72
         '
         'myRst
         '
         Me.myRst.HeaderText = "My RST"
         Me.myRst.Name = "myRst"
-        Me.myRst.Width = 77
+        Me.myRst.Width = 71
         '
         'band
         '
         Me.band.HeaderText = "Band"
         Me.band.Name = "band"
-        Me.band.Width = 61
+        Me.band.Width = 57
         '
         'frequency
         '
         Me.frequency.HeaderText = "Freq"
         Me.frequency.Name = "frequency"
-        Me.frequency.Width = 57
+        Me.frequency.Width = 53
         '
         'mode
         '
         Me.mode.HeaderText = "Mode"
         Me.mode.Name = "mode"
-        Me.mode.Width = 63
+        Me.mode.Width = 59
         '
         'subNode
         '
         Me.subNode.HeaderText = "Sub Mode"
         Me.subNode.Name = "subNode"
-        Me.subNode.Width = 89
+        Me.subNode.Width = 81
         '
         'hisOp
         '
         Me.hisOp.HeaderText = "His OP"
         Me.hisOp.Name = "hisOp"
-        Me.hisOp.Width = 71
+        Me.hisOp.Width = 65
         '
         'myOp
         '
         Me.myOp.HeaderText = "My Op"
         Me.myOp.Name = "myOp"
-        Me.myOp.Width = 68
+        Me.myOp.Width = 63
         '
         'ContextMenuStripLog
         '
@@ -772,7 +790,7 @@ Partial Class frmLogEntry
         Me.btnClose.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.Location = New System.Drawing.Point(568, 310)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(92, 30)
         Me.btnClose.TabIndex = 50
@@ -784,7 +802,7 @@ Partial Class frmLogEntry
         Me.ButtonEditNext.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonEditNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEditNext.Location = New System.Drawing.Point(56, 300)
-        Me.ButtonEditNext.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonEditNext.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonEditNext.Name = "ButtonEditNext"
         Me.ButtonEditNext.Size = New System.Drawing.Size(118, 22)
         Me.ButtonEditNext.TabIndex = 51
@@ -797,7 +815,7 @@ Partial Class frmLogEntry
         Me.ButtonEditPrevious.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonEditPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEditPrevious.Location = New System.Drawing.Point(56, 326)
-        Me.ButtonEditPrevious.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonEditPrevious.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonEditPrevious.Name = "ButtonEditPrevious"
         Me.ButtonEditPrevious.Size = New System.Drawing.Size(120, 22)
         Me.ButtonEditPrevious.TabIndex = 52
@@ -810,7 +828,7 @@ Partial Class frmLogEntry
         Me.ButtonSaveEdit.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonSaveEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSaveEdit.Location = New System.Drawing.Point(196, 294)
-        Me.ButtonSaveEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonSaveEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonSaveEdit.Name = "ButtonSaveEdit"
         Me.ButtonSaveEdit.Size = New System.Drawing.Size(92, 30)
         Me.ButtonSaveEdit.TabIndex = 53
@@ -827,7 +845,7 @@ Partial Class frmLogEntry
         Me.cmbContactOperation.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactOperation.FormattingEnabled = True
         Me.cmbContactOperation.Location = New System.Drawing.Point(340, 84)
-        Me.cmbContactOperation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbContactOperation.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbContactOperation.Name = "cmbContactOperation"
         Me.cmbContactOperation.Size = New System.Drawing.Size(80, 21)
         Me.cmbContactOperation.TabIndex = 28
@@ -851,7 +869,7 @@ Partial Class frmLogEntry
         Me.cmbContactCountyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactCountyLine.FormattingEnabled = True
         Me.cmbContactCountyLine.Location = New System.Drawing.Point(338, 54)
-        Me.cmbContactCountyLine.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbContactCountyLine.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbContactCountyLine.Name = "cmbContactCountyLine"
         Me.cmbContactCountyLine.Size = New System.Drawing.Size(242, 21)
         Me.cmbContactCountyLine.TabIndex = 32
@@ -862,7 +880,7 @@ Partial Class frmLogEntry
         Me.txtContactCall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtContactCall.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactCall.Location = New System.Drawing.Point(66, 28)
-        Me.txtContactCall.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtContactCall.Margin = New System.Windows.Forms.Padding(4)
         Me.txtContactCall.Name = "txtContactCall"
         Me.txtContactCall.Size = New System.Drawing.Size(150, 19)
         Me.txtContactCall.TabIndex = 33
@@ -874,7 +892,7 @@ Partial Class frmLogEntry
         Me.txtMyRST.BackColor = System.Drawing.SystemColors.Window
         Me.txtMyRST.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMyRST.Location = New System.Drawing.Point(660, 24)
-        Me.txtMyRST.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtMyRST.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMyRST.Name = "txtMyRST"
         Me.txtMyRST.Size = New System.Drawing.Size(44, 19)
         Me.txtMyRST.TabIndex = 34
@@ -886,7 +904,7 @@ Partial Class frmLogEntry
         Me.txtHisRST.BackColor = System.Drawing.SystemColors.Window
         Me.txtHisRST.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHisRST.Location = New System.Drawing.Point(660, 54)
-        Me.txtHisRST.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtHisRST.Margin = New System.Windows.Forms.Padding(4)
         Me.txtHisRST.Name = "txtHisRST"
         Me.txtHisRST.Size = New System.Drawing.Size(44, 19)
         Me.txtHisRST.TabIndex = 35
@@ -990,9 +1008,9 @@ Partial Class frmLogEntry
         Me.GroupBoxMobileParameters.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBoxMobileParameters.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBoxMobileParameters.Location = New System.Drawing.Point(12, 160)
-        Me.GroupBoxMobileParameters.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxMobileParameters.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBoxMobileParameters.Name = "GroupBoxMobileParameters"
-        Me.GroupBoxMobileParameters.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBoxMobileParameters.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBoxMobileParameters.Size = New System.Drawing.Size(708, 122)
         Me.GroupBoxMobileParameters.TabIndex = 45
         Me.GroupBoxMobileParameters.TabStop = False
@@ -1001,7 +1019,7 @@ Partial Class frmLogEntry
         'txtContactHomeCounty
         '
         Me.txtContactHomeCounty.Location = New System.Drawing.Point(338, 4)
-        Me.txtContactHomeCounty.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtContactHomeCounty.Margin = New System.Windows.Forms.Padding(4)
         Me.txtContactHomeCounty.Name = "txtContactHomeCounty"
         Me.txtContactHomeCounty.ReadOnly = True
         Me.txtContactHomeCounty.Size = New System.Drawing.Size(242, 19)

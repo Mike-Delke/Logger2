@@ -3,6 +3,8 @@ Imports System.Data.OleDb
 Imports System.IO
 Imports System.Net
 Imports System.Text
+Imports System.Windows.Forms.AxHost
+
 Public Class FixedLogEntry
     Public Property StringPass As String
     Private _commonData As clsCommonData = clsCommonData.GetInstance("CommonData")
@@ -141,7 +143,7 @@ Public Class FixedLogEntry
         If cmbMyOperation.Text = "Home" And chkRunningClock.Checked = True Then
             cmbContactOperation.Text = "Mobile"
             datagridshow()
-            btnPost.Visible = False
+            ' btnPost.Visible = False
             btnPost.Visible = True
             ' Button1.Visible = False
             lblTime.Visible = True
@@ -160,7 +162,7 @@ Public Class FixedLogEntry
                 cmbContactOperation.Text = "Mobile"
                 datagridshow()
                 btnPost.Visible = False
-                btnPost.Visible = True
+                ' btnPost.Visible = True
                 'Button1.Visible = False
                 lblTime.Visible = False
                 txtTime.Visible = True
@@ -343,53 +345,54 @@ Public Class FixedLogEntry
 
     Private Sub GetMCounty()       ' Gets the list of counties to put into combobox MyCounty
 
-        cmbMyCounty.Items.Clear()
-
-        Dim countyList As DataTable = _commonData.GetCountyList("county")
-        For Each row As DataRow In countyList.Rows
-            Dim county As String = CStr(row("countyId"))
-            Dim countyId As Integer = CInt(row("countyId"))
-            ' Add county to DropDown
-            cmbMyCounty.Items.Add(county)
-        Next
-
-        'Dim ds As New DataSet
-        'Dim dt As New DataTable
-        'ds.Tables.Add(dt)
-        'Dim da As New OleDbDataAdapter
-
-        ''------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
-
-        'Dim strFilePrefix = "NetControl"
-        'Dim strFileSuffix = ".accdb"
-        'Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
-        'Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
-
-        ''--------------------------------------------------------------------------------------------------------------
-        'con.ConnectionString = conString
-        'cmbMyCounty.Items.Clear()
-        'con.Open()
-
-        'da = New OleDbDataAdapter("SELECT County FROM County WHERE State = '" & cmbMyState.Text & "'", con)
-
-
-        'da.Fill(dt)
-
-        'con.Close()
-
         'cmbMyCounty.Items.Clear()
 
-        'For Each R As DataRow In dt.Rows
-        '    cmbMyCounty.Items.Add(R("County"))
+        'Dim countyList As DataTable = _commonData.GetCountyList("county")
+        'For Each row As DataRow In countyList.Rows
+        '    Dim county As String = CStr(row("countyId"))
+        '    Dim countyId As Integer = CInt(row("countyId"))
+        '    ' Add county to DropDown
+        '    cmbMyCounty.Items.Add(county)
         'Next
 
-        ''DISPLAY FIRST RECORD
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
 
-        ''cmbMCounty.Text = CType(dt.Rows(0).Item(0), String)
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "NetControl"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+        cmbMyCounty.Items.Clear()
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT County FROM County WHERE State = '" & cmbMyState.Text & "'", con)
+
+
+        da.Fill(dt)
+
+        con.Close()
+
+        cmbMyCounty.Items.Clear()
+
+        For Each R As DataRow In dt.Rows
+            cmbMyCounty.Items.Add(R("County"))
+        Next
+
+        'DISPLAY FIRST RECORD
+
+        'cmbMCounty.Text = CType(dt.Rows(0).Item(0), String)
 
     End Sub
 
     Private Sub GetHCounty()
+
 
         Dim ds As New DataSet
         Dim dt As New DataTable
@@ -489,7 +492,7 @@ Public Class FixedLogEntry
         cmbContactCountyLine.Items.Clear()
 
         For Each R As DataRow In dt.Rows
-            cmbContactCountyLine.Items.Add(R("clCounty" ))
+            cmbContactCountyLine.Items.Add(R("clCounty"))
         Next
 
 
@@ -1131,5 +1134,13 @@ Public Class FixedLogEntry
 
     Private Sub GroupBoxMyParameters_Enter(sender As Object, e As EventArgs) Handles GroupBoxMyParameters.Enter
 
+    End Sub
+
+    Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
+
+        ButtonClear.Visible = True
+        ButtonEditNext.Visible = True
+        ButtonEditPrevious.Visible = True
+        ButtonSaveEdit.Visible = True
     End Sub
 End Class

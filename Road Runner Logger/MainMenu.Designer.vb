@@ -229,7 +229,7 @@ Partial Class MainMenu
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainMenu"
-        Me.Text = "MainMenu"
+        Me.Text = " "
         Me.MainMenuStrip.ResumeLayout(False)
         Me.MainMenuStrip.PerformLayout()
         Me.ResumeLayout(False)
