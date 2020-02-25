@@ -1146,4 +1146,71 @@ Public Class FixedLogEntry
         ButtonEditPrevious.Visible = True
         ButtonSaveEdit.Visible = True
     End Sub
+
+    Private Sub SetFrequency()
+        Select Case cmbMode.Text
+            Case "SSB"
+                Select Case cmbBand.Text
+                    Case "160"
+                        cmbFrequency.Text = "1.950"
+                    Case "80"
+                        cmbFrequency.Text = "3.901"
+                    Case "40"
+                        cmbFrequency.Text = "7.188"
+                    Case "30"
+                        'cmbMode.Text = "CW"
+                        cmbFrequency.Text = "10.1245"
+                    Case "20"
+                        cmbFrequency.Text = "14.336"
+                    Case "17"
+                        cmbFrequency.Text = "18.136"
+                    Case "12"
+                        cmbFrequency.Text = "24.950"
+                    Case "10"
+                        cmbFrequency.Text = "28.336"
+                    Case "6"
+                        cmbFrequency.Text = "52.525"
+                End Select
+            Case "CW"
+                Select Case cmbBand.Text
+                    Case "80"
+                        cmbFrequency.Text = "3.0565"
+                    Case "40"
+                        cmbFrequency.Text = "7.0565"
+                    Case "30"
+                        cmbFrequency.Text = "10.1245"
+                    Case "20"
+                        cmbFrequency.Text = "14.0565"
+                    Case "17"
+                        cmbFrequency.Text = "18.0915"
+                    Case "15"
+                        cmbFrequency.Text = "21.0565"
+                    Case "12"
+                        cmbFrequency.Text = "24.9155"
+                    Case "10"
+                        cmbFrequency.Text = "28.0565"
+                End Select
+            Case "PSK"
+                Select Case cmbBand.Text
+                    Case "40"
+                        cmbFrequency.Text = "7.071"
+                    Case "30"
+                        cmbFrequency.Text = "10.139"
+                    Case "20"
+                        cmbFrequency.Text = "14.071"
+                End Select
+        End Select
+    End Sub
+
+    Private Sub cmbMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMode.SelectedIndexChanged
+
+        SetFrequency()    'sets the frequency when mode is changed
+
+    End Sub
+
+    Private Sub cmbBand_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbBand.SelectedIndexChanged
+
+        SetFrequency()    'sets the frequency when Band is changed
+
+    End Sub
 End Class
