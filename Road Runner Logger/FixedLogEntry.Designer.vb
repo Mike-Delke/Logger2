@@ -23,9 +23,9 @@ Partial Class FixedLogEntry
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbMyOperation = New System.Windows.Forms.ComboBox()
         Me.btnExit = New System.Windows.Forms.Button()
@@ -93,6 +93,7 @@ Partial Class FixedLogEntry
         Me.GroupBoxMobileParameters = New System.Windows.Forms.GroupBox()
         Me.lblContactHomeCounty = New System.Windows.Forms.Label()
         Me.TimerClock = New System.Windows.Forms.Timer(Me.components)
+        Me.lblYourLog = New System.Windows.Forms.Label()
         CType(Me.dataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxMyParameters.SuspendLayout()
         Me.GroupBoxTeamMembers.SuspendLayout()
@@ -131,9 +132,9 @@ Partial Class FixedLogEntry
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnExit.Location = New System.Drawing.Point(1006, 578)
+        Me.btnExit.Location = New System.Drawing.Point(1006, 593)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(117, 47)
+        Me.btnExit.Size = New System.Drawing.Size(117, 32)
         Me.btnExit.TabIndex = 4
         Me.btnExit.Text = "Main Menu"
         Me.btnExit.UseVisualStyleBackColor = False
@@ -300,29 +301,29 @@ Partial Class FixedLogEntry
         '
         Me.dataGridView.AllowUserToOrderColumns = True
         Me.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView.DefaultCellStyle = DataGridViewCellStyle14
-        Me.dataGridView.Location = New System.Drawing.Point(21, 365)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dataGridView.Location = New System.Drawing.Point(21, 302)
         Me.dataGridView.Name = "dataGridView"
-        DataGridViewCellStyle15.NullValue = Nothing
-        Me.dataGridView.RowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.dataGridView.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridView.RowTemplate.Height = 24
-        Me.dataGridView.Size = New System.Drawing.Size(1102, 207)
+        Me.dataGridView.Size = New System.Drawing.Size(1105, 275)
         Me.dataGridView.TabIndex = 13
         '
         'cmbContactState
@@ -330,9 +331,9 @@ Partial Class FixedLogEntry
         Me.cmbContactState.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmbContactState.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactState.FormattingEnabled = True
-        Me.cmbContactState.Location = New System.Drawing.Point(453, 72)
+        Me.cmbContactState.Location = New System.Drawing.Point(742, 12)
         Me.cmbContactState.Name = "cmbContactState"
-        Me.cmbContactState.Size = New System.Drawing.Size(67, 24)
+        Me.cmbContactState.Size = New System.Drawing.Size(50, 24)
         Me.cmbContactState.TabIndex = 14
         '
         'cmbContactCounty
@@ -340,9 +341,9 @@ Partial Class FixedLogEntry
         Me.cmbContactCounty.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmbContactCounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactCounty.FormattingEnabled = True
-        Me.cmbContactCounty.Location = New System.Drawing.Point(606, 72)
+        Me.cmbContactCounty.Location = New System.Drawing.Point(859, 12)
         Me.cmbContactCounty.Name = "cmbContactCounty"
-        Me.cmbContactCounty.Size = New System.Drawing.Size(263, 24)
+        Me.cmbContactCounty.Size = New System.Drawing.Size(257, 24)
         Me.cmbContactCounty.TabIndex = 14
         '
         'cmbContactCountyLine
@@ -350,7 +351,7 @@ Partial Class FixedLogEntry
         Me.cmbContactCountyLine.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmbContactCountyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactCountyLine.FormattingEnabled = True
-        Me.cmbContactCountyLine.Location = New System.Drawing.Point(576, 116)
+        Me.cmbContactCountyLine.Location = New System.Drawing.Point(587, 40)
         Me.cmbContactCountyLine.Name = "cmbContactCountyLine"
         Me.cmbContactCountyLine.Size = New System.Drawing.Size(293, 24)
         Me.cmbContactCountyLine.TabIndex = 14
@@ -360,7 +361,7 @@ Partial Class FixedLogEntry
         Me.txtcontactCall.BackColor = System.Drawing.SystemColors.ControlDark
         Me.txtcontactCall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcontactCall.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcontactCall.Location = New System.Drawing.Point(65, 56)
+        Me.txtcontactCall.Location = New System.Drawing.Point(70, 42)
         Me.txtcontactCall.Name = "txtcontactCall"
         Me.txtcontactCall.Size = New System.Drawing.Size(275, 22)
         Me.txtcontactCall.TabIndex = 15
@@ -370,7 +371,7 @@ Partial Class FixedLogEntry
         '
         Me.txtMyrst.BackColor = System.Drawing.SystemColors.ControlDark
         Me.txtMyrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMyrst.Location = New System.Drawing.Point(978, 53)
+        Me.txtMyrst.Location = New System.Drawing.Point(953, 42)
         Me.txtMyrst.Name = "txtMyrst"
         Me.txtMyrst.Size = New System.Drawing.Size(100, 22)
         Me.txtMyrst.TabIndex = 15
@@ -381,7 +382,7 @@ Partial Class FixedLogEntry
         '
         Me.txtHisrst.BackColor = System.Drawing.SystemColors.ControlDark
         Me.txtHisrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHisrst.Location = New System.Drawing.Point(978, 83)
+        Me.txtHisrst.Location = New System.Drawing.Point(953, 72)
         Me.txtHisrst.Name = "txtHisrst"
         Me.txtHisrst.Size = New System.Drawing.Size(100, 22)
         Me.txtHisrst.TabIndex = 15
@@ -393,7 +394,7 @@ Partial Class FixedLogEntry
         Me.lblContactState.AutoSize = True
         Me.lblContactState.BackColor = System.Drawing.Color.Transparent
         Me.lblContactState.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContactState.Location = New System.Drawing.Point(403, 75)
+        Me.lblContactState.Location = New System.Drawing.Point(694, 15)
         Me.lblContactState.Name = "lblContactState"
         Me.lblContactState.Size = New System.Drawing.Size(44, 16)
         Me.lblContactState.TabIndex = 16
@@ -404,7 +405,7 @@ Partial Class FixedLogEntry
         Me.lblContactCounty.AutoSize = True
         Me.lblContactCounty.BackColor = System.Drawing.Color.Transparent
         Me.lblContactCounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContactCounty.Location = New System.Drawing.Point(545, 75)
+        Me.lblContactCounty.Location = New System.Drawing.Point(798, 15)
         Me.lblContactCounty.Name = "lblContactCounty"
         Me.lblContactCounty.Size = New System.Drawing.Size(55, 16)
         Me.lblContactCounty.TabIndex = 16
@@ -415,7 +416,7 @@ Partial Class FixedLogEntry
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(13, 59)
+        Me.Label11.Location = New System.Drawing.Point(18, 45)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(48, 16)
         Me.Label11.TabIndex = 16
@@ -426,7 +427,7 @@ Partial Class FixedLogEntry
         Me.lblContactCountyLine.AutoSize = True
         Me.lblContactCountyLine.BackColor = System.Drawing.Color.Transparent
         Me.lblContactCountyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContactCountyLine.Location = New System.Drawing.Point(482, 119)
+        Me.lblContactCountyLine.Location = New System.Drawing.Point(493, 43)
         Me.lblContactCountyLine.Name = "lblContactCountyLine"
         Me.lblContactCountyLine.Size = New System.Drawing.Size(88, 16)
         Me.lblContactCountyLine.TabIndex = 16
@@ -437,7 +438,7 @@ Partial Class FixedLogEntry
         Me.lblMrst.AutoSize = True
         Me.lblMrst.BackColor = System.Drawing.Color.Transparent
         Me.lblMrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMrst.Location = New System.Drawing.Point(911, 53)
+        Me.lblMrst.Location = New System.Drawing.Point(886, 42)
         Me.lblMrst.Name = "lblMrst"
         Me.lblMrst.Size = New System.Drawing.Size(63, 16)
         Me.lblMrst.TabIndex = 16
@@ -448,7 +449,7 @@ Partial Class FixedLogEntry
         Me.lblHrst.AutoSize = True
         Me.lblHrst.BackColor = System.Drawing.Color.Transparent
         Me.lblHrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHrst.Location = New System.Drawing.Point(913, 83)
+        Me.lblHrst.Location = New System.Drawing.Point(888, 72)
         Me.lblHrst.Name = "lblHrst"
         Me.lblHrst.Size = New System.Drawing.Size(66, 16)
         Me.lblHrst.TabIndex = 16
@@ -458,7 +459,7 @@ Partial Class FixedLogEntry
         '
         Me.ButtonSaveEdit.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonSaveEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSaveEdit.Location = New System.Drawing.Point(442, 585)
+        Me.ButtonSaveEdit.Location = New System.Drawing.Point(434, 593)
         Me.ButtonSaveEdit.Name = "ButtonSaveEdit"
         Me.ButtonSaveEdit.Size = New System.Drawing.Size(121, 32)
         Me.ButtonSaveEdit.TabIndex = 22
@@ -510,7 +511,7 @@ Partial Class FixedLogEntry
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(249, 406)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(249, 319)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 28
@@ -533,7 +534,7 @@ Partial Class FixedLogEntry
         '
         Me.btnPost.BackColor = System.Drawing.Color.SkyBlue
         Me.btnPost.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPost.Location = New System.Drawing.Point(878, 585)
+        Me.btnPost.Location = New System.Drawing.Point(870, 593)
         Me.btnPost.Name = "btnPost"
         Me.btnPost.Size = New System.Drawing.Size(117, 32)
         Me.btnPost.TabIndex = 30
@@ -544,7 +545,7 @@ Partial Class FixedLogEntry
         '
         Me.btnSpot.BackColor = System.Drawing.Color.Yellow
         Me.btnSpot.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSpot.Location = New System.Drawing.Point(21, 585)
+        Me.btnSpot.Location = New System.Drawing.Point(13, 593)
         Me.btnSpot.Name = "btnSpot"
         Me.btnSpot.Size = New System.Drawing.Size(113, 32)
         Me.btnSpot.TabIndex = 32
@@ -556,7 +557,7 @@ Partial Class FixedLogEntry
         '
         Me.ButtonEdit.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEdit.Location = New System.Drawing.Point(741, 585)
+        Me.ButtonEdit.Location = New System.Drawing.Point(733, 593)
         Me.ButtonEdit.Name = "ButtonEdit"
         Me.ButtonEdit.Size = New System.Drawing.Size(117, 32)
         Me.ButtonEdit.TabIndex = 33
@@ -565,7 +566,7 @@ Partial Class FixedLogEntry
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(21, 432)
+        Me.WebBrowser1.Location = New System.Drawing.Point(39, 319)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(250, 55)
@@ -575,7 +576,7 @@ Partial Class FixedLogEntry
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(305, 432)
+        Me.TextBox1.Location = New System.Drawing.Point(305, 345)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(144, 23)
         Me.TextBox1.TabIndex = 39
@@ -651,7 +652,7 @@ Partial Class FixedLogEntry
         '
         Me.ButtonClear.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonClear.Location = New System.Drawing.Point(596, 585)
+        Me.ButtonClear.Location = New System.Drawing.Point(588, 593)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(121, 32)
         Me.ButtonClear.TabIndex = 47
@@ -662,7 +663,7 @@ Partial Class FixedLogEntry
         '
         Me.ButtonEditNext.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonEditNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEditNext.Location = New System.Drawing.Point(155, 585)
+        Me.ButtonEditNext.Location = New System.Drawing.Point(147, 593)
         Me.ButtonEditNext.Name = "ButtonEditNext"
         Me.ButtonEditNext.Size = New System.Drawing.Size(116, 32)
         Me.ButtonEditNext.TabIndex = 48
@@ -674,7 +675,7 @@ Partial Class FixedLogEntry
         '
         Me.ButtonEditPrevious.BackColor = System.Drawing.Color.SkyBlue
         Me.ButtonEditPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEditPrevious.Location = New System.Drawing.Point(296, 585)
+        Me.ButtonEditPrevious.Location = New System.Drawing.Point(288, 593)
         Me.ButtonEditPrevious.Name = "ButtonEditPrevious"
         Me.ButtonEditPrevious.Size = New System.Drawing.Size(116, 32)
         Me.ButtonEditPrevious.TabIndex = 49
@@ -685,7 +686,7 @@ Partial Class FixedLogEntry
         'txtContactHomeCounty
         '
         Me.txtContactHomeCounty.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.txtContactHomeCounty.Location = New System.Drawing.Point(548, 37)
+        Me.txtContactHomeCounty.Location = New System.Drawing.Point(447, 12)
         Me.txtContactHomeCounty.Name = "txtContactHomeCounty"
         Me.txtContactHomeCounty.Size = New System.Drawing.Size(241, 22)
         Me.txtContactHomeCounty.TabIndex = 50
@@ -696,7 +697,7 @@ Partial Class FixedLogEntry
         Me.cmbContactOperation.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbContactOperation.FormattingEnabled = True
         Me.cmbContactOperation.Items.AddRange(New Object() {"M", "F", "P", "U"})
-        Me.cmbContactOperation.Location = New System.Drawing.Point(189, 26)
+        Me.cmbContactOperation.Location = New System.Drawing.Point(189, 12)
         Me.cmbContactOperation.Name = "cmbContactOperation"
         Me.cmbContactOperation.Size = New System.Drawing.Size(121, 24)
         Me.cmbContactOperation.TabIndex = 51
@@ -706,7 +707,7 @@ Partial Class FixedLogEntry
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(71, 31)
+        Me.Label15.Location = New System.Drawing.Point(71, 17)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(110, 13)
         Me.Label15.TabIndex = 52
@@ -715,7 +716,7 @@ Partial Class FixedLogEntry
         'txtContactNames
         '
         Me.txtContactNames.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.txtContactNames.Location = New System.Drawing.Point(86, 97)
+        Me.txtContactNames.Location = New System.Drawing.Point(86, 72)
         Me.txtContactNames.Name = "txtContactNames"
         Me.txtContactNames.Size = New System.Drawing.Size(224, 22)
         Me.txtContactNames.TabIndex = 53
@@ -723,18 +724,17 @@ Partial Class FixedLogEntry
         'txtContactInfo
         '
         Me.txtContactInfo.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.txtContactInfo.Location = New System.Drawing.Point(86, 138)
+        Me.txtContactInfo.Location = New System.Drawing.Point(430, 72)
         Me.txtContactInfo.Name = "txtContactInfo"
         Me.txtContactInfo.Size = New System.Drawing.Size(224, 22)
         Me.txtContactInfo.TabIndex = 54
-        Me.txtContactInfo.Text = "contact Info"
         '
         'lblNames
         '
         Me.lblNames.AutoSize = True
         Me.lblNames.BackColor = System.Drawing.Color.Transparent
         Me.lblNames.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNames.Location = New System.Drawing.Point(11, 100)
+        Me.lblNames.Location = New System.Drawing.Point(11, 75)
         Me.lblNames.Name = "lblNames"
         Me.lblNames.Size = New System.Drawing.Size(62, 15)
         Me.lblNames.TabIndex = 55
@@ -744,15 +744,15 @@ Partial Class FixedLogEntry
         '
         Me.Info.AutoSize = True
         Me.Info.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Info.Location = New System.Drawing.Point(14, 141)
+        Me.Info.Location = New System.Drawing.Point(335, 75)
         Me.Info.Name = "Info"
-        Me.Info.Size = New System.Drawing.Size(33, 16)
+        Me.Info.Size = New System.Drawing.Size(89, 16)
         Me.Info.TabIndex = 56
-        Me.Info.Text = "Info"
+        Me.Info.Text = "Contact Info"
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(286, 450)
+        Me.btnClose.Location = New System.Drawing.Point(256, 362)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 57
@@ -853,9 +853,9 @@ Partial Class FixedLogEntry
         Me.GroupBoxMobileParameters.Controls.Add(Me.lblMrst)
         Me.GroupBoxMobileParameters.Controls.Add(Me.txtHisrst)
         Me.GroupBoxMobileParameters.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxMobileParameters.Location = New System.Drawing.Point(16, 187)
+        Me.GroupBoxMobileParameters.Location = New System.Drawing.Point(21, 171)
         Me.GroupBoxMobileParameters.Name = "GroupBoxMobileParameters"
-        Me.GroupBoxMobileParameters.Size = New System.Drawing.Size(1122, 179)
+        Me.GroupBoxMobileParameters.Size = New System.Drawing.Size(1122, 105)
         Me.GroupBoxMobileParameters.TabIndex = 59
         Me.GroupBoxMobileParameters.TabStop = False
         Me.GroupBoxMobileParameters.Text = "Contact Data"
@@ -864,7 +864,7 @@ Partial Class FixedLogEntry
         '
         Me.lblContactHomeCounty.AutoSize = True
         Me.lblContactHomeCounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContactHomeCounty.Location = New System.Drawing.Point(436, 40)
+        Me.lblContactHomeCounty.Location = New System.Drawing.Point(335, 15)
         Me.lblContactHomeCounty.Name = "lblContactHomeCounty"
         Me.lblContactHomeCounty.Size = New System.Drawing.Size(92, 15)
         Me.lblContactHomeCounty.TabIndex = 57
@@ -874,6 +874,16 @@ Partial Class FixedLogEntry
         '
         Me.TimerClock.Enabled = True
         '
+        'lblYourLog
+        '
+        Me.lblYourLog.AutoSize = True
+        Me.lblYourLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblYourLog.Location = New System.Drawing.Point(21, 279)
+        Me.lblYourLog.Name = "lblYourLog"
+        Me.lblYourLog.Size = New System.Drawing.Size(64, 15)
+        Me.lblYourLog.TabIndex = 62
+        Me.lblYourLog.Text = "Your Log"
+        '
         'FixedLogEntry
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -881,6 +891,7 @@ Partial Class FixedLogEntry
         Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1145, 637)
+        Me.Controls.Add(Me.lblYourLog)
         Me.Controls.Add(Me.GroupBoxMobileParameters)
         Me.Controls.Add(Me.GroupBoxMyParameters)
         Me.Controls.Add(Me.btnClose)
@@ -979,4 +990,5 @@ Partial Class FixedLogEntry
     Friend WithEvents lblContactHomeCounty As Label
     Friend WithEvents TimerClock As Timer
     Friend WithEvents lblCall As Label
+    Friend WithEvents lblYourLog As Label
 End Class

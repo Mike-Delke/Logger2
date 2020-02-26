@@ -38,6 +38,7 @@ Partial Class frmStartScreen
         Me.ckbTeamOperation = New System.Windows.Forms.CheckBox()
         Me.btnChange = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.lblCopyright = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,7 +47,7 @@ Partial Class frmStartScreen
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.road_runner1
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(-708, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(-723, -1)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(1924, 318)
         Me.PictureBox1.TabIndex = 0
@@ -57,7 +58,7 @@ Partial Class frmStartScreen
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Impact", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 320)
+        Me.Label1.Location = New System.Drawing.Point(135, 320)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(574, 80)
         Me.Label1.TabIndex = 1
@@ -78,7 +79,7 @@ Partial Class frmStartScreen
         '
         Me.cmdLocateDatabase.BackColor = System.Drawing.Color.Silver
         Me.cmdLocateDatabase.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdLocateDatabase.Location = New System.Drawing.Point(444, 403)
+        Me.cmdLocateDatabase.Location = New System.Drawing.Point(450, 429)
         Me.cmdLocateDatabase.Name = "cmdLocateDatabase"
         Me.cmdLocateDatabase.Size = New System.Drawing.Size(380, 123)
         Me.cmdLocateDatabase.TabIndex = 5
@@ -91,7 +92,7 @@ Partial Class frmStartScreen
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(323, 683)
+        Me.Label5.Location = New System.Drawing.Point(207, 400)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(422, 24)
         Me.Label5.TabIndex = 8
@@ -180,6 +181,16 @@ Partial Class frmStartScreen
         Me.ToolTip.InitialDelay = 500
         Me.ToolTip.ReshowDelay = 100
         '
+        'lblCopyright
+        '
+        Me.lblCopyright.AutoSize = True
+        Me.lblCopyright.BackColor = System.Drawing.Color.Transparent
+        Me.lblCopyright.Location = New System.Drawing.Point(229, 700)
+        Me.lblCopyright.Name = "lblCopyright"
+        Me.lblCopyright.Size = New System.Drawing.Size(378, 13)
+        Me.lblCopyright.TabIndex = 24
+        Me.lblCopyright.Text = "This program was written by K3IMC and K8EMS copyrighted 2018"
+        '
         'frmStartScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -189,6 +200,7 @@ Partial Class frmStartScreen
         Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(894, 722)
+        Me.Controls.Add(Me.lblCopyright)
         Me.Controls.Add(Me.btnChange)
         Me.Controls.Add(Me.ckbTeamOperation)
         Me.Controls.Add(Me.RadioButtonCall2)
@@ -227,4 +239,5 @@ Partial Class frmStartScreen
     Friend WithEvents ckbTeamOperation As CheckBox
     Friend WithEvents btnChange As Button
     Friend WithEvents ToolTip As ToolTip
+    Friend WithEvents lblCopyright As Label
 End Class
