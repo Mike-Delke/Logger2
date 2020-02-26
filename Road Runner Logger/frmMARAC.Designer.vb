@@ -30,11 +30,11 @@ Partial Class frmMARAC
         Me.lblCall = New System.Windows.Forms.Label()
         Me.lblDirectors = New System.Windows.Forms.Label()
         Me.lblClubOfficers = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewOfficers = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewDirectors = New System.Windows.Forms.DataGridView()
         Me.btnViewEdit = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewOfficers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewDirectors, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -95,13 +95,13 @@ Partial Class frmMARAC
         Me.lblClubOfficers.TabIndex = 3
         Me.lblClubOfficers.Text = "Club Officers"
         '
-        'DataGridView1
+        'DataGridViewOfficers
         '
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.ColumnHeadersVisible = False
+        Me.DataGridViewOfficers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.DataGridViewOfficers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DataGridViewOfficers.BackgroundColor = System.Drawing.SystemColors.ControlDark
+        Me.DataGridViewOfficers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewOfficers.ColumnHeadersVisible = False
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -109,10 +109,11 @@ Partial Class frmMARAC
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Location = New System.Drawing.Point(480, 275)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridViewOfficers.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewOfficers.Location = New System.Drawing.Point(480, 275)
+        Me.DataGridViewOfficers.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridViewOfficers.Name = "DataGridViewOfficers"
+        Me.DataGridViewOfficers.ReadOnly = True
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -120,20 +121,20 @@ Partial Class frmMARAC
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.DataGridView1.Size = New System.Drawing.Size(309, 293)
-        Me.DataGridView1.TabIndex = 6
+        Me.DataGridViewOfficers.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridViewOfficers.RowHeadersVisible = False
+        Me.DataGridViewOfficers.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewOfficers.RowTemplate.Height = 24
+        Me.DataGridViewOfficers.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.DataGridViewOfficers.Size = New System.Drawing.Size(309, 293)
+        Me.DataGridViewOfficers.TabIndex = 6
         '
-        'DataGridView2
+        'DataGridViewDirectors
         '
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.ColumnHeadersVisible = False
+        Me.DataGridViewDirectors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.DataGridViewDirectors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DataGridViewDirectors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewDirectors.ColumnHeadersVisible = False
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -141,15 +142,15 @@ Partial Class frmMARAC
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView2.Location = New System.Drawing.Point(19, 275)
-        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowHeadersVisible = False
-        Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.DataGridView2.Size = New System.Drawing.Size(412, 207)
-        Me.DataGridView2.TabIndex = 7
+        Me.DataGridViewDirectors.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewDirectors.Location = New System.Drawing.Point(19, 275)
+        Me.DataGridViewDirectors.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridViewDirectors.Name = "DataGridViewDirectors"
+        Me.DataGridViewDirectors.RowHeadersVisible = False
+        Me.DataGridViewDirectors.RowTemplate.Height = 24
+        Me.DataGridViewDirectors.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.DataGridViewDirectors.Size = New System.Drawing.Size(412, 207)
+        Me.DataGridViewDirectors.TabIndex = 7
         '
         'btnViewEdit
         '
@@ -170,8 +171,8 @@ Partial Class frmMARAC
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(825, 585)
         Me.Controls.Add(Me.btnViewEdit)
-        Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridViewDirectors)
+        Me.Controls.Add(Me.DataGridViewOfficers)
         Me.Controls.Add(Me.lblClubOfficers)
         Me.Controls.Add(Me.lblDirectors)
         Me.Controls.Add(Me.lblCall)
@@ -180,8 +181,8 @@ Partial Class frmMARAC
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmMARAC"
         Me.Text = "MARAC"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewOfficers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewDirectors, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -192,7 +193,7 @@ Partial Class frmMARAC
     Friend WithEvents lblCall As Label
     Friend WithEvents lblDirectors As Label
     Friend WithEvents lblClubOfficers As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DataGridViewOfficers As DataGridView
+    Friend WithEvents DataGridViewDirectors As DataGridView
     Friend WithEvents btnViewEdit As Button
 End Class

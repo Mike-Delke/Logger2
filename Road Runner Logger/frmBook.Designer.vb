@@ -47,7 +47,7 @@ Partial Class frmBook
         '
         Me.btnViewMenu.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewMenu.Location = New System.Drawing.Point(11, 673)
-        Me.btnViewMenu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnViewMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewMenu.Name = "btnViewMenu"
         Me.btnViewMenu.Size = New System.Drawing.Size(150, 64)
         Me.btnViewMenu.TabIndex = 1
@@ -60,7 +60,7 @@ Partial Class frmBook
         Me.btnMainMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnMainMenu.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMainMenu.Location = New System.Drawing.Point(218, 673)
-        Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnMainMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMainMenu.Name = "btnMainMenu"
         Me.btnMainMenu.Size = New System.Drawing.Size(142, 64)
         Me.btnMainMenu.TabIndex = 2
@@ -89,7 +89,7 @@ Partial Class frmBook
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Location = New System.Drawing.Point(2, 91)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -107,7 +107,7 @@ Partial Class frmBook
         Me.Controls.Add(Me.btnMainMenu)
         Me.Controls.Add(Me.btnViewMenu)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmBook"
         Me.Text = "Book View / Edit"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

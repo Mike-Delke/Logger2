@@ -309,7 +309,7 @@ Public Class FixedLogEntry
 
     End Sub
 
-    Private Sub GetMCLCounty()     ' fills the combo box hold my count lines
+    Private Sub GetMCLCounty()     ' fills the combo box holds users count lines
 
         Dim ds As New DataSet
         Dim dt As New DataTable

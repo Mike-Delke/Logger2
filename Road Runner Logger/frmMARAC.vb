@@ -16,17 +16,17 @@ Public Class frmMARAC
     Private Sub frmMARAC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
-        LoadDataGrid1()
-        LoadDataGrid2()
+        LoadDataGridOfficers()
+        LoadDataGridDirectors()
 
 
     End Sub
 
 
-    Private Sub LoadDataGrid2()
+    Private Sub LoadDataGridDirectors()
 
 
-        ' This sets datagrid1 to the table and shows it for Logging Fixed Contacts
+        ' This sets datagridDirectors to the table and shows it for Logging Fixed Contacts
         ' Dim mcall = lblCall.Text
         Dim ds As New DataSet
         Dim dt As New DataTable
@@ -48,7 +48,7 @@ Public Class frmMARAC
 
 
         da.Fill(dt)
-        DataGridView2.DataSource = dt.DefaultView
+        DataGridViewDirectors.DataSource = dt.DefaultView
 
 
         con.Close()
@@ -58,7 +58,7 @@ Public Class frmMARAC
 
     End Sub
 
-    Private Sub LoadDataGrid1()
+    Private Sub LoadDataGridOfficers()
 
         ' Load_data_into_Listbox()
         ' LDILst2()
@@ -85,7 +85,7 @@ Public Class frmMARAC
 
 
         da.Fill(dt)
-        DataGridView1.DataSource = dt.DefaultView
+        DataGridViewOfficers.DataSource = dt.DefaultView
 
         con.Close()
 
@@ -99,4 +99,34 @@ Public Class frmMARAC
         Me.Close()
 
     End Sub
+
+    'Public Sub GetDistrictDirectors()
+
+
+    '    Sql = "SELECT [District Directors - States].[State ID], [County Hunters].* , #1/1/1900# as [Starting Date], " &
+    '     "0 as [Phone number - Cell], 0 as [Phone number - Work], " &
+    '      "[District Directors].[District ID] AS [District], [Silent Key Date] " &
+    '      "FROM ([County Hunters] " &
+    '      "RIGHT JOIN ([District Directors] " &
+    '     "LEFT JOIN [District Directors - States] ON " &
+    '      "[District Directors].[District ID] = [District Directors - States].[District ID]) ON " &
+    '      "[County Hunters].State = [District Directors - States].[State ID]) " &
+    '      "LEFT JOIN [Silent Keys] ON [County Hunters].[Call ID] = [Silent Keys].[Call ID] " &
+    '      "Where (([District Directors].[Call ID]) =  And " &
+    '     "([County Hunters].[E Mail Address] And " &
+    '      "Not ([County Hunters].[E Mail Address]) Is Null) And " &
+    '      "(([County Hunters].[MARAC Expiration Date]) >= Now() - 30) And " &
+    '     "(([Silent Keys].[Silent Key Date]) Is Null)) " &
+    '      "ORDER BY [District Directors - States].[State ID]"
+
+    '    'lngRecordCount = OpenRecordset(rsTemp, Sql)
+
+    '    'If lngRecordCount > 0 Then Call CreateCollection(DistrictMembers)
+
+    '    '  GetByHomeCounty = CountyHunters.Count
+
+    '    'rsTemp = Nothing
+
+    'End Sub
+
 End Class
