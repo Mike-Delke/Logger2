@@ -106,6 +106,7 @@
     <Compile Include="clsLog.vb" />
     <Compile Include="clsPrimaryLog.vb" />
     <Compile Include="clsNetControl.vb" />
+    <Compile Include="clsScreenUtilities.vb" />
     <Compile Include="clsSecondaryLog.vb" />
     <Compile Include="EditFrm.Designer.vb">
       <DependentUpon>EditFrm.vb</DependentUpon>

@@ -7,6 +7,7 @@ Imports System.Windows.Forms.AxHost
 
 Public Class FixedLogEntry
     Public Property StringPass As String
+    Public _screenUtilities As New clsScreenUtilities
     Private _commonData As clsCommonData = clsCommonData.GetInstance("CommonData")
 
 
@@ -59,7 +60,6 @@ Public Class FixedLogEntry
         LblDate2.Visible = False
         ' lblDFormat.Visible = False
         txtDate.Visible = False
-
 
         'SETS THE COMBO BOX TO FIRST VALUE IN LIST...................................................
         cmbMode.Text = (cmbMode.Items(0)).ToString
@@ -182,6 +182,25 @@ Public Class FixedLogEntry
                         txtTime.Visible = True
                         lblTime2.Visible = True
                         txtDate.Visible = True
+                    Else
+                        If cmbMyOperation.Text = "Remote" Then
+                            cmbContactOperation.Text = "Mobile"
+                            datagridshow()
+                            btnPost.Visible = True
+                            ' btnLogIt.Visible = True
+                            ' Button1.Visible = False
+                            lblTime.Visible = True
+                            txtTime.Visible = False
+                            'lblFormat.Visible = False
+                            lblTime2.Visible = False
+                            LblDate2.Visible = True
+                            'lblDFormat.Visible = False
+                            txtDate.Visible = False
+                            btnSpot.Visible = True
+                            txtTime.Visible = True
+                            lblTime2.Visible = True
+                            txtDate.Visible = True
+                        End If
                     End If
                 End If
             End If
@@ -197,6 +216,13 @@ Public Class FixedLogEntry
     End Sub
 
     Public Sub GetState()        'This gets the State list to show in combobox MyState
+
+        ''Load My Home States
+        '_screenUtilities.LoadStateComboBox(cmbMyState)
+        'cmbMyState.Text = _primaryCallData.state
+        ''Load Contact States 
+        '_screenUtilities.LoadStateComboBox(cmbContactState)
+
 
         cmbMyState.Items.Clear()
 
@@ -377,52 +403,77 @@ Public Class FixedLogEntry
 
     End Sub
 
-    Private Sub cmbMState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMyState.SelectedIndexChanged
+    Private Sub cmbMyState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMyState.SelectedIndexChanged
 
-        GetMCounty()
+        ' GetMCounty()
+        'Fill this county combo box with available counties
+        _screenUtilities.LoadCountiesComboBox(cmbMyCounty, cmbMyState.Text)
+        'Clear the county line comboBox
+        cmbMyCountyLine.DataSource = Nothing
+        cmbMyCountyLine.Items.Clear()
+        Me.Refresh()
 
 
 
     End Sub
 
-    Private Sub cmbHState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbContactState.SelectedIndexChanged
+    Private Sub cmbContactState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbContactState.SelectedIndexChanged
 
-        GetHCounty()
+        ' GetHCounty()
+        'Fill contact county box with available counties
+        If cmbContactState.Text = "" Then
+            cmbContactCounty.DataSource = Nothing
+            cmbContactCounty.Items.Clear()
+        Else
+            _screenUtilities.LoadCountiesComboBox(cmbContactCounty, cmbContactState.Text)
+        End If
+        'Clear the county line comboBox
+        cmbContactCountyLine.DataSource = Nothing
+        cmbContactCountyLine.Items.Clear()
+        Me.Refresh()
+
 
     End Sub
 
     Private Sub cmbMCounty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMyCounty.SelectedIndexChanged
 
-        GetMCLCounty()
+        'GetMCLCounty()
+
+        'Fill this county combo box with available counties
+        Try
+            Dim countyId As Integer = _screenUtilities.GetComboIdReturn(cmbMyCounty)
+            If countyId > 0 Then
+                _screenUtilities.LoadCountyLinesComboBox(cmbMyCountyLine, countyId)
+            Else
+                'Clear the county line combo box
+                cmbMyCountyLine.DataSource = Nothing
+                cmbMyCountyLine.Items.Clear()
+            End If
+            Me.Refresh()
+        Catch
+        End Try
+
 
     End Sub
 
-    Private Sub cmbHCounty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbContactCounty.SelectedIndexChanged
+    Private Sub cmbContactCounty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbContactCounty.SelectedIndexChanged
 
-        GetContactCountyLine()
+        ' GetContactCountyLine()
 
-    End Sub
+        ' Fill contact county line box with available countiy lines
+        Try
+            Dim countyId As Integer = _screenUtilities.GetComboIdReturn(cmbContactCounty)
+            If countyId > 0 Then
+                _screenUtilities.LoadCountyLinesComboBox(cmbContactCountyLine, countyId)
+            Else
+                'Clear the county line combo box
+                cmbContactCountyLine.DataSource = Nothing
+                cmbContactCountyLine.Items.Clear()
+            End If
+            Me.Refresh()
+        Catch
+        End Try
 
-    Private Sub dataGrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridView.CellContentClick
-
-        Dim form As New EditFrm
-        form.txtID.Text = dataGridView.CurrentRow.Cells(0).Value.ToString()
-        form.txtDate.Text = dataGridView.CurrentRow.Cells(1).Value.ToString()
-        form.txtTime.Text = dataGridView.CurrentRow.Cells(2).Value.ToString()
-        form.txtHcall.Text = dataGridView.CurrentRow.Cells(3).Value.ToString()
-        form.txtHstate.Text = dataGridView.CurrentRow.Cells(4).Value.ToString()
-        form.txtHcounty.Text = dataGridView.CurrentRow.Cells(5).Value.ToString()
-        form.txtHcntyLine.Text = dataGridView.CurrentRow.Cells(6).Value.ToString()
-        form.txtFreq.Text = dataGridView.CurrentRow.Cells(7).Value.ToString()
-        form.txtMode.Text = dataGridView.CurrentRow.Cells(8).Value.ToString()
-        form.txtMycall.Text = dataGridView.CurrentRow.Cells(9).Value.ToString()
-        form.txtHrst.Text = dataGridView.CurrentRow.Cells(10).Value.ToString()
-        form.txtMrst.Text = dataGridView.CurrentRow.Cells(11).Value.ToString()
-        form.txtMstate.Text = dataGridView.CurrentRow.Cells(12).Value.ToString()
-        form.txtMcounty.Text = dataGridView.CurrentRow.Cells(13).Value.ToString()
-        form.txtMcntyLine.Text = dataGridView.CurrentRow.Cells(14).Value.ToString()
-
-        form.ShowDialog()
 
     End Sub
 
@@ -436,7 +487,13 @@ Public Class FixedLogEntry
         myConnection.Open()
         Dim str As String
 
-        str = "Insert into Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCntyLine])
+        If txtcontactCall.Text = "" Then
+            Exit Sub
+        End If
+
+
+
+        str = "Insert into Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCntyLine])    
                  Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
         Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
@@ -463,10 +520,10 @@ Public Class FixedLogEntry
             cmd.ExecuteNonQuery()
             cmd.Dispose()
             myConnection.Close()
-            txtTime.Clear()
-            txtcontactCall.Clear()
-            txtHisrst.Clear()
-            txtMyrst.Clear()
+            'txtTime.Clear()
+            'txtcontactCall.Clear()
+            'txtHisrst.Clear()
+            'txtMyrst.Clear()
 
 
         Catch ex As Exception
@@ -476,36 +533,7 @@ Public Class FixedLogEntry
         End Try
 
         myConnection.Close()
-
-    End Sub
-
-    Private Sub btnPost_Click(sender As Object, e As EventArgs)
-
-        'This splits the calls of a team for logging
-
-        Dim a As String
-        Dim b As String
-        Dim split = txtcontactCall.Text.Split("/"c)
-        If (split.Count = 2) Then
-            a = split(0).ToString
-            b = split(1).ToString
-
-            txtcontactCall.Text = a
-            PostLog()
-
-            txtcontactCall.Text = b
-            PostLog()
-
-            txtcontactCall.Text = ""
-            txtHisrst.Text = ""
-            txtMyrst.Text = ""
-
-        ElseIf (split.Count = 0) Then
-
-            PostLog()
-
-        End If
-
+        datagridshow()
 
     End Sub
 
@@ -568,126 +596,57 @@ Public Class FixedLogEntry
 
     Private Sub btnSpot_Click(sender As Object, e As EventArgs) Handles btnSpot.Click
 
-        '''NEXT STATEMENT IS THE POSTING
-        'Dim commentStr As String
-        'If cmbxMCLine.Text = "" Then
-        '    commentStr = cmbxHCounty.Text & "+" & cmbHState.Text
-        'Else
-        '    commentStr = cmbxHCounty.Text & "+" & cmbHState.Text & "+" & cmbxCLine.Text & "," & cmbHCLineState.Text
-        'End If
+        Spot()
 
-        ''WebBrowser1.Document.GetElementById("Add Call").InvokeMember("click")
-        'Dim request As WebRequest = WebRequest.Create("http://ch.w6rk.com/add.php?add=1")
-        '' Set the Method property of the request to POST.  
-        'request.Method = "POST"
-        '' Create POST data and convert it to a byte array.  
-        'Dim postData As String = "redirect=&user=&code=&call=" & lblCall.Text & "&fq=" &
-        '    cmbxFrequency.Text & "&DXcall=" & txtCall.Text & "&comments=" & commentStr & "&submit=Add+spot"
-
-        'Dim byteArray As Byte() = Encoding.UTF8.GetBytes(postData)
-        '' Set the ContentType property of the WebRequest.  
-        'request.ContentType = "application/x-www-form-urlencoded"
-        '' Set the ContentLength property of the WebRequest.  
-        'request.ContentLength = byteArray.Length
-        '' Get the request stream.  
-        'Dim dataStream As Stream = request.GetRequestStream()
-        '' Write the data to the request stream.  
-        'dataStream.Write(byteArray, 0, byteArray.Length)
-        '' Close the Stream object.  
-        'dataStream.Close()
-        '' Get the response.  
-        'Dim response As WebResponse = request.GetResponse()
-        '' Display the status.  
-        'Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)
-        '' Get the stream containing content returned by the server.  
-        'dataStream = response.GetResponseStream()
-        '' Open the stream using a StreamReader for easy access.  
-        'Dim reader As New StreamReader(dataStream)
-        '' Read the content.  
-        'Dim responseFromServer As String = reader.ReadToEnd()
-        '' Display the content.  
-        'Console.WriteLine(responseFromServer)
-        '' Clean up the streams.  
-        'reader.Close()
-        'dataStream.Close()
-        'response.Close()
-        ' Spotit()
     End Sub
-    ' Public Sub Spotit()
 
-    '    ''NEXT STATEMENT IS THE POSTING
-    '    Dim commentStr As String
-    '    If cmbMyCountyLine.Text = "" Then
-    '        commentStr = cmbContactCounty.Text & "," & cmbContactState.Text & "+" & TextBox1.Text
-    '    Else
-    '        commentStr = cmbContactCounty.Text & "," & cmbContactState.Text & "/" & cmbContactCountyLine.Text & "," & cmbLineState.Text & "+" & TextBox1.Text
-    '    End If
+    Private Sub Spot()
 
-    '    'WebBrowser1.Document.GetElementById("Add Call").InvokeMember("click")
-    '    Dim request As WebRequest = WebRequest.Create("http://ch.w6rk.com/add.php?add=1")
-    '    ' Set the Method property of the request to POST.  
-    '    request.Method = "POST"
-    '    ' Create POST data and convert it to a byte array.  
-    '    Dim postData As String = "redirect=&user=&code=&call=" & lblCall.Text & "&fq=" &
-    '        cmbFrequency.Text & "&DXcall=" & txtCall.Text & "&comments=" & commentStr & "&submit=Add+spot"
+        ''NEXT STATEMENT IS THE POSTING
+        Dim commentStr As String
+        If cmbMyCountyLine.Text = "" Then
+            commentStr = cmbContactCounty.Text & "+" & cmbContactState.Text
+        Else
+            commentStr = cmbContactCounty.Text & "+" & cmbContactState.Text & "+" & cmbContactCountyLine.Text
+        End If
 
-    '    Dim byteArray As Byte() = Encoding.UTF8.GetBytes(postData)
-    '    ' Set the ContentType property of the WebRequest.  
-    '    request.ContentType = "application/x-www-form-urlencoded"
-    '    ' Set the ContentLength property of the WebRequest.  
-    '    request.ContentLength = byteArray.Length
-    '    ' Get the request stream.  
-    '    Dim dataStream As Stream = request.GetRequestStream()
-    '    ' Write the data to the request stream.  
-    '    dataStream.Write(byteArray, 0, byteArray.Length)
-    '    ' Close the Stream object.  
-    '    dataStream.Close()
-    '    ' Get the response.  
-    '    Dim response As WebResponse = request.GetResponse()
-    '    ' Display the status.  
-    '    Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)
-    '    ' Get the stream containing content returned by the server.  
-    '    dataStream = response.GetResponseStream()
-    '    ' Open the stream using a StreamReader for easy access.  
-    '    Dim reader As New StreamReader(dataStream)
-    '    ' Read the content.  
-    '    Dim responseFromServer As String = reader.ReadToEnd()
-    '    ' Display the content.  
-    '    Console.WriteLine(responseFromServer)
-    '    ' Clean up the streams.  
-    '    reader.Close()
-    '    dataStream.Close()
-    '    response.Close()
-    'End Sub
+        'WebBrowser1.Document.GetElementById("Add Call").InvokeMember("click")
+        Dim request As WebRequest = WebRequest.Create("http://ch.w6rk.com/add.php?add=1")
+        ' Set the Method property of the request to POST.  
+        request.Method = "POST"
+        ' Create POST data and convert it to a byte array.  
+        Dim postData As String = "redirect=&user=&code=&call=" & lblCall.Text & "&fq=" &
+            cmbFrequency.Text & "&DXcall=" & txtcontactCall.Text & "&comments=" & commentStr & "&submit=Add+spot"
 
-    'Private Sub btnLogIt_Click(sender As Object, e As EventArgs) Handles btnPost.Click
+        Dim byteArray As Byte() = Encoding.UTF8.GetBytes(postData)
+        ' Set the ContentType property of the WebRequest.  
+        request.ContentType = "application/x-www-form-urlencoded"
+        ' Set the ContentLength property of the WebRequest.  
+        request.ContentLength = byteArray.Length
+        ' Get the request stream.  
+        Dim dataStream As Stream = request.GetRequestStream()
+        ' Write the data to the request stream.  
+        dataStream.Write(byteArray, 0, byteArray.Length)
+        ' Close the Stream object.  
+        dataStream.Close()
+        ' Get the response.  
+        Dim response As WebResponse = request.GetResponse()
+        ' Display the status.  
+        Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)
+        ' Get the stream containing content returned by the server.  
+        dataStream = response.GetResponseStream()
+        ' Open the stream using a StreamReader for easy access.  
+        Dim reader As New StreamReader(dataStream)
+        ' Read the content.  
+        Dim responseFromServer As String = reader.ReadToEnd()
+        ' Display the content.  
+        Console.WriteLine(responseFromServer)
+        ' Clean up the streams.  
+        reader.Close()
+        dataStream.Close()
+        response.Close()
 
-    '    Dim a As String
-    '    Dim b As String
-    '    Dim split = txtcontactCall.Text.Split("/"c)
-    '    If (split.Count = 2) Then
-    '        a = split(0).ToString
-    '        b = split(1).ToString
-
-    '        txtcontactCall.Text = a
-    '        PostRunLog()
-
-    '        txtcontactCall.Text = b
-    '        PostRunLog()
-
-    '        ' txtCall.Text = ""
-    '        ' txtHrst.Text = ""
-    '        ' txtMrst.Text = ""
-
-    '    ElseIf (split.Count = 0) Then
-
-    '        PostRunLog()
-
-    '    End If
-    'End Sub
-
-
-
+    End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
 
         'Closes the program
@@ -698,9 +657,44 @@ Public Class FixedLogEntry
 
     Private Sub btnPost_Click_1(sender As Object, e As EventArgs) Handles btnPost.Click
 
-        'Post info on screen to the log
+        'this checks to see if both combo boxs have entries if they do then sets up county Line post
 
-        PostLog()
+        If cmbContactCounty.Text IsNot Nothing And
+            cmbContactCountyLine.Text IsNot Nothing Then
+
+            countyLinePost()
+
+        End If
+
+
+        'Post info on screen to the log
+        'This splits the calls of a team for logging
+
+        Dim a As String
+        Dim b As String
+
+        Dim split = txtcontactCall.Text.Split(CType("/", Char()))
+        If split.Count = 2 Then
+            a = split(0).ToString
+            b = split(1).ToString
+
+            txtcontactCall.Text = a
+            PostLog()
+
+            txtcontactCall.Text = b
+            PostLog()
+
+            'txtcontactCall.Text = ""
+            'txtHisrst.Text = ""
+            'txtMyrst.Text = ""
+
+        ElseIf split.Count = 1 Then
+
+            PostLog()
+            '  txtcontactCall.Text = ""
+        End If
+        txtcontactCall.Text = ""
+        ' PostLog()
 
     End Sub
 
@@ -780,5 +774,53 @@ Public Class FixedLogEntry
         SetFrequency()    'sets the frequency when Band is changed
 
     End Sub
+
+    Public Sub countyLinePost()
+
+        'This splits the calls of a team for logging
+
+
+        'Dim county As String
+        Dim split = txtcontactCall.Text.Split(CType("/", Char()))
+        Dim a As String
+        Dim b As String
+
+        If split.Count = 2 Then
+            a = split(0).ToString
+            b = split(1).ToString
+
+            txtcontactCall.Text = a
+            PostLog()
+
+            txtcontactCall.Text = b
+            PostLog()
+
+            'Set ContactCounty.Text to be same as ContactCountyLine.text and post it
+
+
+            cmbContactCounty.Text = cmbContactCountyLine.Text
+            cmbContactCountyLine.Text = ""
+
+
+            If split.Count = 2 Then
+                a = split(0).ToString
+                b = split(1).ToString
+
+                txtcontactCall.Text = a
+                PostLog()
+
+                txtcontactCall.Text = b
+                PostLog()
+                txtcontactCall.Text = ""
+            ElseIf txtcontactCall.text = "" Then
+
+                End
+            End If
+            txtcontactCall.Text = ""
+            cmbContactCounty.Text = ""
+            cmbContactCountyLine.Text = ""
+        End If
+    End Sub
+
 
 End Class

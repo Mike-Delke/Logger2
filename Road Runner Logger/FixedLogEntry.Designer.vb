@@ -300,16 +300,17 @@ Partial Class FixedLogEntry
         'dataGridView
         '
         Me.dataGridView.AllowUserToOrderColumns = True
-        Me.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -320,6 +321,7 @@ Partial Class FixedLogEntry
         Me.dataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView.Location = New System.Drawing.Point(21, 302)
         Me.dataGridView.Name = "dataGridView"
+        Me.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         DataGridViewCellStyle3.NullValue = Nothing
         Me.dataGridView.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridView.RowTemplate.Height = 24
@@ -361,6 +363,7 @@ Partial Class FixedLogEntry
         Me.txtcontactCall.BackColor = System.Drawing.SystemColors.ControlDark
         Me.txtcontactCall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcontactCall.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontactCall.HideSelection = False
         Me.txtcontactCall.Location = New System.Drawing.Point(70, 42)
         Me.txtcontactCall.Name = "txtcontactCall"
         Me.txtcontactCall.Size = New System.Drawing.Size(275, 22)

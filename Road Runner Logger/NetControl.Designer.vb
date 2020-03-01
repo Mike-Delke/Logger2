@@ -29,7 +29,7 @@ Partial Class NetControl
         Me.lblClock = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.btnAddLog = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnSpotMobile = New System.Windows.Forms.Button()
         Me.DataGridV1 = New System.Windows.Forms.DataGridView()
         Me.lblHCall = New System.Windows.Forms.Label()
         Me.lblHState = New System.Windows.Forms.Label()
@@ -147,18 +147,18 @@ Partial Class NetControl
         Me.btnAddLog.UseVisualStyleBackColor = False
         Me.btnAddLog.Visible = False
         '
-        'Button3
+        'btnSpotMobile
         '
-        Me.Button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button3.BackColor = System.Drawing.Color.Yellow
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(718, 383)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(164, 45)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Spot"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnSpotMobile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnSpotMobile.BackColor = System.Drawing.Color.Yellow
+        Me.btnSpotMobile.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSpotMobile.Location = New System.Drawing.Point(718, 383)
+        Me.btnSpotMobile.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSpotMobile.Name = "btnSpotMobile"
+        Me.btnSpotMobile.Size = New System.Drawing.Size(164, 45)
+        Me.btnSpotMobile.TabIndex = 5
+        Me.btnSpotMobile.Text = "Spot"
+        Me.btnSpotMobile.UseVisualStyleBackColor = False
         '
         'DataGridV1
         '
@@ -311,9 +311,9 @@ Partial Class NetControl
         Me.lblTimer.Location = New System.Drawing.Point(1018, 300)
         Me.lblTimer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTimer.Name = "lblTimer"
-        Me.lblTimer.Size = New System.Drawing.Size(72, 34)
+        Me.lblTimer.Size = New System.Drawing.Size(98, 34)
         Me.lblTimer.TabIndex = 7
-        Me.lblTimer.Text = "0:0:0"
+        Me.lblTimer.Text = "0:10:00"
         Me.lblTimer.Visible = False
         '
         'btnStart
@@ -616,7 +616,7 @@ Partial Class NetControl
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.DataGridV1)
         Me.Controls.Add(Me.btnPost)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnSpotMobile)
         Me.Controls.Add(Me.btnAddLog)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblClock)
@@ -639,7 +639,7 @@ Partial Class NetControl
     Friend WithEvents lblClock As Label
     Friend WithEvents lblDate As Label
     Friend WithEvents btnAddLog As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnSpotMobile As Button
     Friend WithEvents DataGridV1 As DataGridView
     Friend WithEvents lblHCall As Label
     Friend WithEvents lblHState As Label

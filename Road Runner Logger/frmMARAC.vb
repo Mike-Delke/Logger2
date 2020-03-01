@@ -100,33 +100,5 @@ Public Class frmMARAC
 
     End Sub
 
-    'Public Sub GetDistrictDirectors()
-
-
-    '    Sql = "SELECT [District Directors - States].[State ID], [County Hunters].* , #1/1/1900# as [Starting Date], " &
-    '     "0 as [Phone number - Cell], 0 as [Phone number - Work], " &
-    '      "[District Directors].[District ID] AS [District], [Silent Key Date] " &
-    '      "FROM ([County Hunters] " &
-    '      "RIGHT JOIN ([District Directors] " &
-    '     "LEFT JOIN [District Directors - States] ON " &
-    '      "[District Directors].[District ID] = [District Directors - States].[District ID]) ON " &
-    '      "[County Hunters].State = [District Directors - States].[State ID]) " &
-    '      "LEFT JOIN [Silent Keys] ON [County Hunters].[Call ID] = [Silent Keys].[Call ID] " &
-    '      "Where (([District Directors].[Call ID]) =  And " &
-    '     "([County Hunters].[E Mail Address] And " &
-    '      "Not ([County Hunters].[E Mail Address]) Is Null) And " &
-    '      "(([County Hunters].[MARAC Expiration Date]) >= Now() - 30) And " &
-    '     "(([Silent Keys].[Silent Key Date]) Is Null)) " &
-    '      "ORDER BY [District Directors - States].[State ID]"
-
-    '    'lngRecordCount = OpenRecordset(rsTemp, Sql)
-
-    '    'If lngRecordCount > 0 Then Call CreateCollection(DistrictMembers)
-
-    '    '  GetByHomeCounty = CountyHunters.Count
-
-    '    'rsTemp = Nothing
-
-    'End Sub
 
 End Class

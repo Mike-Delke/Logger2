@@ -24,13 +24,13 @@ Partial Class EditFrm
     Private Sub InitializeComponent()
         Me.txtTime = New System.Windows.Forms.TextBox()
         Me.lblCall = New System.Windows.Forms.Label()
-        Me.txtHcall = New System.Windows.Forms.TextBox()
+        Me.txtContactcall = New System.Windows.Forms.TextBox()
         Me.lblHState = New System.Windows.Forms.Label()
-        Me.txtHstate = New System.Windows.Forms.TextBox()
+        Me.txtcontactstate = New System.Windows.Forms.TextBox()
         Me.lblHCounty = New System.Windows.Forms.Label()
-        Me.txtHcounty = New System.Windows.Forms.TextBox()
+        Me.txtContactcounty = New System.Windows.Forms.TextBox()
         Me.lblCntyLine = New System.Windows.Forms.Label()
-        Me.txtHcntyLine = New System.Windows.Forms.TextBox()
+        Me.txtContactcntyLine = New System.Windows.Forms.TextBox()
         Me.lblFreq = New System.Windows.Forms.Label()
         Me.txtFreq = New System.Windows.Forms.TextBox()
         Me.lblMode = New System.Windows.Forms.Label()
@@ -38,15 +38,15 @@ Partial Class EditFrm
         Me.lblMcall = New System.Windows.Forms.Label()
         Me.txtMycall = New System.Windows.Forms.TextBox()
         Me.lblHrst = New System.Windows.Forms.Label()
-        Me.txtHrst = New System.Windows.Forms.TextBox()
+        Me.txtContactrst = New System.Windows.Forms.TextBox()
         Me.lblMrst = New System.Windows.Forms.Label()
-        Me.txtMrst = New System.Windows.Forms.TextBox()
+        Me.txtMyrst = New System.Windows.Forms.TextBox()
         Me.lblMstate = New System.Windows.Forms.Label()
-        Me.txtMstate = New System.Windows.Forms.TextBox()
+        Me.txtMystate = New System.Windows.Forms.TextBox()
         Me.lblMcounty = New System.Windows.Forms.Label()
-        Me.txtMcounty = New System.Windows.Forms.TextBox()
+        Me.txtMycounty = New System.Windows.Forms.TextBox()
         Me.lblMcntyline = New System.Windows.Forms.Label()
-        Me.txtMcntyLine = New System.Windows.Forms.TextBox()
+        Me.txtMycntyLine = New System.Windows.Forms.TextBox()
         Me.lblTime = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
@@ -85,12 +85,12 @@ Partial Class EditFrm
         '
         'txtHcall
         '
-        Me.txtHcall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtHcall.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHcall.Location = New System.Drawing.Point(138, 128)
-        Me.txtHcall.Name = "txtHcall"
-        Me.txtHcall.Size = New System.Drawing.Size(249, 26)
-        Me.txtHcall.TabIndex = 1
+        Me.txtContactcall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtContactcall.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContactcall.Location = New System.Drawing.Point(138, 128)
+        Me.txtContactcall.Name = "txtHcall"
+        Me.txtContactcall.Size = New System.Drawing.Size(249, 26)
+        Me.txtContactcall.TabIndex = 1
         '
         'lblHState
         '
@@ -105,12 +105,12 @@ Partial Class EditFrm
         '
         'txtHstate
         '
-        Me.txtHstate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtHstate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHstate.Location = New System.Drawing.Point(138, 164)
-        Me.txtHstate.Name = "txtHstate"
-        Me.txtHstate.Size = New System.Drawing.Size(249, 26)
-        Me.txtHstate.TabIndex = 1
+        Me.txtcontactstate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtcontactstate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontactstate.Location = New System.Drawing.Point(138, 164)
+        Me.txtcontactstate.Name = "txtHstate"
+        Me.txtcontactstate.Size = New System.Drawing.Size(249, 26)
+        Me.txtcontactstate.TabIndex = 1
         '
         'lblHCounty
         '
@@ -125,11 +125,11 @@ Partial Class EditFrm
         '
         'txtHcounty
         '
-        Me.txtHcounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHcounty.Location = New System.Drawing.Point(138, 200)
-        Me.txtHcounty.Name = "txtHcounty"
-        Me.txtHcounty.Size = New System.Drawing.Size(249, 26)
-        Me.txtHcounty.TabIndex = 1
+        Me.txtContactcounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContactcounty.Location = New System.Drawing.Point(138, 200)
+        Me.txtContactcounty.Name = "txtHcounty"
+        Me.txtContactcounty.Size = New System.Drawing.Size(249, 26)
+        Me.txtContactcounty.TabIndex = 1
         '
         'lblCntyLine
         '
@@ -144,11 +144,11 @@ Partial Class EditFrm
         '
         'txtHcntyLine
         '
-        Me.txtHcntyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHcntyLine.Location = New System.Drawing.Point(138, 236)
-        Me.txtHcntyLine.Name = "txtHcntyLine"
-        Me.txtHcntyLine.Size = New System.Drawing.Size(249, 26)
-        Me.txtHcntyLine.TabIndex = 1
+        Me.txtContactcntyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContactcntyLine.Location = New System.Drawing.Point(138, 236)
+        Me.txtContactcntyLine.Name = "txtHcntyLine"
+        Me.txtContactcntyLine.Size = New System.Drawing.Size(249, 26)
+        Me.txtContactcntyLine.TabIndex = 1
         '
         'lblFreq
         '
@@ -223,12 +223,12 @@ Partial Class EditFrm
         '
         'txtHrst
         '
-        Me.txtHrst.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtHrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHrst.Location = New System.Drawing.Point(138, 416)
-        Me.txtHrst.Name = "txtHrst"
-        Me.txtHrst.Size = New System.Drawing.Size(249, 26)
-        Me.txtHrst.TabIndex = 1
+        Me.txtContactrst.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtContactrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContactrst.Location = New System.Drawing.Point(138, 416)
+        Me.txtContactrst.Name = "txtHrst"
+        Me.txtContactrst.Size = New System.Drawing.Size(249, 26)
+        Me.txtContactrst.TabIndex = 1
         '
         'lblMrst
         '
@@ -243,12 +243,12 @@ Partial Class EditFrm
         '
         'txtMrst
         '
-        Me.txtMrst.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtMrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMrst.Location = New System.Drawing.Point(138, 452)
-        Me.txtMrst.Name = "txtMrst"
-        Me.txtMrst.Size = New System.Drawing.Size(249, 26)
-        Me.txtMrst.TabIndex = 1
+        Me.txtMyrst.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMyrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMyrst.Location = New System.Drawing.Point(138, 452)
+        Me.txtMyrst.Name = "txtMrst"
+        Me.txtMyrst.Size = New System.Drawing.Size(249, 26)
+        Me.txtMyrst.TabIndex = 1
         '
         'lblMstate
         '
@@ -263,12 +263,12 @@ Partial Class EditFrm
         '
         'txtMstate
         '
-        Me.txtMstate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtMstate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMstate.Location = New System.Drawing.Point(138, 560)
-        Me.txtMstate.Name = "txtMstate"
-        Me.txtMstate.Size = New System.Drawing.Size(249, 26)
-        Me.txtMstate.TabIndex = 1
+        Me.txtMystate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMystate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMystate.Location = New System.Drawing.Point(138, 560)
+        Me.txtMystate.Name = "txtMstate"
+        Me.txtMystate.Size = New System.Drawing.Size(249, 26)
+        Me.txtMystate.TabIndex = 1
         '
         'lblMcounty
         '
@@ -283,11 +283,11 @@ Partial Class EditFrm
         '
         'txtMcounty
         '
-        Me.txtMcounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMcounty.Location = New System.Drawing.Point(138, 596)
-        Me.txtMcounty.Name = "txtMcounty"
-        Me.txtMcounty.Size = New System.Drawing.Size(249, 26)
-        Me.txtMcounty.TabIndex = 1
+        Me.txtMycounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMycounty.Location = New System.Drawing.Point(138, 596)
+        Me.txtMycounty.Name = "txtMcounty"
+        Me.txtMycounty.Size = New System.Drawing.Size(249, 26)
+        Me.txtMycounty.TabIndex = 1
         '
         'lblMcntyline
         '
@@ -302,11 +302,11 @@ Partial Class EditFrm
         '
         'txtMcntyLine
         '
-        Me.txtMcntyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMcntyLine.Location = New System.Drawing.Point(138, 632)
-        Me.txtMcntyLine.Name = "txtMcntyLine"
-        Me.txtMcntyLine.Size = New System.Drawing.Size(249, 26)
-        Me.txtMcntyLine.TabIndex = 1
+        Me.txtMycntyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMycntyLine.Location = New System.Drawing.Point(138, 632)
+        Me.txtMycntyLine.Name = "txtMcntyLine"
+        Me.txtMycntyLine.Size = New System.Drawing.Size(249, 26)
+        Me.txtMycntyLine.TabIndex = 1
         '
         'lblTime
         '
@@ -463,23 +463,23 @@ Partial Class EditFrm
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.txtDate)
-        Me.Controls.Add(Me.txtMcntyLine)
-        Me.Controls.Add(Me.txtMcounty)
-        Me.Controls.Add(Me.txtMstate)
+        Me.Controls.Add(Me.txtMycntyLine)
+        Me.Controls.Add(Me.txtMycounty)
+        Me.Controls.Add(Me.txtMystate)
         Me.Controls.Add(Me.txtMyOper)
         Me.Controls.Add(Me.txtHisOper)
-        Me.Controls.Add(Me.txtMrst)
-        Me.Controls.Add(Me.txtHrst)
+        Me.Controls.Add(Me.txtMyrst)
+        Me.Controls.Add(Me.txtContactrst)
         Me.Controls.Add(Me.txtMycall)
         Me.Controls.Add(Me.txtMode)
         Me.Controls.Add(Me.txtBand)
         Me.Controls.Add(Me.txtFreq)
-        Me.Controls.Add(Me.txtHcntyLine)
-        Me.Controls.Add(Me.txtHcounty)
+        Me.Controls.Add(Me.txtContactcntyLine)
+        Me.Controls.Add(Me.txtContactcounty)
         Me.Controls.Add(Me.ID)
-        Me.Controls.Add(Me.txtHstate)
+        Me.Controls.Add(Me.txtcontactstate)
         Me.Controls.Add(Me.lblDate)
-        Me.Controls.Add(Me.txtHcall)
+        Me.Controls.Add(Me.txtContactcall)
         Me.Controls.Add(Me.lblMcntyline)
         Me.Controls.Add(Me.lblMyOper)
         Me.Controls.Add(Me.lblMcounty)
@@ -507,13 +507,13 @@ Partial Class EditFrm
     End Sub
     Friend WithEvents txtTime As TextBox
     Friend WithEvents lblCall As Label
-    Friend WithEvents txtHcall As TextBox
+    Friend WithEvents txtContactcall As TextBox
     Friend WithEvents lblHState As Label
-    Friend WithEvents txtHstate As TextBox
+    Friend WithEvents txtcontactstate As TextBox
     Friend WithEvents lblHCounty As Label
-    Friend WithEvents txtHcounty As TextBox
+    Friend WithEvents txtContactcounty As TextBox
     Friend WithEvents lblCntyLine As Label
-    Friend WithEvents txtHcntyLine As TextBox
+    Friend WithEvents txtContactcntyLine As TextBox
     Friend WithEvents lblFreq As Label
     Friend WithEvents txtFreq As TextBox
     Friend WithEvents lblMode As Label
@@ -521,15 +521,15 @@ Partial Class EditFrm
     Friend WithEvents lblMcall As Label
     Friend WithEvents txtMycall As TextBox
     Friend WithEvents lblHrst As Label
-    Friend WithEvents txtHrst As TextBox
+    Friend WithEvents txtContactrst As TextBox
     Friend WithEvents lblMrst As Label
-    Friend WithEvents txtMrst As TextBox
+    Friend WithEvents txtMyrst As TextBox
     Friend WithEvents lblMstate As Label
-    Friend WithEvents txtMstate As TextBox
+    Friend WithEvents txtMystate As TextBox
     Friend WithEvents lblMcounty As Label
-    Friend WithEvents txtMcounty As TextBox
+    Friend WithEvents txtMycounty As TextBox
     Friend WithEvents lblMcntyline As Label
-    Friend WithEvents txtMcntyLine As TextBox
+    Friend WithEvents txtMycntyLine As TextBox
     Friend WithEvents lblTime As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents lblDate As Label

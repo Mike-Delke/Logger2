@@ -30,10 +30,10 @@ Public Class EditFrm
         Dim str As String
 
 
-        str = ("Update TempLog SET [LDate] = '" & txtDate.Text & "',[LTime] = '" & txtTime.Text & "',[HCall] = '" & txtHcall.Text & "',[State] = '" & txtHstate.Text & "',
-                             [County] = '" & txtHcounty.Text & "',[CountyLine] = '" & txtHcntyLine.Text & "',[Freq] = '" & txtFreq.Text & "',[Band] = '" & txtBand.Text & "',[Mode] = '" & txtMode.Text & "',
-                             [MyCall] = '" & txtMycall.Text & "',[HRST] = '" & txtHrst.Text & "',[MRST] = '" & txtMrst.Text & "',[MState] = '" & txtMstate.Text & "',
-                             [MCounty] = '" & txtMcounty.Text & "',[MCountyLine] = '" & txtMcntyLine.Text & "'
+        str = ("Update TempLog SET [LDate] = '" & txtDate.Text & "',[LTime] = '" & txtTime.Text & "',[HCall] = '" & txtContactcall.Text & "',[State] = '" & txtcontactstate.Text & "',
+                             [County] = '" & txtContactcounty.Text & "',[CountyLine] = '" & txtContactcntyLine.Text & "',[Freq] = '" & txtFreq.Text & "',[Band] = '" & txtBand.Text & "',[Mode] = '" & txtMode.Text & "',
+                             [MyCall] = '" & txtMycall.Text & "',[HRST] = '" & txtContactrst.Text & "',[MRST] = '" & txtMyrst.Text & "',[MState] = '" & txtMystate.Text & "',
+                             [MCounty] = '" & txtMycounty.Text & "',[MCountyLine] = '" & txtMycntyLine.Text & "'
                              WHERE [Id] = " & txtID.Text)
 
         Dim cmd As OleDbCommand = New OleDbCommand(str, con)
@@ -46,18 +46,18 @@ Public Class EditFrm
             txtID.Clear()
             txtTime.Clear()
             txtDate.Clear()
-            txtHcall.Clear()
-            txtHstate.Clear()
-            txtHcounty.Clear()
-            txtHcntyLine.Clear()
+            txtContactcall.Clear()
+            txtcontactstate.Clear()
+            txtContactcounty.Clear()
+            txtContactcntyLine.Clear()
             txtFreq.Clear()
             txtMode.Clear()
             txtMycall.Clear()
-            txtHrst.Clear()
-            txtMrst.Clear()
-            txtMstate.Clear()
-            txtMcounty.Clear()
-            txtMcntyLine.Clear()
+            txtContactrst.Clear()
+            txtMyrst.Clear()
+            txtMystate.Clear()
+            txtMycounty.Clear()
+            txtMycntyLine.Clear()
             txtHisOper.Clear()
             txtMyOper.Clear()
             txtBand.Clear()

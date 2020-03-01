@@ -201,7 +201,6 @@
     End Function
 
     Public Function GetRelatedCountyLines(countyId As Integer) As Collection
-
         Dim relatedCountyLines As New Collection
 
         Dim strSql As String = "SELECT * FROM [County Lines] " &
@@ -236,6 +235,14 @@
 
     Public Function GetCountyList(state As String) As DataTable
         Return Read("SELECT * FROM [List Of Counties] WHERE [State ID]='" & state & "' ORDER BY County")
+    End Function
+
+    Public Function GetModeList() As DataTable
+        Return Read("SELECT * FROM [Modes] ORDER BY [Mode] ASC")
+    End Function
+
+    Public Function GetSubModeList(modeId As Integer) As DataTable
+        Return Read("SELECT * FROM [Modes - Sub] WHERE [mode ID]=" & modeId & " ORDER BY [Sub Mode] ASC")
     End Function
 
 End Class

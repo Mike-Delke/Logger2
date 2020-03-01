@@ -5,21 +5,21 @@ Imports System.Text
 Public Class NetControl
     Public Property StringPass As String
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        If lblTimer.Text = "0:10:0" Then
-            EndNetSesion()
-        End If
-
-
-
-        'Dim obj As New MainMenu
-        'obj.StringPass = lblCall.Text
-        'obj.Show()
-        Me.Hide()
+    '    If lblTimer.Text = "0:10:0" Then
+    '        EndNetSesion()
+    '    End If
 
 
-    End Sub
+
+    '    'Dim obj As New MainMenu
+    '    'obj.StringPass = lblCall.Text
+    '    'obj.Show()
+    '    Me.Hide()
+
+
+    'End Sub
 
     Private Sub NetControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -235,7 +235,7 @@ Public Class NetControl
         Post()
         'LogContact()
 
-        btnAddLog.Visible = True
+        'btnAddLog.Visible = True
     End Sub
     Private Sub Post()
 
@@ -248,6 +248,10 @@ Public Class NetControl
         myConnection.ConnectionString = conString
         myConnection.Open()
         Dim str As String
+
+        If txtHcall.Text = "" Then
+            Exit Sub
+        End If
 
         str = "Insert into NetLog ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Frequency],[Band],[Mode],[MCall],[HRST],[MRST],[Hoper],[Moper],[NetDuration])
                  Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
@@ -292,9 +296,11 @@ Public Class NetControl
 
         If CheckBox1.Checked = True Then
             Timer2.Enabled = False
-            lblTimer.Text = "0:10:0"
+            lblTimer.Text = "0:10:00"
             lblTimer.Visible = True
         End If
+
+        EndNetSesion()
 
     End Sub
 
@@ -377,14 +383,14 @@ Public Class NetControl
                  Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
 
-        txtHcall.Text = "----------------"
+        'txtHcall.Text = ""
         cmbState.Text = "--------"
         cmbCounty.Text = "----------------"
         cmbHCountyL.Text = "----------------"
         cmbFreq.Text = "----------------"
         cmbMode.Text = "--------"
         cmbBand.Text = "--------"
-        lblCall.Text = "--------"
+        'lblCall.Text = ""
         cmbHrst.Text = "----------------"
         cmbMrst.Text = "--------"
         cmbHoper.Text = "----------------"
@@ -465,47 +471,44 @@ Public Class NetControl
 
     End Sub
 
-    Private Sub btnAddLog_Click(sender As Object, e As EventArgs) Handles btnAddLog.Click
+    'Private Sub btnAddLog_Click(sender As Object, e As EventArgs) Handles btnAddLog.Click
 
-        LogContact()
+    '    LogContact()
 
-    End Sub
+    'End Sub
 
-    Private Sub LogContact()
-
-
-
-        Dim myConnection As OleDbConnection = New OleDbConnection
-
-        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
-        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
-        myConnection.ConnectionString = conString
-        myConnection.Open()
-        Dim str As String
-
-        str = "Insert INTO Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[HOper],[MOper])
-                SELECT [LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MCall],[HRST],[MRST],[Hoper],[Moper]                
-                FROM NetLog"
-        'WHERE LDATE = Date"
-
-        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
-
-        cmd.ExecuteNonQuery()
-        cmd.Dispose()
-
-        myConnection.Close()
-
-        ' ClearTempTbl()
-
-        ' MobileLogShow()
+    'Private Sub LogContact()
 
 
-    End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    '    Dim myConnection As OleDbConnection = New OleDbConnection
 
-        Spotit()
-    End Sub
+    '    Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+    '    Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+    '    myConnection.ConnectionString = conString
+    '    myConnection.Open()
+    '    Dim str As String
+
+    '    str = "Insert INTO Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[HOper],[MOper])
+    '            SELECT [LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MCall],[HRST],[MRST],[Hoper],[Moper]                
+    '            FROM NetLog"
+    '    'WHERE LDATE = Date"
+
+    '    Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+
+    '    cmd.ExecuteNonQuery()
+    '    cmd.Dispose()
+
+    '    myConnection.Close()
+
+    '    ' ClearTempTbl()
+
+    '    ' MobileLogShow()
+
+
+    'End Sub
+
+    '
 
     ' Private Sub btnAddLog_Click(sender As Object, e As EventArgs) Handles btnAddLog.Click
 
@@ -577,6 +580,62 @@ Public Class NetControl
         response.Close()
     End Sub
 
+    Private Sub btnSpotMobile_Click(sender As Object, e As EventArgs) Handles btnSpotMobile.Click
+        Spotit()
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Me.Hide()
+
+    End Sub
+
+    Public Sub countyLinePost()
+
+        'This splits the calls of a team for logging
+
+
+        'Dim county As String
+        Dim split = txtHcall.Text.Split(CType("/", Char()))
+        Dim a As String
+        Dim b As String
+
+        If split.Count = 2 Then
+            a = split(0).ToString
+            b = split(1).ToString
+
+            txtHcall.Text = a
+            Post()
+
+            txtHcall.Text = b
+            Post()
+
+            'Set ContactCounty.Text to be same as ContactCountyLine.text and post it
+
+
+            cmbCounty.Text = cmbHCountyL.Text
+            cmbHCountyL.Text = ""
+
+
+            If split.Count = 2 Then
+                a = split(0).ToString
+                b = split(1).ToString
+
+                txtHcall.Text = a
+                Post()
+
+                txtHcall.Text = b
+                Post()
+                txtHcall.Text = ""
+            ElseIf txtHCall.text = "" Then
+
+                End
+            End If
+            txtHcall.Text = ""
+            cmbCounty.Text = ""
+            cmbHCountyL.Text = ""
+        End If
+    End Sub
 
 End Class
