@@ -217,12 +217,6 @@ Public Class FixedLogEntry
 
     Public Sub GetState()        'This gets the State list to show in combobox MyState
 
-        ''Load My Home States
-        '_screenUtilities.LoadStateComboBox(cmbMyState)
-        'cmbMyState.Text = _primaryCallData.state
-        ''Load Contact States 
-        '_screenUtilities.LoadStateComboBox(cmbContactState)
-
 
         cmbMyState.Items.Clear()
 
@@ -250,158 +244,18 @@ Public Class FixedLogEntry
 
     Private Sub GetMCounty()       ' Gets the list of counties to put into combobox MyCounty
 
-        'cmbMyCounty.Items.Clear()
-
-        'Dim countyList As DataTable = _commonData.GetCountyList("county")
-        'For Each row As DataRow In countyList.Rows
-        '    Dim county As String = CStr(row("countyId"))
-        '    Dim countyId As Integer = CInt(row("countyId"))
-        '    ' Add county to DropDown
-        '    cmbMyCounty.Items.Add(county)
-        'Next
-
-        Dim ds As New DataSet
-        Dim dt As New DataTable
-        ds.Tables.Add(dt)
-        Dim da As New OleDbDataAdapter
-
-        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
-
-        Dim strFilePrefix = "NetControl"
-        Dim strFileSuffix = ".accdb"
-        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
-        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
-
-        '--------------------------------------------------------------------------------------------------------------
-        con.ConnectionString = conString
-        cmbMyCounty.Items.Clear()
-        con.Open()
-
-        da = New OleDbDataAdapter("SELECT County FROM County WHERE State = '" & cmbMyState.Text & "'", con)
-
-
-        da.Fill(dt)
-
-        con.Close()
-
         cmbMyCounty.Items.Clear()
 
-        For Each R As DataRow In dt.Rows
-            cmbMyCounty.Items.Add(R("County"))
+        Dim countyList As DataTable = _commonData.GetCountyList("county")
+        For Each row As DataRow In countyList.Rows
+            Dim county As String = CStr(row("countyId"))
+            Dim countyId As Integer = CInt(row("countyId"))
+            ' Add county to DropDown
+            cmbMyCounty.Items.Add(county)
         Next
-
-        'DISPLAY FIRST RECORD
-
-        'cmbMCounty.Text = CType(dt.Rows(0).Item(0), String)
 
     End Sub
 
-    Private Sub GetHCounty()       'fills the contact cmbo box with counties
-
-
-        Dim ds As New DataSet
-        Dim dt As New DataTable
-        ds.Tables.Add(dt)
-        Dim da As New OleDbDataAdapter
-
-        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
-
-        Dim strFilePrefix = "NetControl"
-        Dim strFileSuffix = ".accdb"
-        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
-        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
-
-        '--------------------------------------------------------------------------------------------------------------
-        con.ConnectionString = conString
-        cmbContactCounty.Items.Clear()
-        con.Open()
-
-        da = New OleDbDataAdapter("SELECT County FROM County WHERE State = '" & cmbContactState.Text & "'", con)
-
-
-        da.Fill(dt)
-
-        con.Close()
-
-        cmbContactCounty.Items.Clear()
-
-        For Each R As DataRow In dt.Rows
-            cmbContactCounty.Items.Add(R("County"))
-        Next
-
-        'DISPLAY FIRST RECORD
-
-        cmbContactCounty.Text = CType(dt.Rows(0).Item(0), String)
-
-    End Sub
-
-    Private Sub GetMCLCounty()     ' fills the combo box holds users count lines
-
-        Dim ds As New DataSet
-        Dim dt As New DataTable
-        ds.Tables.Add(dt)
-        Dim da As New OleDbDataAdapter
-
-        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
-
-        Dim strFilePrefix = "NetControl"
-        Dim strFileSuffix = ".accdb"
-        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
-        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
-
-        '--------------------------------------------------------------------------------------------------------------
-        con.ConnectionString = conString
-        con.Open()
-
-        da = New OleDbDataAdapter("SELECT clCounty FROM CountyLine WHERE clState = '" & cmbMyState.Text & "' And CountyLine = '" & cmbMyCounty.Text & "'", con)
-
-
-        da.Fill(dt)
-
-        con.Close()
-
-        cmbMyCountyLine.Items.Clear()
-
-        For Each R As DataRow In dt.Rows
-            cmbMyCountyLine.Items.Add(R("clCounty"))
-        Next
-
-
-    End Sub
-
-    Private Sub GetContactCountyLine()     ' fills the combo box used to show the county lines
-
-        Dim ds As New DataSet
-        Dim dt As New DataTable
-        ds.Tables.Add(dt)
-        Dim da As New OleDbDataAdapter
-
-        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
-
-        Dim strFilePrefix = "NetControl"
-        Dim strFileSuffix = ".accdb"
-        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
-        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
-
-        '--------------------------------------------------------------------------------------------------------------
-        con.ConnectionString = conString
-        con.Open()
-
-        da = New OleDbDataAdapter("SELECT clCounty FROM CountyLine WHERE clState =  '" & cmbContactState.Text & "' And CountyLine = '" & cmbContactCounty.Text & "'", con)
-
-
-        da.Fill(dt)
-
-        con.Close()
-
-        cmbContactCountyLine.Items.Clear()
-
-        For Each R As DataRow In dt.Rows
-            cmbContactCountyLine.Items.Add(R("clCounty"))
-        Next
-
-
-    End Sub
 
     Private Sub cmbMyState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMyState.SelectedIndexChanged
 
