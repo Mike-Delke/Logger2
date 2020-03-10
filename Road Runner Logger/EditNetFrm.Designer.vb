@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EditFrm
+Partial Class EditNetFrm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,10 @@ Partial Class EditFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.txtTime = New System.Windows.Forms.TextBox()
+        Me.NetLogBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NetControlDataSet1 = New Road_Runner_Logger.NetControlDataSet1()
         Me.lblCall = New System.Windows.Forms.Label()
         Me.txtContactcall = New System.Windows.Forms.TextBox()
         Me.lblHState = New System.Windows.Forms.Label()
@@ -41,17 +44,11 @@ Partial Class EditFrm
         Me.txtContactrst = New System.Windows.Forms.TextBox()
         Me.lblMrst = New System.Windows.Forms.Label()
         Me.txtMyrst = New System.Windows.Forms.TextBox()
-        Me.lblMstate = New System.Windows.Forms.Label()
-        Me.txtMystate = New System.Windows.Forms.TextBox()
-        Me.lblMcounty = New System.Windows.Forms.Label()
-        Me.txtMycounty = New System.Windows.Forms.TextBox()
-        Me.lblMcntyline = New System.Windows.Forms.Label()
-        Me.txtMycntyLine = New System.Windows.Forms.TextBox()
         Me.lblTime = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.txtDate = New System.Windows.Forms.TextBox()
-        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnSaveEdit = New System.Windows.Forms.Button()
         Me.lblHisOper = New System.Windows.Forms.Label()
         Me.txtHisOper = New System.Windows.Forms.TextBox()
         Me.lblMyOper = New System.Windows.Forms.Label()
@@ -60,21 +57,59 @@ Partial Class EditFrm
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.lblBand = New System.Windows.Forms.Label()
         Me.txtBand = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnCloseForm = New System.Windows.Forms.Button()
+        Me.txtDuration = New System.Windows.Forms.TextBox()
+        Me.lblDuration = New System.Windows.Forms.Label()
         Me.btnFirstRecord = New System.Windows.Forms.Button()
-        Me.btnNextRecord = New System.Windows.Forms.Button()
-        Me.BtnPreviousRecord = New System.Windows.Forms.Button()
-        Me.BtnLastRecord = New System.Windows.Forms.Button()
+        Me.btnPrevious = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnLastRec = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LtimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HCallDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CountyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CountyLineDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FrequencyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BandDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MCallDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HrstDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MrstDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HoperDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MoperDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NetDurationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NetLogTableAdapter = New Road_Runner_Logger.NetControlDataSet1TableAdapters.NetLogTableAdapter()
+        CType(Me.NetLogBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NetControlDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtTime
         '
         Me.txtTime.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTime.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Ltime", True))
         Me.txtTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTime.Location = New System.Drawing.Point(138, 92)
         Me.txtTime.Name = "txtTime"
         Me.txtTime.Size = New System.Drawing.Size(249, 26)
         Me.txtTime.TabIndex = 1
+        '
+        'NetLogBindingSource
+        '
+        Me.NetLogBindingSource.DataMember = "NetLog"
+        Me.NetLogBindingSource.DataSource = Me.NetControlDataSet1
+        '
+        'NetControlDataSet1
+        '
+        Me.NetControlDataSet1.DataSetName = "NetControlDataSet1"
+        Me.NetControlDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'lblCall
         '
@@ -90,6 +125,7 @@ Partial Class EditFrm
         'txtContactcall
         '
         Me.txtContactcall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtContactcall.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "HCall", True))
         Me.txtContactcall.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactcall.Location = New System.Drawing.Point(138, 128)
         Me.txtContactcall.Name = "txtContactcall"
@@ -110,6 +146,7 @@ Partial Class EditFrm
         'txtcontactstate
         '
         Me.txtcontactstate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtcontactstate.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "State", True))
         Me.txtcontactstate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontactstate.Location = New System.Drawing.Point(138, 164)
         Me.txtcontactstate.Name = "txtcontactstate"
@@ -129,6 +166,7 @@ Partial Class EditFrm
         '
         'txtContactcounty
         '
+        Me.txtContactcounty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "County", True))
         Me.txtContactcounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactcounty.Location = New System.Drawing.Point(138, 200)
         Me.txtContactcounty.Name = "txtContactcounty"
@@ -148,6 +186,7 @@ Partial Class EditFrm
         '
         'txtContactcntyLine
         '
+        Me.txtContactcntyLine.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "CountyLine", True))
         Me.txtContactcntyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactcntyLine.Location = New System.Drawing.Point(138, 236)
         Me.txtContactcntyLine.Name = "txtContactcntyLine"
@@ -168,6 +207,7 @@ Partial Class EditFrm
         'txtFreq
         '
         Me.txtFreq.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtFreq.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Frequency", True))
         Me.txtFreq.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFreq.Location = New System.Drawing.Point(138, 272)
         Me.txtFreq.Name = "txtFreq"
@@ -188,6 +228,7 @@ Partial Class EditFrm
         'txtMode
         '
         Me.txtMode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMode.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Mode", True))
         Me.txtMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMode.Location = New System.Drawing.Point(138, 344)
         Me.txtMode.Name = "txtMode"
@@ -199,15 +240,16 @@ Partial Class EditFrm
         Me.lblMcall.AutoSize = True
         Me.lblMcall.BackColor = System.Drawing.Color.Transparent
         Me.lblMcall.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMcall.Location = New System.Drawing.Point(56, 384)
+        Me.lblMcall.Location = New System.Drawing.Point(64, 384)
         Me.lblMcall.Name = "lblMcall"
-        Me.lblMcall.Size = New System.Drawing.Size(78, 18)
+        Me.lblMcall.Size = New System.Drawing.Size(68, 18)
         Me.lblMcall.TabIndex = 0
-        Me.lblMcall.Text = "Home Call"
+        Me.lblMcall.Text = "Your Call"
         '
         'txtMycall
         '
         Me.txtMycall.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMycall.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "MCall", True))
         Me.txtMycall.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMycall.Location = New System.Drawing.Point(138, 380)
         Me.txtMycall.Name = "txtMycall"
@@ -228,6 +270,7 @@ Partial Class EditFrm
         'txtContactrst
         '
         Me.txtContactrst.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtContactrst.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Hrst", True))
         Me.txtContactrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactrst.Location = New System.Drawing.Point(138, 416)
         Me.txtContactrst.Name = "txtContactrst"
@@ -239,78 +282,21 @@ Partial Class EditFrm
         Me.lblMrst.AutoSize = True
         Me.lblMrst.BackColor = System.Drawing.Color.Transparent
         Me.lblMrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMrst.Location = New System.Drawing.Point(50, 456)
+        Me.lblMrst.Location = New System.Drawing.Point(58, 456)
         Me.lblMrst.Name = "lblMrst"
-        Me.lblMrst.Size = New System.Drawing.Size(83, 18)
+        Me.lblMrst.Size = New System.Drawing.Size(73, 18)
         Me.lblMrst.TabIndex = 0
-        Me.lblMrst.Text = "Home RST"
+        Me.lblMrst.Text = "Your RST"
         '
         'txtMyrst
         '
         Me.txtMyrst.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMyrst.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Mrst", True))
         Me.txtMyrst.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMyrst.Location = New System.Drawing.Point(138, 452)
         Me.txtMyrst.Name = "txtMyrst"
         Me.txtMyrst.Size = New System.Drawing.Size(249, 26)
         Me.txtMyrst.TabIndex = 1
-        '
-        'lblMstate
-        '
-        Me.lblMstate.AutoSize = True
-        Me.lblMstate.BackColor = System.Drawing.Color.Transparent
-        Me.lblMstate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMstate.Location = New System.Drawing.Point(40, 564)
-        Me.lblMstate.Name = "lblMstate"
-        Me.lblMstate.Size = New System.Drawing.Size(87, 18)
-        Me.lblMstate.TabIndex = 0
-        Me.lblMstate.Text = "Home State"
-        '
-        'txtMystate
-        '
-        Me.txtMystate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtMystate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMystate.Location = New System.Drawing.Point(138, 560)
-        Me.txtMystate.Name = "txtMystate"
-        Me.txtMystate.Size = New System.Drawing.Size(249, 26)
-        Me.txtMystate.TabIndex = 1
-        '
-        'lblMcounty
-        '
-        Me.lblMcounty.AutoSize = True
-        Me.lblMcounty.BackColor = System.Drawing.Color.Transparent
-        Me.lblMcounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMcounty.Location = New System.Drawing.Point(32, 600)
-        Me.lblMcounty.Name = "lblMcounty"
-        Me.lblMcounty.Size = New System.Drawing.Size(100, 18)
-        Me.lblMcounty.TabIndex = 0
-        Me.lblMcounty.Text = "Home County"
-        '
-        'txtMycounty
-        '
-        Me.txtMycounty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMycounty.Location = New System.Drawing.Point(138, 596)
-        Me.txtMycounty.Name = "txtMycounty"
-        Me.txtMycounty.Size = New System.Drawing.Size(249, 26)
-        Me.txtMycounty.TabIndex = 1
-        '
-        'lblMcntyline
-        '
-        Me.lblMcntyline.AutoSize = True
-        Me.lblMcntyline.BackColor = System.Drawing.Color.Transparent
-        Me.lblMcntyline.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMcntyline.Location = New System.Drawing.Point(16, 636)
-        Me.lblMcntyline.Name = "lblMcntyline"
-        Me.lblMcntyline.Size = New System.Drawing.Size(114, 18)
-        Me.lblMcntyline.TabIndex = 0
-        Me.lblMcntyline.Text = "Home Cnty Line"
-        '
-        'txtMycntyLine
-        '
-        Me.txtMycntyLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMycntyLine.Location = New System.Drawing.Point(138, 632)
-        Me.txtMycntyLine.Name = "txtMycntyLine"
-        Me.txtMycntyLine.Size = New System.Drawing.Size(249, 26)
-        Me.txtMycntyLine.TabIndex = 1
         '
         'lblTime
         '
@@ -346,22 +332,23 @@ Partial Class EditFrm
         'txtDate
         '
         Me.txtDate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDate.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "LDate", True))
         Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDate.Location = New System.Drawing.Point(138, 56)
         Me.txtDate.Name = "txtDate"
         Me.txtDate.Size = New System.Drawing.Size(249, 26)
         Me.txtDate.TabIndex = 1
         '
-        'btnEdit
+        'btnSaveEdit
         '
-        Me.btnEdit.BackColor = System.Drawing.Color.Yellow
-        Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(138, 679)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(125, 46)
-        Me.btnEdit.TabIndex = 2
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = False
+        Me.btnSaveEdit.BackColor = System.Drawing.Color.Yellow
+        Me.btnSaveEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveEdit.Location = New System.Drawing.Point(119, 607)
+        Me.btnSaveEdit.Name = "btnSaveEdit"
+        Me.btnSaveEdit.Size = New System.Drawing.Size(144, 46)
+        Me.btnSaveEdit.TabIndex = 2
+        Me.btnSaveEdit.Text = "Save Edit "
+        Me.btnSaveEdit.UseVisualStyleBackColor = False
         '
         'lblHisOper
         '
@@ -377,6 +364,7 @@ Partial Class EditFrm
         'txtHisOper
         '
         Me.txtHisOper.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtHisOper.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Hoper", True))
         Me.txtHisOper.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHisOper.Location = New System.Drawing.Point(138, 488)
         Me.txtHisOper.Name = "txtHisOper"
@@ -388,15 +376,16 @@ Partial Class EditFrm
         Me.lblMyOper.AutoSize = True
         Me.lblMyOper.BackColor = System.Drawing.Color.Transparent
         Me.lblMyOper.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMyOper.Location = New System.Drawing.Point(47, 528)
+        Me.lblMyOper.Location = New System.Drawing.Point(56, 528)
         Me.lblMyOper.Name = "lblMyOper"
-        Me.lblMyOper.Size = New System.Drawing.Size(86, 18)
+        Me.lblMyOper.Size = New System.Drawing.Size(76, 18)
         Me.lblMyOper.TabIndex = 0
-        Me.lblMyOper.Text = "Home Oper"
+        Me.lblMyOper.Text = "Your Oper"
         '
         'txtMyOper
         '
         Me.txtMyOper.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtMyOper.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Moper", True))
         Me.txtMyOper.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMyOper.Location = New System.Drawing.Point(138, 524)
         Me.txtMyOper.Name = "txtMyOper"
@@ -417,6 +406,7 @@ Partial Class EditFrm
         'txtID
         '
         Me.txtID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "ID", True))
         Me.txtID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtID.Location = New System.Drawing.Point(138, 20)
         Me.txtID.Name = "txtID"
@@ -438,83 +428,267 @@ Partial Class EditFrm
         'txtBand
         '
         Me.txtBand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtBand.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "Band", True))
         Me.txtBand.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBand.Location = New System.Drawing.Point(138, 308)
         Me.txtBand.Name = "txtBand"
         Me.txtBand.Size = New System.Drawing.Size(249, 26)
         Me.txtBand.TabIndex = 1
         '
-        'Button1
+        'btnCloseForm
         '
-        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(278, 679)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(109, 46)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Close Form"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnCloseForm.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnCloseForm.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCloseForm.Location = New System.Drawing.Point(278, 607)
+        Me.btnCloseForm.Name = "btnCloseForm"
+        Me.btnCloseForm.Size = New System.Drawing.Size(109, 46)
+        Me.btnCloseForm.TabIndex = 3
+        Me.btnCloseForm.Text = "Close Form"
+        Me.btnCloseForm.UseVisualStyleBackColor = False
+        '
+        'txtDuration
+        '
+        Me.txtDuration.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDuration.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NetLogBindingSource, "NetDuration", True))
+        Me.txtDuration.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDuration.Location = New System.Drawing.Point(138, 560)
+        Me.txtDuration.Name = "txtDuration"
+        Me.txtDuration.Size = New System.Drawing.Size(249, 26)
+        Me.txtDuration.TabIndex = 5
+        '
+        'lblDuration
+        '
+        Me.lblDuration.AutoSize = True
+        Me.lblDuration.BackColor = System.Drawing.Color.Transparent
+        Me.lblDuration.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDuration.Location = New System.Drawing.Point(41, 564)
+        Me.lblDuration.Name = "lblDuration"
+        Me.lblDuration.Size = New System.Drawing.Size(91, 18)
+        Me.lblDuration.TabIndex = 4
+        Me.lblDuration.Text = "Net Duration"
         '
         'btnFirstRecord
         '
-        Me.btnFirstRecord.BackColor = System.Drawing.Color.SkyBlue
-        Me.btnFirstRecord.Location = New System.Drawing.Point(393, 164)
+        Me.btnFirstRecord.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFirstRecord.ForeColor = System.Drawing.Color.Black
+        Me.btnFirstRecord.Location = New System.Drawing.Point(411, 107)
         Me.btnFirstRecord.Name = "btnFirstRecord"
-        Me.btnFirstRecord.Size = New System.Drawing.Size(90, 62)
-        Me.btnFirstRecord.TabIndex = 4
-        Me.btnFirstRecord.Text = "FIRST RECORD"
-        Me.btnFirstRecord.UseVisualStyleBackColor = False
+        Me.btnFirstRecord.Size = New System.Drawing.Size(61, 43)
+        Me.btnFirstRecord.TabIndex = 6
+        Me.btnFirstRecord.Text = "<<"
+        Me.btnFirstRecord.UseVisualStyleBackColor = True
         '
-        'btnNextRecord
+        'btnPrevious
         '
-        Me.btnNextRecord.BackColor = System.Drawing.Color.SkyBlue
-        Me.btnNextRecord.Location = New System.Drawing.Point(393, 272)
-        Me.btnNextRecord.Name = "btnNextRecord"
-        Me.btnNextRecord.Size = New System.Drawing.Size(90, 62)
-        Me.btnNextRecord.TabIndex = 5
-        Me.btnNextRecord.Text = "NEXT RECORD"
-        Me.btnNextRecord.UseVisualStyleBackColor = False
+        Me.btnPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrevious.ForeColor = System.Drawing.Color.Black
+        Me.btnPrevious.Location = New System.Drawing.Point(411, 199)
+        Me.btnPrevious.Name = "btnPrevious"
+        Me.btnPrevious.Size = New System.Drawing.Size(61, 43)
+        Me.btnPrevious.TabIndex = 7
+        Me.btnPrevious.Text = "<"
+        Me.btnPrevious.UseVisualStyleBackColor = True
         '
-        'BtnPreviousRecord
+        'btnNext
         '
-        Me.BtnPreviousRecord.BackColor = System.Drawing.Color.SkyBlue
-        Me.BtnPreviousRecord.Location = New System.Drawing.Point(393, 379)
-        Me.BtnPreviousRecord.Name = "BtnPreviousRecord"
-        Me.BtnPreviousRecord.Size = New System.Drawing.Size(90, 59)
-        Me.BtnPreviousRecord.TabIndex = 6
-        Me.BtnPreviousRecord.Text = "PREVIOUS RECORD"
-        Me.BtnPreviousRecord.UseVisualStyleBackColor = False
+        Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.ForeColor = System.Drawing.Color.Black
+        Me.btnNext.Location = New System.Drawing.Point(411, 287)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(61, 43)
+        Me.btnNext.TabIndex = 8
+        Me.btnNext.Text = ">"
+        Me.btnNext.UseVisualStyleBackColor = True
         '
-        'BtnLastRecord
+        'btnLastRec
         '
-        Me.BtnLastRecord.BackColor = System.Drawing.Color.SkyBlue
-        Me.BtnLastRecord.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLastRecord.Location = New System.Drawing.Point(393, 486)
-        Me.BtnLastRecord.Name = "BtnLastRecord"
-        Me.BtnLastRecord.Size = New System.Drawing.Size(90, 64)
-        Me.BtnLastRecord.TabIndex = 7
-        Me.BtnLastRecord.Text = "LAST RECORD"
-        Me.BtnLastRecord.UseVisualStyleBackColor = False
+        Me.btnLastRec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLastRec.ForeColor = System.Drawing.Color.Black
+        Me.btnLastRec.Location = New System.Drawing.Point(411, 380)
+        Me.btnLastRec.Name = "btnLastRec"
+        Me.btnLastRec.Size = New System.Drawing.Size(61, 45)
+        Me.btnLastRec.TabIndex = 9
+        Me.btnLastRec.Text = ">>"
+        Me.btnLastRec.UseVisualStyleBackColor = True
         '
-        'EditFrm
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(424, 88)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 16)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "First"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(424, 361)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(37, 16)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Last"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(424, 268)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 16)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Next"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(408, 180)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(69, 16)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Previous"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.LDateDataGridViewTextBoxColumn, Me.LtimeDataGridViewTextBoxColumn, Me.HCallDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.CountyDataGridViewTextBoxColumn, Me.CountyLineDataGridViewTextBoxColumn, Me.FrequencyDataGridViewTextBoxColumn, Me.BandDataGridViewTextBoxColumn, Me.ModeDataGridViewTextBoxColumn, Me.MCallDataGridViewTextBoxColumn, Me.HrstDataGridViewTextBoxColumn, Me.MrstDataGridViewTextBoxColumn, Me.HoperDataGridViewTextBoxColumn, Me.MoperDataGridViewTextBoxColumn, Me.NetDurationDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.NetLogBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 12)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(82, 100)
+        Me.DataGridView1.TabIndex = 14
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        '
+        'LDateDataGridViewTextBoxColumn
+        '
+        Me.LDateDataGridViewTextBoxColumn.DataPropertyName = "LDate"
+        Me.LDateDataGridViewTextBoxColumn.HeaderText = "LDate"
+        Me.LDateDataGridViewTextBoxColumn.Name = "LDateDataGridViewTextBoxColumn"
+        '
+        'LtimeDataGridViewTextBoxColumn
+        '
+        Me.LtimeDataGridViewTextBoxColumn.DataPropertyName = "Ltime"
+        Me.LtimeDataGridViewTextBoxColumn.HeaderText = "Ltime"
+        Me.LtimeDataGridViewTextBoxColumn.Name = "LtimeDataGridViewTextBoxColumn"
+        '
+        'HCallDataGridViewTextBoxColumn
+        '
+        Me.HCallDataGridViewTextBoxColumn.DataPropertyName = "HCall"
+        Me.HCallDataGridViewTextBoxColumn.HeaderText = "HCall"
+        Me.HCallDataGridViewTextBoxColumn.Name = "HCallDataGridViewTextBoxColumn"
+        '
+        'StateDataGridViewTextBoxColumn
+        '
+        Me.StateDataGridViewTextBoxColumn.DataPropertyName = "State"
+        Me.StateDataGridViewTextBoxColumn.HeaderText = "State"
+        Me.StateDataGridViewTextBoxColumn.Name = "StateDataGridViewTextBoxColumn"
+        '
+        'CountyDataGridViewTextBoxColumn
+        '
+        Me.CountyDataGridViewTextBoxColumn.DataPropertyName = "County"
+        Me.CountyDataGridViewTextBoxColumn.HeaderText = "County"
+        Me.CountyDataGridViewTextBoxColumn.Name = "CountyDataGridViewTextBoxColumn"
+        '
+        'CountyLineDataGridViewTextBoxColumn
+        '
+        Me.CountyLineDataGridViewTextBoxColumn.DataPropertyName = "CountyLine"
+        Me.CountyLineDataGridViewTextBoxColumn.HeaderText = "CountyLine"
+        Me.CountyLineDataGridViewTextBoxColumn.Name = "CountyLineDataGridViewTextBoxColumn"
+        '
+        'FrequencyDataGridViewTextBoxColumn
+        '
+        Me.FrequencyDataGridViewTextBoxColumn.DataPropertyName = "Frequency"
+        Me.FrequencyDataGridViewTextBoxColumn.HeaderText = "Frequency"
+        Me.FrequencyDataGridViewTextBoxColumn.Name = "FrequencyDataGridViewTextBoxColumn"
+        '
+        'BandDataGridViewTextBoxColumn
+        '
+        Me.BandDataGridViewTextBoxColumn.DataPropertyName = "Band"
+        Me.BandDataGridViewTextBoxColumn.HeaderText = "Band"
+        Me.BandDataGridViewTextBoxColumn.Name = "BandDataGridViewTextBoxColumn"
+        '
+        'ModeDataGridViewTextBoxColumn
+        '
+        Me.ModeDataGridViewTextBoxColumn.DataPropertyName = "Mode"
+        Me.ModeDataGridViewTextBoxColumn.HeaderText = "Mode"
+        Me.ModeDataGridViewTextBoxColumn.Name = "ModeDataGridViewTextBoxColumn"
+        '
+        'MCallDataGridViewTextBoxColumn
+        '
+        Me.MCallDataGridViewTextBoxColumn.DataPropertyName = "MCall"
+        Me.MCallDataGridViewTextBoxColumn.HeaderText = "MCall"
+        Me.MCallDataGridViewTextBoxColumn.Name = "MCallDataGridViewTextBoxColumn"
+        '
+        'HrstDataGridViewTextBoxColumn
+        '
+        Me.HrstDataGridViewTextBoxColumn.DataPropertyName = "Hrst"
+        Me.HrstDataGridViewTextBoxColumn.HeaderText = "Hrst"
+        Me.HrstDataGridViewTextBoxColumn.Name = "HrstDataGridViewTextBoxColumn"
+        '
+        'MrstDataGridViewTextBoxColumn
+        '
+        Me.MrstDataGridViewTextBoxColumn.DataPropertyName = "Mrst"
+        Me.MrstDataGridViewTextBoxColumn.HeaderText = "Mrst"
+        Me.MrstDataGridViewTextBoxColumn.Name = "MrstDataGridViewTextBoxColumn"
+        '
+        'HoperDataGridViewTextBoxColumn
+        '
+        Me.HoperDataGridViewTextBoxColumn.DataPropertyName = "Hoper"
+        Me.HoperDataGridViewTextBoxColumn.HeaderText = "Hoper"
+        Me.HoperDataGridViewTextBoxColumn.Name = "HoperDataGridViewTextBoxColumn"
+        '
+        'MoperDataGridViewTextBoxColumn
+        '
+        Me.MoperDataGridViewTextBoxColumn.DataPropertyName = "Moper"
+        Me.MoperDataGridViewTextBoxColumn.HeaderText = "Moper"
+        Me.MoperDataGridViewTextBoxColumn.Name = "MoperDataGridViewTextBoxColumn"
+        '
+        'NetDurationDataGridViewTextBoxColumn
+        '
+        Me.NetDurationDataGridViewTextBoxColumn.DataPropertyName = "NetDuration"
+        Me.NetDurationDataGridViewTextBoxColumn.HeaderText = "NetDuration"
+        Me.NetDurationDataGridViewTextBoxColumn.Name = "NetDurationDataGridViewTextBoxColumn"
+        '
+        'NetLogTableAdapter
+        '
+        Me.NetLogTableAdapter.ClearBeforeFill = True
+        '
+        'EditNetFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(495, 737)
-        Me.Controls.Add(Me.BtnLastRecord)
-        Me.Controls.Add(Me.BtnPreviousRecord)
-        Me.Controls.Add(Me.btnNextRecord)
+        Me.ClientSize = New System.Drawing.Size(498, 668)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnLastRec)
+        Me.Controls.Add(Me.btnNext)
+        Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.btnFirstRecord)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnEdit)
+        Me.Controls.Add(Me.txtDuration)
+        Me.Controls.Add(Me.lblDuration)
+        Me.Controls.Add(Me.btnCloseForm)
+        Me.Controls.Add(Me.btnSaveEdit)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.txtDate)
-        Me.Controls.Add(Me.txtMycntyLine)
-        Me.Controls.Add(Me.txtMycounty)
-        Me.Controls.Add(Me.txtMystate)
         Me.Controls.Add(Me.txtMyOper)
         Me.Controls.Add(Me.txtHisOper)
         Me.Controls.Add(Me.txtMyrst)
@@ -529,11 +703,8 @@ Partial Class EditFrm
         Me.Controls.Add(Me.txtcontactstate)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.txtContactcall)
-        Me.Controls.Add(Me.lblMcntyline)
         Me.Controls.Add(Me.lblMyOper)
-        Me.Controls.Add(Me.lblMcounty)
         Me.Controls.Add(Me.lblHisOper)
-        Me.Controls.Add(Me.lblMstate)
         Me.Controls.Add(Me.lblMrst)
         Me.Controls.Add(Me.lblHrst)
         Me.Controls.Add(Me.lblMcall)
@@ -548,8 +719,11 @@ Partial Class EditFrm
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.txtTime)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Name = "EditFrm"
-        Me.Text = "Edit Log Form"
+        Me.Name = "EditNetFrm"
+        Me.Text = "Edit Net Control Form"
+        CType(Me.NetLogBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NetControlDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -573,17 +747,11 @@ Partial Class EditFrm
     Friend WithEvents txtContactrst As TextBox
     Friend WithEvents lblMrst As Label
     Friend WithEvents txtMyrst As TextBox
-    Friend WithEvents lblMstate As Label
-    Friend WithEvents txtMystate As TextBox
-    Friend WithEvents lblMcounty As Label
-    Friend WithEvents txtMycounty As TextBox
-    Friend WithEvents lblMcntyline As Label
-    Friend WithEvents txtMycntyLine As TextBox
     Friend WithEvents lblTime As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents lblDate As Label
     Friend WithEvents txtDate As TextBox
-    Friend WithEvents btnEdit As Button
+    Friend WithEvents btnSaveEdit As Button
     Friend WithEvents lblHisOper As Label
     Friend WithEvents txtHisOper As TextBox
     Friend WithEvents lblMyOper As Label
@@ -592,9 +760,35 @@ Partial Class EditFrm
     Friend WithEvents txtID As TextBox
     Friend WithEvents lblBand As Label
     Friend WithEvents txtBand As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnCloseForm As Button
+    Friend WithEvents txtDuration As TextBox
+    Friend WithEvents lblDuration As Label
     Friend WithEvents btnFirstRecord As Button
-    Friend WithEvents btnNextRecord As Button
-    Friend WithEvents BtnPreviousRecord As Button
-    Friend WithEvents BtnLastRecord As Button
+    Friend WithEvents btnPrevious As Button
+    Friend WithEvents btnNext As Button
+    Friend WithEvents btnLastRec As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents NetControlDataSet1 As NetControlDataSet1
+    Friend WithEvents NetLogBindingSource As BindingSource
+    Friend WithEvents NetLogTableAdapter As NetControlDataSet1TableAdapters.NetLogTableAdapter
+    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LtimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HCallDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CountyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CountyLineDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FrequencyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BandDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ModeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MCallDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HrstDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MrstDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HoperDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MoperDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NetDurationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

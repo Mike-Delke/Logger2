@@ -77,32 +77,75 @@ Public Class FixedLogEntry
 
     Private Sub datagridshow()
 
-        ' This sets datagrid1 to the table and shows it for Logging Fixed Contacts
-        ' Dim mcall = lblCall.Text
-        Dim ds As New DataSet
-        Dim dt As New DataTable
-        ds.Tables.Add(dt)
-        Dim da As New OleDbDataAdapter
+        Dim con As New OleDb.OleDbConnection       'Connection Object
 
-        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+        Dim dbProvider As String                   'Holds the Provider
+        Dim dbSource As String                     'Holds the Data Source
+        Dim TheDatabase As String                  'Holds the Database Name
+        Dim FullDatabasePath As String             'Holds the Database Path
 
-        Dim strFilePrefix = "County Hunter - "
-        Dim strFileSuffix = ".accdb"
-        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
-        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        Dim ds As New DataSet                      'Holds a Dataset Object
+        Dim da As OleDb.OleDbDataAdapter           'Holds a dataAdapter Object
+        Dim sql As String                          'Holds SQL String
 
-        '--------------------------------------------------------------------------------------------------------------
-        con.ConnectionString = conString
-        dataGridView.DataSource = dt.DefaultView
+        'SET UP THE PROVIDER
+        dbProvider = "Provider=Microsoft.Jet.OLEDB.4.0;"
+
+        'SET THE DATABASE AND WHERE THE DATABASE IS
+        TheDatabase = "\NetControl.mdb"
+        FullDatabasePath = "C:\RRLogger Data" & TheDatabase
+
+        'SET THE DATA SOURCE
+        dbSource = "Data Source = " & FullDatabasePath
+
+        'SET THE CONNECTION STRING
+        con.ConnectionString = dbProvider & dbSource
+
+        'OPEN THE DATABASE
         con.Open()
 
-        da = New OleDbDataAdapter("SELECT * FROM Log  ORDER BY ID DESC", con)
+        'STORE THE SQL STRING
+        sql = "SELECT * From NetLog"
 
-        da.Fill(dt)
+        'PASS THE SQL STRING AND CONNECTION OBJECT TO THE DATA_ADAPTER
+        da = New OleDb.OleDbDataAdapter(sql, con)
 
+        'FILL DATASET WITH RECORDS FROM THE DATABASE TABLE
+        da.Fill(ds, "help")
 
-
+        'CLOSE THE DATABASE
         con.Close()
+
+        txtlDate.Text = CType(ds.Tables("help").Rows(0).Item(1), String)
+        txtltime.Text = CType(ds.Tables("help").Rows(0).Item(2), String)
+
+
+        '' This sets datagrid1 to the table and shows it for Logging Fixed Contacts
+        '' Dim mcall = lblCall.Text
+        'Dim ds As New DataSet
+        'Dim dt As New DataTable
+        'ds.Tables.Add(dt)
+        'Dim da As New OleDbDataAdapter
+
+        ''------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        'Dim strFilePrefix = "County Hunter - "
+        'Dim strFileSuffix = ".mdb"
+        'Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        'Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        ''--------------------------------------------------------------------------------------------------------------
+        'con.ConnectionString = conString
+        'dataGridView.DataSource = dt.DefaultView
+        'con.Open()
+
+        'da = New OleDbDataAdapter("SELECT * FROM Log  ORDER BY ID DESC", con)
+
+        'da.Fill(dt)
+
+
+
+        'con.Close()
 
     End Sub
 
@@ -335,7 +378,7 @@ Public Class FixedLogEntry
 
         Dim myConnection As OleDbConnection = New OleDbConnection
 
-        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.MDB"
         Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
         myConnection.ConnectionString = conString
         myConnection.Open()
@@ -430,7 +473,7 @@ Public Class FixedLogEntry
         '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
 
         Dim strFilePrefix = "County Hunters - Common"
-        Dim strFileSuffix = ".accdb"
+        Dim strFileSuffix = ".MDB"
         Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
         Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
 

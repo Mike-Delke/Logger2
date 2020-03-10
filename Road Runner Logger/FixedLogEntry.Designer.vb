@@ -94,6 +94,8 @@ Partial Class FixedLogEntry
         Me.lblContactHomeCounty = New System.Windows.Forms.Label()
         Me.TimerClock = New System.Windows.Forms.Timer(Me.components)
         Me.lblYourLog = New System.Windows.Forms.Label()
+        Me.txtlDate = New System.Windows.Forms.TextBox()
+        Me.txtltime = New System.Windows.Forms.TextBox()
         CType(Me.dataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxMyParameters.SuspendLayout()
         Me.GroupBoxTeamMembers.SuspendLayout()
@@ -120,7 +122,7 @@ Partial Class FixedLogEntry
         Me.cmbMyOperation.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmbMyOperation.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMyOperation.FormattingEnabled = True
-        Me.cmbMyOperation.Items.AddRange(New Object() {"Home", "Mobile", "Portable", "Remote"})
+        Me.cmbMyOperation.Items.AddRange(New Object() {"Home", "Mobile", "Portable"})
         Me.cmbMyOperation.Location = New System.Drawing.Point(50, 38)
         Me.cmbMyOperation.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbMyOperation.Name = "cmbMyOperation"
@@ -221,7 +223,7 @@ Partial Class FixedLogEntry
         Me.cmbMode.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmbMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMode.FormattingEnabled = True
-        Me.cmbMode.Items.AddRange(New Object() {"SSB", "CW", "AM", "AMTOR", "ATV", "CHIP", "CLOVER", "CONTESTIA", "DOMINO", "DSSTV", "DV", "FM", "FSK31", "FT8", "GTOR", "HAMDRM", "HELL", "HFSK", "JT65", "JT9", "MFSK", "MT63", "OLIVIA", "PACKET", "PAX", "PSK", "Q15", "ROS", "RTTY", "SSTV", "THOR", "THROB"})
+        Me.cmbMode.Items.AddRange(New Object() {"SSB", "CW", "AM", "FM", "DIGITAL"})
         Me.cmbMode.Location = New System.Drawing.Point(957, 86)
         Me.cmbMode.Name = "cmbMode"
         Me.cmbMode.Size = New System.Drawing.Size(94, 24)
@@ -321,7 +323,7 @@ Partial Class FixedLogEntry
         Me.dataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView.Location = New System.Drawing.Point(21, 302)
         Me.dataGridView.Name = "dataGridView"
-        Me.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         DataGridViewCellStyle3.NullValue = Nothing
         Me.dataGridView.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridView.RowTemplate.Height = 24
@@ -514,7 +516,7 @@ Partial Class FixedLogEntry
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(249, 319)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(295, 319)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 28
@@ -591,6 +593,7 @@ Partial Class FixedLogEntry
         Me.cmbSubMode.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmbSubMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbSubMode.FormattingEnabled = True
+        Me.cmbSubMode.Items.AddRange(New Object() {"AMTOR", "ATV", "CHIP", "CLOVER", "CONTESTIA", "DOMINO", "DSSTV", "DV", "FSK31", "FT4", "FT8", "QAM", "GTOR", "HAMDRM", "HELL", "HFSK", "JT64", "MT63", "OLIVIA", "PACLET", "PAX", "PSK", "Q15", "ROS", "RTTY", "SSTV", "THOR", "THROB"})
         Me.cmbSubMode.Location = New System.Drawing.Point(786, 85)
         Me.cmbSubMode.Name = "cmbSubMode"
         Me.cmbSubMode.Size = New System.Drawing.Size(97, 24)
@@ -887,6 +890,20 @@ Partial Class FixedLogEntry
         Me.lblYourLog.TabIndex = 62
         Me.lblYourLog.Text = "Your Log"
         '
+        'txtlDate
+        '
+        Me.txtlDate.Location = New System.Drawing.Point(266, 276)
+        Me.txtlDate.Name = "txtlDate"
+        Me.txtlDate.Size = New System.Drawing.Size(100, 20)
+        Me.txtlDate.TabIndex = 61
+        '
+        'txtltime
+        '
+        Me.txtltime.Location = New System.Drawing.Point(476, 279)
+        Me.txtltime.Name = "txtltime"
+        Me.txtltime.Size = New System.Drawing.Size(100, 20)
+        Me.txtltime.TabIndex = 63
+        '
         'FixedLogEntry
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -894,6 +911,8 @@ Partial Class FixedLogEntry
         Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1145, 637)
+        Me.Controls.Add(Me.txtltime)
+        Me.Controls.Add(Me.txtlDate)
         Me.Controls.Add(Me.lblYourLog)
         Me.Controls.Add(Me.GroupBoxMobileParameters)
         Me.Controls.Add(Me.GroupBoxMyParameters)
@@ -994,4 +1013,6 @@ Partial Class FixedLogEntry
     Friend WithEvents TimerClock As Timer
     Friend WithEvents lblCall As Label
     Friend WithEvents lblYourLog As Label
+    Friend WithEvents txtlDate As TextBox
+    Friend WithEvents txtltime As TextBox
 End Class

@@ -75,6 +75,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Core.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Core.WinForms.17.4.0.51\lib\net451\Syncfusion.Core.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Data.WinForms.17.4.0.51\lib\net451\Syncfusion.Data.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DataSource.WinForms.17.4.0.51\lib\net451\Syncfusion.DataSource.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.GridCommon.WinForms.17.4.0.51\lib\net451\Syncfusion.GridCommon.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.4.0.51\lib\net451\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfDataGrid.WinForms.17.4.0.51\lib\net451\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfInput.WinForms.17.4.0.51\lib\net451\Syncfusion.SfInput.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfListView.WinForms.17.4.0.51\lib\net451\Syncfusion.SfListView.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.17.4.0.51\lib\net451\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -108,10 +135,17 @@
     <Compile Include="clsNetControl.vb" />
     <Compile Include="clsScreenUtilities.vb" />
     <Compile Include="clsSecondaryLog.vb" />
+    <Compile Include="DBControl.vb" />
     <Compile Include="EditFrm.Designer.vb">
       <DependentUpon>EditFrm.vb</DependentUpon>
     </Compile>
     <Compile Include="EditFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNetFrm.Designer.vb">
+      <DependentUpon>EditNetFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditNetFrm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FixedLogEntry.Designer.vb">
@@ -190,6 +224,16 @@
     <Compile Include="NetControl.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NetControlDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetControlDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NetControlDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetControlDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PublicVars.vb" />
     <Compile Include="ViewEdit.Designer.vb">
       <DependentUpon>ViewEdit.vb</DependentUpon>
@@ -202,6 +246,9 @@
     <EmbeddedResource Include="EditFrm.resx">
       <DependentUpon>EditFrm.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNetFrm.resx">
+      <DependentUpon>EditNetFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FixedLogEntry.resx">
       <DependentUpon>FixedLogEntry.vb</DependentUpon>
@@ -256,6 +303,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="NetControlDataSet.xsc">
+      <DependentUpon>NetControlDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NetControlDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NetControlDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NetControlDataSet.xss">
+      <DependentUpon>NetControlDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NetControlDataSet1.xsc">
+      <DependentUpon>NetControlDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="NetControlDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NetControlDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NetControlDataSet1.xss">
+      <DependentUpon>NetControlDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Resources\imagesO7PSW12X.jpg" />
   </ItemGroup>
   <ItemGroup>
