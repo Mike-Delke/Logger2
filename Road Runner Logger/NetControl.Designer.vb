@@ -67,6 +67,13 @@ Partial Class NetControl
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnSpotMobile = New System.Windows.Forms.Button()
         Me.btnRelayHelp = New System.Windows.Forms.Button()
+        Me.tbStartNet = New System.Windows.Forms.TextBox()
+        Me.tbEndNet = New System.Windows.Forms.TextBox()
+        Me.lblNetLength = New System.Windows.Forms.Label()
+        Me.lblnettime = New System.Windows.Forms.Label()
+        Me.txtMyState = New System.Windows.Forms.TextBox()
+        Me.txtMyCounty = New System.Windows.Forms.TextBox()
+        Me.txtMyCountyLine = New System.Windows.Forms.TextBox()
         CType(Me.DataGridV1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gboxedit.SuspendLayout()
@@ -77,7 +84,7 @@ Partial Class NetControl
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Impact", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(238, 1)
+        Me.Label1.Location = New System.Drawing.Point(238, 18)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(633, 80)
@@ -89,7 +96,7 @@ Partial Class NetControl
         Me.lblCall.AutoSize = True
         Me.lblCall.BackColor = System.Drawing.Color.Transparent
         Me.lblCall.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCall.Location = New System.Drawing.Point(45, 9)
+        Me.lblCall.Location = New System.Drawing.Point(46, 27)
         Me.lblCall.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCall.Name = "lblCall"
         Me.lblCall.Size = New System.Drawing.Size(116, 60)
@@ -102,7 +109,7 @@ Partial Class NetControl
         Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(947, 358)
+        Me.Button1.Location = New System.Drawing.Point(947, 373)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(198, 45)
@@ -284,7 +291,7 @@ Partial Class NetControl
         Me.lblTimer.AutoSize = True
         Me.lblTimer.BackColor = System.Drawing.Color.Transparent
         Me.lblTimer.Font = New System.Drawing.Font("Impact", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTimer.Location = New System.Drawing.Point(941, 285)
+        Me.lblTimer.Location = New System.Drawing.Point(851, 261)
         Me.lblTimer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTimer.Name = "lblTimer"
         Me.lblTimer.Size = New System.Drawing.Size(98, 34)
@@ -296,7 +303,7 @@ Partial Class NetControl
         '
         Me.btnStart.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStart.Location = New System.Drawing.Point(1092, 285)
+        Me.btnStart.Location = New System.Drawing.Point(976, 257)
         Me.btnStart.Margin = New System.Windows.Forms.Padding(2)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(86, 25)
@@ -318,7 +325,7 @@ Partial Class NetControl
         '
         Me.btnEnd.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEnd.Location = New System.Drawing.Point(1092, 327)
+        Me.btnEnd.Location = New System.Drawing.Point(976, 289)
         Me.btnEnd.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEnd.Name = "btnEnd"
         Me.btnEnd.Size = New System.Drawing.Size(86, 25)
@@ -334,7 +341,7 @@ Partial Class NetControl
         Me.PictureBox1.Location = New System.Drawing.Point(914, 89)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(264, 181)
+        Me.PictureBox1.Size = New System.Drawing.Size(264, 165)
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
@@ -434,7 +441,7 @@ Partial Class NetControl
         Me.cmbContactrst.Name = "cmbContactrst"
         Me.cmbContactrst.Size = New System.Drawing.Size(58, 28)
         Me.cmbContactrst.TabIndex = 9
-        Me.cmbContactrst.Text = "59"
+        Me.cmbContactrst.Text = "559"
         '
         'cmbMyrst
         '
@@ -446,7 +453,7 @@ Partial Class NetControl
         Me.cmbMyrst.Name = "cmbMyrst"
         Me.cmbMyrst.Size = New System.Drawing.Size(58, 28)
         Me.cmbMyrst.TabIndex = 10
-        Me.cmbMyrst.Text = "59"
+        Me.cmbMyrst.Text = "559"
         '
         'txtList
         '
@@ -507,12 +514,12 @@ Partial Class NetControl
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(491, 306)
+        Me.TextBox1.Location = New System.Drawing.Point(857, 297)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(76, 20)
         Me.TextBox1.TabIndex = 20
-        Me.TextBox1.Text = "     (NL)"
+        Me.TextBox1.Text = "     "
         Me.TextBox1.Visible = False
         '
         'btnEdit
@@ -569,12 +576,70 @@ Partial Class NetControl
         'btnRelayHelp
         '
         Me.btnRelayHelp.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnRelayHelp.Location = New System.Drawing.Point(932, 329)
+        Me.btnRelayHelp.Location = New System.Drawing.Point(986, 345)
         Me.btnRelayHelp.Name = "btnRelayHelp"
         Me.btnRelayHelp.Size = New System.Drawing.Size(117, 23)
         Me.btnRelayHelp.TabIndex = 43
         Me.btnRelayHelp.Text = "Help With Relays"
         Me.btnRelayHelp.UseVisualStyleBackColor = False
+        '
+        'tbStartNet
+        '
+        Me.tbStartNet.Location = New System.Drawing.Point(1067, 259)
+        Me.tbStartNet.Name = "tbStartNet"
+        Me.tbStartNet.Size = New System.Drawing.Size(78, 20)
+        Me.tbStartNet.TabIndex = 47
+        '
+        'tbEndNet
+        '
+        Me.tbEndNet.Location = New System.Drawing.Point(1067, 289)
+        Me.tbEndNet.Name = "tbEndNet"
+        Me.tbEndNet.Size = New System.Drawing.Size(78, 20)
+        Me.tbEndNet.TabIndex = 48
+        '
+        'lblNetLength
+        '
+        Me.lblNetLength.AutoSize = True
+        Me.lblNetLength.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNetLength.Location = New System.Drawing.Point(1088, 320)
+        Me.lblNetLength.Name = "lblNetLength"
+        Me.lblNetLength.Size = New System.Drawing.Size(43, 15)
+        Me.lblNetLength.TabIndex = 49
+        Me.lblNetLength.Text = "00.00"
+        '
+        'lblnettime
+        '
+        Me.lblnettime.AutoSize = True
+        Me.lblnettime.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lblnettime.Location = New System.Drawing.Point(983, 322)
+        Me.lblnettime.Name = "lblnettime"
+        Me.lblnettime.Size = New System.Drawing.Size(79, 13)
+        Me.lblnettime.TabIndex = 50
+        Me.lblnettime.Text = "Net Duration"
+        '
+        'txtMyState
+        '
+        Me.txtMyState.Location = New System.Drawing.Point(480, 297)
+        Me.txtMyState.Name = "txtMyState"
+        Me.txtMyState.Size = New System.Drawing.Size(100, 20)
+        Me.txtMyState.TabIndex = 51
+        Me.txtMyState.Visible = False
+        '
+        'txtMyCounty
+        '
+        Me.txtMyCounty.Location = New System.Drawing.Point(586, 297)
+        Me.txtMyCounty.Name = "txtMyCounty"
+        Me.txtMyCounty.Size = New System.Drawing.Size(100, 20)
+        Me.txtMyCounty.TabIndex = 52
+        Me.txtMyCounty.Visible = False
+        '
+        'txtMyCountyLine
+        '
+        Me.txtMyCountyLine.Location = New System.Drawing.Point(531, 275)
+        Me.txtMyCountyLine.Name = "txtMyCountyLine"
+        Me.txtMyCountyLine.Size = New System.Drawing.Size(100, 20)
+        Me.txtMyCountyLine.TabIndex = 53
+        Me.txtMyCountyLine.Visible = False
         '
         'NetControl
         '
@@ -583,6 +648,13 @@ Partial Class NetControl
         Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1199, 756)
+        Me.Controls.Add(Me.txtMyCountyLine)
+        Me.Controls.Add(Me.txtMyCounty)
+        Me.Controls.Add(Me.txtMyState)
+        Me.Controls.Add(Me.lblnettime)
+        Me.Controls.Add(Me.lblNetLength)
+        Me.Controls.Add(Me.tbEndNet)
+        Me.Controls.Add(Me.tbStartNet)
         Me.Controls.Add(Me.btnRelayHelp)
         Me.Controls.Add(Me.gboxedit)
         Me.Controls.Add(Me.TextBox1)
@@ -677,4 +749,11 @@ Partial Class NetControl
     Friend WithEvents btnSpotMobile As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnRelayHelp As Button
+    Friend WithEvents tbStartNet As TextBox
+    Friend WithEvents tbEndNet As TextBox
+    Friend WithEvents lblNetLength As Label
+    Friend WithEvents lblnettime As Label
+    Friend WithEvents txtMyState As TextBox
+    Friend WithEvents txtMyCounty As TextBox
+    Friend WithEvents txtMyCountyLine As TextBox
 End Class

@@ -55,5 +55,12 @@
 
     End Sub
 
+    Private Sub btnPrintLog_Click(sender As Object, e As EventArgs) Handles btnPrintLog.Click
 
+        Dim obj As New printLogForm
+        'obj.StringPass = _strPrimaryCall
+        obj.Show()
+        'Me.Hide()
+
+    End Sub
 End Class

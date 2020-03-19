@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Net
 Imports System.Text
+Imports System.Math
 Public Class NetControl
     Public Property StringPass As String
     Public _screenUtilities As New clsScreenUtilities
@@ -200,6 +201,8 @@ Public Class NetControl
 
         End Try
 
+        MsgBox("Your Contact has been saved to the NET LOG")       ' THIS JUST LETS YOU KNOW THAT THE ACTION WAS COMPLETED
+
         FillGrid()
 
     End Sub
@@ -208,18 +211,18 @@ Public Class NetControl
 
         'THIS MAKES RELAY TIME NOT VISIBLE AND STARTS THE TIMER FOR NET DURATION
 
-        starttime = DateTime.Now()
         Timer2.Start()
         Timer2.Enabled = True
+        tbStartNet.Text = DateTime.UtcNow.ToString("HH:mm:ss")
 
-        lblTimer.Visible = True
+        'lblTimer.Visible = True
 
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
+        'THIS STARTS THE CLOCK  THAT SHOWS IN UPPER RIGHT HAND CORNER.............................................................................................
 
-        'Clock timer.............................................................................................
         Dim currenttime As DateTime = DateTime.UtcNow
         lblClock.Text = DateTime.UtcNow.ToString("HH:mm:ss")
 
@@ -230,23 +233,18 @@ Public Class NetControl
         'THIS IS THE TIMER FOR NET DURATION
 
         Dim span As TimeSpan = DateTime.Now.Subtract(starttime)
-        lblTimer.Text = span.Hours.ToString & ":" & span.Minutes.ToString & ":" & span.Seconds.ToString
+        'lblTimer.Text = span.Hours.ToString & ":" & span.Minutes.ToString & ":" & span.Seconds.ToString
         btnEnd.Enabled = True
-
 
     End Sub
 
     Private Sub btnEnd_Click(sender As Object, e As EventArgs) Handles btnEnd.Click
 
-        'STOPS THE TIMER FOR LENGTH OF NET
+        'SETS THE END TIME FOR NET DURATION SO CALCULATION CAN BE PREFORMED 
 
-        If (Timer2.Enabled) Then
-            Timer2.Stop()
-            lblTimer.Visible = False
-        End If
+        tbEndNet.Text = DateTime.UtcNow.ToString("HH:mm:ss")
 
-        EndNetSesion()
-
+        NetDuration()
 
     End Sub
 
@@ -293,7 +291,7 @@ Public Class NetControl
         cmd.Parameters.Add(New OleDbParameter("MRST", CType(cmbMyrst.Text, String)))
         cmd.Parameters.Add(New OleDbParameter("HOper", CType(cmbContactoper.Text, String)))
         cmd.Parameters.Add(New OleDbParameter("Moper", CType(cmbMyoper.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("NetDuration", CType(lblTimer.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("NetDuration", lblNetLength.Text))
 
         Try
             cmd.ExecuteNonQuery()
@@ -305,6 +303,8 @@ Public Class NetControl
             MsgBox(ex.Message)
 
         End Try
+
+        MsgBox("Info has been saved to the LOG")
 
         FillGrid()
 
@@ -362,6 +362,9 @@ Public Class NetControl
         reader.Close()
         dataStream.Close()
         response.Close()
+
+        MsgBox(" The MOBILE has been Spoted on W6RK ")
+
     End Sub
 
     Private Sub btnSpotMobile_Click(sender As Object, e As EventArgs) Handles btnSpotMobile.Click
@@ -432,6 +435,7 @@ Public Class NetControl
     Private Sub btnAddLog_Click(sender As Object, e As EventArgs) Handles btnPost.Click
 
         Post()
+        'PostLog()
 
     End Sub
 
@@ -515,12 +519,85 @@ Public Class NetControl
 
     Private Sub btnRelayHelp_Click(sender As Object, e As EventArgs) Handles btnRelayHelp.Click
 
+        'SETS LBLTIMER TO 10 MINUTES FOR CREDIT TOWARDS MASTER GOLD FOR HELPING WITH RELAYS FOR MOBILE
+
+        'lblTimer.Visible = True
+        lblTimer.Text = "00:10:00"
+        lblNetLength.Text = lblTimer.Text
         EndNetSesion()
-        lblTimer.Visible = True
-        lblTimer.Text = "10:00"
 
     End Sub
 
+    Private Sub NetDuration()
 
+        'DOES THE CALCULATION TO GET ELAPSED TIME FOR NET DURATION THEN MAKES ENTRY IN LOG FOR END OF NET
+
+        Dim startTime As New TimeSpan()
+        Dim endTime As New TimeSpan()
+        Dim NetLength As New TimeSpan()
+
+
+        TimeSpan.TryParse(tbStartNet.Text, startTime)
+        TimeSpan.TryParse(tbEndNet.Text, endTime)
+
+        lblNetLength.Text = (endTime - startTime).ToString()
+
+        EndNetSesion()
+
+    End Sub
+
+    Private Sub PostLog()              ' this is the sub that does the actual posting to the log
+
+        Dim myConnection As OleDbConnection = New OleDbConnection
+
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.MDB"
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        myConnection.ConnectionString = conString
+        myConnection.Open()
+        Dim str As String
+
+        str = "Insert into Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCntyLine])    
+                 Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+
+        cmd.Parameters.Add(New OleDbParameter("Date", CType(lblDate.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Time", CType(lblClock.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCall", CType(txtContactcall.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HState", CType(cmbContactState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCounty", CType(cmbContactCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCLine", CType(cmbContactCountyL.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Freq", cmbFreq.Text))
+        cmd.Parameters.Add(New OleDbParameter("Band", CType(cmbBand.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Mode", CType(cmbMode.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MyCall", lblCall.Text))
+        cmd.Parameters.Add(New OleDbParameter("HRST", CType(cmbContactrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MRST", CType(cmbMyrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HOper", CType(cmbContactoper.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Moper", CType(cmbMyoper.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MState", CType(txtMyState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCounty", CType(txtMyCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCLine", CType(txtMyCountyLine.Text, String)))
+
+        Try
+            cmd.ExecuteNonQuery()
+            cmd.Dispose()
+            myConnection.Close()
+            'txtTime.Clear()
+            'txtcontactCall.Clear()
+            'txtHisrst.Clear()
+            'txtMyrst.Clear()  
+
+
+        Catch ex As Exception
+
+            MsgBox(ex.Message)
+
+        End Try
+
+        myConnection.Close()
+        ' datagridshow()
+
+    End Sub
 
 End Class

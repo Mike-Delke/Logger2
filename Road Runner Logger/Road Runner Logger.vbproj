@@ -74,6 +74,11 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Core.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Core.WinForms.17.4.0.51\lib\net451\Syncfusion.Core.WinForms.dll</HintPath>
@@ -107,6 +112,8 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -135,6 +142,18 @@
     <Compile Include="clsNetControl.vb" />
     <Compile Include="clsScreenUtilities.vb" />
     <Compile Include="clsSecondaryLog.vb" />
+    <Compile Include="Net Control.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Net Control.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DBControl.vb" />
     <Compile Include="EditFrm.Designer.vb">
       <DependentUpon>EditFrm.vb</DependentUpon>
@@ -234,6 +253,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NetControlDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="printLogForm.Designer.vb">
+      <DependentUpon>printLogForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="printLogForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PublicVars.vb" />
     <Compile Include="ViewEdit.Designer.vb">
       <DependentUpon>ViewEdit.vb</DependentUpon>
@@ -243,6 +268,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="Net Control.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Net Control.vb</LastGenOutput>
+    </AdditionalFiles>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditFrm.resx">
       <DependentUpon>EditFrm.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -285,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NetControl.resx">
       <DependentUpon>NetControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printLogForm.resx">
+      <DependentUpon>printLogForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEdit.resx">
       <DependentUpon>ViewEdit.vb</DependentUpon>
@@ -356,6 +392,9 @@
     <None Include="Resources\FlatLine.png" />
     <None Include="Resources\line1.png" />
     <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

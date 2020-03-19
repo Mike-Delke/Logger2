@@ -32,7 +32,7 @@ Partial Class frmTools
         Me.btnRecalcBook = New System.Windows.Forms.Button()
         Me.cmdButton7 = New System.Windows.Forms.Button()
         Me.cmdButton6 = New System.Windows.Forms.Button()
-        Me.cmdButton2 = New System.Windows.Forms.Button()
+        Me.btnPrintLog = New System.Windows.Forms.Button()
         Me.cmdButton1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
@@ -55,7 +55,7 @@ Partial Class frmTools
         '
         Me.btnCloseForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnCloseForm.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCloseForm.Location = New System.Drawing.Point(298, 519)
+        Me.btnCloseForm.Location = New System.Drawing.Point(298, 411)
         Me.btnCloseForm.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCloseForm.Name = "btnCloseForm"
         Me.btnCloseForm.Size = New System.Drawing.Size(176, 58)
@@ -83,7 +83,7 @@ Partial Class frmTools
         Me.GroupBox1.Controls.Add(Me.btnBackupDatabase)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 420)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 312)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
@@ -135,7 +135,7 @@ Partial Class frmTools
         '
         Me.btnRecalcBook.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnRecalcBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRecalcBook.Location = New System.Drawing.Point(26, 519)
+        Me.btnRecalcBook.Location = New System.Drawing.Point(26, 411)
         Me.btnRecalcBook.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRecalcBook.Name = "btnRecalcBook"
         Me.btnRecalcBook.Size = New System.Drawing.Size(232, 58)
@@ -169,18 +169,18 @@ Partial Class frmTools
         Me.cmdButton6.Text = "MRC"
         Me.cmdButton6.UseVisualStyleBackColor = False
         '
-        'cmdButton2
+        'btnPrintLog
         '
-        Me.cmdButton2.AccessibleName = ""
-        Me.cmdButton2.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.cmdButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdButton2.Location = New System.Drawing.Point(20, 102)
-        Me.cmdButton2.Margin = New System.Windows.Forms.Padding(2)
-        Me.cmdButton2.Name = "cmdButton2"
-        Me.cmdButton2.Size = New System.Drawing.Size(212, 69)
-        Me.cmdButton2.TabIndex = 7
-        Me.cmdButton2.Text = "Log"
-        Me.cmdButton2.UseVisualStyleBackColor = False
+        Me.btnPrintLog.AccessibleName = ""
+        Me.btnPrintLog.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnPrintLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrintLog.Location = New System.Drawing.Point(20, 102)
+        Me.btnPrintLog.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPrintLog.Name = "btnPrintLog"
+        Me.btnPrintLog.Size = New System.Drawing.Size(212, 69)
+        Me.btnPrintLog.TabIndex = 7
+        Me.btnPrintLog.Text = "Log"
+        Me.btnPrintLog.UseVisualStyleBackColor = False
         '
         'cmdButton1
         '
@@ -198,12 +198,12 @@ Partial Class frmTools
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.cmdButton2)
+        Me.GroupBox2.Controls.Add(Me.btnPrintLog)
         Me.GroupBox2.Controls.Add(Me.cmdButton7)
         Me.GroupBox2.Controls.Add(Me.cmdButton6)
         Me.GroupBox2.Controls.Add(Me.cmdButton1)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 225)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 117)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(473, 190)
         Me.GroupBox2.TabIndex = 9
@@ -216,7 +216,7 @@ Partial Class frmTools
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(511, 600)
+        Me.ClientSize = New System.Drawing.Size(511, 496)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnRecalcBook)
         Me.Controls.Add(Me.GroupBox1)
@@ -242,7 +242,7 @@ Partial Class frmTools
     Friend WithEvents btnRecalcBook As Button
     Friend WithEvents cmdButton7 As Button
     Friend WithEvents cmdButton6 As Button
-    Friend WithEvents cmdButton2 As Button
+    Friend WithEvents btnPrintLog As Button
     Friend WithEvents cmdButton1 As Button
     Friend WithEvents GroupBox2 As GroupBox
 End Class

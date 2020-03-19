@@ -301,7 +301,7 @@ Partial Class FixedLogEntry
         '
         'dataGridView
         '
-        Me.dataGridView.AllowUserToOrderColumns = True
+        Me.dataGridView.AllowUserToResizeRows = False
         Me.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -312,7 +312,7 @@ Partial Class FixedLogEntry
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -323,12 +323,15 @@ Partial Class FixedLogEntry
         Me.dataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView.Location = New System.Drawing.Point(21, 302)
         Me.dataGridView.Name = "dataGridView"
+        Me.dataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         DataGridViewCellStyle3.NullValue = Nothing
         Me.dataGridView.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridView.RowTemplate.Height = 24
+        Me.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dataGridView.Size = New System.Drawing.Size(1105, 275)
         Me.dataGridView.TabIndex = 13
+        Me.dataGridView.TabStop = False
         '
         'cmbContactState
         '
@@ -516,7 +519,7 @@ Partial Class FixedLogEntry
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(295, 319)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(608, 282)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 28
@@ -571,7 +574,7 @@ Partial Class FixedLogEntry
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(39, 319)
+        Me.WebBrowser1.Location = New System.Drawing.Point(870, 271)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(250, 55)
@@ -581,7 +584,7 @@ Partial Class FixedLogEntry
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(305, 345)
+        Me.TextBox1.Location = New System.Drawing.Point(119, 275)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(144, 23)
         Me.TextBox1.TabIndex = 39
@@ -758,7 +761,7 @@ Partial Class FixedLogEntry
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(256, 362)
+        Me.btnClose.Location = New System.Drawing.Point(359, 277)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 57

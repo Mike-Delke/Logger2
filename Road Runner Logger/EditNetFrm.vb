@@ -1,12 +1,13 @@
 ﻿Imports System.Data.OleDb
 
 Public Class EditNetFrm
+
+    'THIS IS THE FORM THAT USERS WILL SEE WHEN THEY CLICK THE EDIT BUTTON ON THE NET CONTROL SCREEN
+
     Private Access As New DBControl
 
     Private CurrentRecord As Integer = 0
 
-
-    ' 
     Dim con As OleDbConnection = New OleDbConnection
 
     Private Sub EditFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -39,14 +40,16 @@ Public Class EditNetFrm
 
     Private Sub GetRecord()
 
-
         ' FAIL If NO RECORDS FOUND Or POSITION Is OUT OF RANGE
+
         If Access.DBDT.Rows.Count < 1 OrElse CurrentRecord > Access.DBDT.Rows.Count - 1 Then Exit Sub
 
         'RETRN FIRST USER FOUND
+
         Dim r As DataRow = Access.DBDT.Rows(CurrentRecord)
 
         'POPULATE FIELDS
+
         txtID.Text = r("ID").ToString
         txtDate.Text = r("LDate").ToString
         txtTime.Text = r("LTime").ToString
@@ -66,7 +69,8 @@ Public Class EditNetFrm
 
     End Sub
 
-    Private Sub NextRecord(AddVal As Integer)
+    Private Sub NextRecord(AddVal As Integer)    ' MOVES TO NEXT RECORD IN DATABASE
+
         CurrentRecord += AddVal ' Advance position by AddVal
         If CurrentRecord > Access.DBDT.Rows.Count - 1 Then CurrentRecord = 0 ' Loop to first record
         If CurrentRecord < 0 Then CurrentRecord = Access.DBDT.Rows.Count - 1 ' Loop to last record
@@ -75,14 +79,15 @@ Public Class EditNetFrm
         GetRecord()
     End Sub
 
-    Private Sub previousRecord(AddVal As Integer)
+    Private Sub previousRecord(AddVal As Integer)   ' MOVES TO THE PREVIOUS RECORD IN DATABASE
 
         CurrentRecord += AddVal ' Advance position by AddVal
         If CurrentRecord < 0 Then CurrentRecord = Access.DBDT.Rows.Count - 1 ' Loop to last record
 
     End Sub
 
-    Private Sub UpdateRecord()
+    Private Sub UpdateRecord()  ' THE CODE FOR UPDATEING THE RECORD
+
         ' FAIL IF NO USER SELECTED
         If String.IsNullOrEmpty(txtID.Text) Then Exit Sub
 
@@ -122,19 +127,26 @@ Public Class EditNetFrm
 
     Private Sub btnSaveEdit_Click(sender As Object, e As EventArgs) Handles btnSaveEdit.Click
 
-
-
         ' On Error GoTo SaveErr
+
+        'SAVES THE EDIT TO NETLOG----------
+
         NetLogBindingSource.EndEdit()
         NetLogTableAdapter.Update(NetControlDataSet1.NetLog)
 
-ErrEx:
+        'LETS THE USER KNOW THAT THE INFO WAS SAVED FROM THE EDIT
+
+        MsgBox("The updated info was changed")
+        'ErrEx:
         Exit Sub
-SaveErr:
+        'SaveErr:
         MsgBox("Error Number " & Err.Number & vbNewLine &
                "Error Description " & Err.Description, MsgBoxStyle.Critical,
                "Reset Error!")
         ' Resume ErrEx
+
+        'THIS IS THE CODE THAT MAKES THE CHANGES FROM EDIT SCREEN TO THE DATABASE
+
         Dim ds As New DataSet
         Dim dt As New DataTable
         ds.Tables.Add(dt)
@@ -153,16 +165,12 @@ SaveErr:
         con.Open()
         Dim str As String
 
-
-
         Dim cmd As OleDbCommand = New OleDbCommand(str, con)
 
         Try
             cmd.ExecuteNonQuery()
             cmd.Dispose()
             con.Close()
-
-            MsgBox("The update info was changed")
 
         Catch ex As Exception
 
@@ -199,6 +207,7 @@ SaveErr:
 
     Private Sub btnCloseForm_Click(sender As Object, e As EventArgs) Handles btnCloseForm.Click
 
+        'CLOSES THE EDIT NET LOG FORM
 
         Me.Close()
         NetControl.Show()

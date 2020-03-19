@@ -47,6 +47,8 @@ Public Class FixedLogEntry
         'Set's the users call
         lblCall.Text = StringPass
 
+
+
         'This sets the datagrid to alternating colors
         dataGridView.RowsDefaultCellStyle.BackColor = Color.LightSkyBlue
         dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
@@ -69,83 +71,84 @@ Public Class FixedLogEntry
 
         WebBrowser1.Navigate("http://ch.w6rk.com/")
 
-        'DataGridViewMem.Visible = True
+        ' DataGridViewMem.Visible = True
         GetState()
         GetHState()
+        datagridshow()
 
     End Sub
 
     Private Sub datagridshow()
 
-        Dim con As New OleDb.OleDbConnection       'Connection Object
+        'Dim con As New OleDb.OleDbConnection       'Connection Object
 
-        Dim dbProvider As String                   'Holds the Provider
-        Dim dbSource As String                     'Holds the Data Source
-        Dim TheDatabase As String                  'Holds the Database Name
-        Dim FullDatabasePath As String             'Holds the Database Path
+        'Dim dbProvider As String                   'Holds the Provider
+        'Dim dbSource As String                     'Holds the Data Source
+        'Dim TheDatabase As String                  'Holds the Database Name
+        'Dim FullDatabasePath As String             'Holds the Database Path
 
-        Dim ds As New DataSet                      'Holds a Dataset Object
-        Dim da As OleDb.OleDbDataAdapter           'Holds a dataAdapter Object
-        Dim sql As String                          'Holds SQL String
+        'Dim ds As New DataSet                      'Holds a Dataset Object
+        'Dim da As OleDb.OleDbDataAdapter           'Holds a dataAdapter Object
+        'Dim sql As String                          'Holds SQL String
 
-        'SET UP THE PROVIDER
-        dbProvider = "Provider=Microsoft.Jet.OLEDB.4.0;"
+        ''SET UP THE PROVIDER
+        'dbProvider = "Provider = Microsoft.Ace.OLEDB.12.0;"
 
-        'SET THE DATABASE AND WHERE THE DATABASE IS
-        TheDatabase = "\NetControl.mdb"
-        FullDatabasePath = "C:\RRLogger Data" & TheDatabase
+        ''SET THE DATABASE AND WHERE THE DATABASE IS
+        'TheDatabase = "\NetControl.mdb"
+        'FullDatabasePath = "C:\RRLogger Data" & TheDatabase
 
-        'SET THE DATA SOURCE
-        dbSource = "Data Source = " & FullDatabasePath
+        ''SET THE DATA SOURCE
+        'dbSource = "Data Source = " & FullDatabasePath
 
-        'SET THE CONNECTION STRING
-        con.ConnectionString = dbProvider & dbSource
+        ''SET THE CONNECTION STRING
+        'con.ConnectionString = dbProvider & dbSource
 
-        'OPEN THE DATABASE
-        con.Open()
+        ''OPEN THE DATABASE
+        'con.Open()
 
-        'STORE THE SQL STRING
-        sql = "SELECT * From NetLog"
+        ''STORE THE SQL STRING
+        'sql = "SELECT * From Log"
 
-        'PASS THE SQL STRING AND CONNECTION OBJECT TO THE DATA_ADAPTER
-        da = New OleDb.OleDbDataAdapter(sql, con)
+        ''PASS THE SQL STRING AND CONNECTION OBJECT TO THE DATA_ADAPTER
+        'da = New OleDb.OleDbDataAdapter(sql, con)
 
-        'FILL DATASET WITH RECORDS FROM THE DATABASE TABLE
-        da.Fill(ds, "help")
+        ''FILL DATASET WITH RECORDS FROM THE DATABASE TABLE
+        'da.Fill(ds, "help")
 
-        'CLOSE THE DATABASE
-        con.Close()
+        ''CLOSE THE DATABASE
+        'con.Close()
 
-        txtlDate.Text = CType(ds.Tables("help").Rows(0).Item(1), String)
-        txtltime.Text = CType(ds.Tables("help").Rows(0).Item(2), String)
+        'txtlDate.Text = CType(ds.Tables("help").Rows(0).Item(1), String)
+        'txtltime.Text = CType(ds.Tables("help").Rows(0).Item(2), String)
 
 
         '' This sets datagrid1 to the table and shows it for Logging Fixed Contacts
         '' Dim mcall = lblCall.Text
-        'Dim ds As New DataSet
-        'Dim dt As New DataTable
-        'ds.Tables.Add(dt)
-        'Dim da As New OleDbDataAdapter
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
 
-        ''------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
 
-        'Dim strFilePrefix = "County Hunter - "
+        ' Dim strFilePrefix = "County Hunter - "
         'Dim strFileSuffix = ".mdb"
-        'Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
-        'Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.mdb"
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
 
-        ''--------------------------------------------------------------------------------------------------------------
-        'con.ConnectionString = conString
-        'dataGridView.DataSource = dt.DefaultView
-        'con.Open()
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+        dataGridView.DataSource = dt.DefaultView
+        con.Open()
 
-        'da = New OleDbDataAdapter("SELECT * FROM Log  ORDER BY ID DESC", con)
+        da = New OleDbDataAdapter("SELECT * FROM Log  ORDER BY ID DESC", con)
 
-        'da.Fill(dt)
+        da.Fill(dt)
 
 
 
-        'con.Close()
+        con.Close()
 
     End Sub
 
@@ -374,7 +377,7 @@ Public Class FixedLogEntry
 
     End Sub
 
-    Private Sub PostLog()              ' this is the sub that does the actual posting to the log
+    Private Sub Post()              ' this is the sub that does the actual posting to the log
 
         Dim myConnection As OleDbConnection = New OleDbConnection
 
@@ -383,12 +386,6 @@ Public Class FixedLogEntry
         myConnection.ConnectionString = conString
         myConnection.Open()
         Dim str As String
-
-        If txtcontactCall.Text = "" Then
-            Exit Sub
-        End If
-
-
 
         str = "Insert into Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCntyLine])    
                  Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
@@ -543,6 +540,8 @@ Public Class FixedLogEntry
         dataStream.Close()
         response.Close()
 
+        MsgBox("MOBILE has been Spotted to W6RK ")
+
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
 
@@ -576,18 +575,17 @@ Public Class FixedLogEntry
             b = split(1).ToString
 
             txtcontactCall.Text = a
-            PostLog()
+            Post()
 
             txtcontactCall.Text = b
-            PostLog()
+            Post()
 
-            'txtcontactCall.Text = ""
             'txtHisrst.Text = ""
             'txtMyrst.Text = ""
 
         ElseIf split.Count = 1 Then
 
-            PostLog()
+            Post()
             '  txtcontactCall.Text = ""
         End If
         txtcontactCall.Text = ""
@@ -687,10 +685,10 @@ Public Class FixedLogEntry
             b = split(1).ToString
 
             txtcontactCall.Text = a
-            PostLog()
+            Post()
 
             txtcontactCall.Text = b
-            PostLog()
+            Post()
 
             'Set ContactCounty.Text to be same as ContactCountyLine.text and post it
 
@@ -704,10 +702,10 @@ Public Class FixedLogEntry
                 b = split(1).ToString
 
                 txtcontactCall.Text = a
-                PostLog()
+                Post()
 
                 txtcontactCall.Text = b
-                PostLog()
+                Post()
                 txtcontactCall.Text = ""
             ElseIf txtcontactCall.text = "" Then
 
