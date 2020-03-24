@@ -22,6 +22,7 @@ Partial Class NeedsAtGlance
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NeedsAtGlance))
         Me.lblBand6 = New System.Windows.Forms.Label()
         Me.lblBand10 = New System.Windows.Forms.Label()
         Me.lblBand12 = New System.Windows.Forms.Label()
@@ -1290,6 +1291,7 @@ Partial Class NeedsAtGlance
         Me.Controls.Add(Me.GroupBoxNthTime)
         Me.Controls.Add(Me.GroupBoxBandNeeds)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NeedsAtGlance"
         Me.Text = "NeedsAtGlance"
         Me.GroupBoxBandNeeds.ResumeLayout(False)

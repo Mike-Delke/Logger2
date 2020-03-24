@@ -22,6 +22,7 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblCall = New System.Windows.Forms.Label()
         Me.btnLogEntryMenu = New System.Windows.Forms.Button()
@@ -226,6 +227,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.lblCall)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.MainMenuStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainMenu"

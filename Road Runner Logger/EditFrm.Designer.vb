@@ -22,6 +22,7 @@ Partial Class EditFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditFrm))
         Me.txtTime = New System.Windows.Forms.TextBox()
         Me.lblCall = New System.Windows.Forms.Label()
         Me.txtContactcall = New System.Windows.Forms.TextBox()
@@ -548,6 +549,7 @@ Partial Class EditFrm
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.txtTime)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditFrm"
         Me.Text = "Edit Log Form"
         Me.ResumeLayout(False)

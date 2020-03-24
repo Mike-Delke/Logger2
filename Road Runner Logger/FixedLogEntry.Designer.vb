@@ -26,6 +26,7 @@ Partial Class FixedLogEntry
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FixedLogEntry))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbMyOperation = New System.Windows.Forms.ComboBox()
         Me.btnExit = New System.Windows.Forms.Button()
@@ -933,6 +934,7 @@ Partial Class FixedLogEntry
         Me.Controls.Add(Me.dataGridView)
         Me.Controls.Add(Me.btnExit)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.Name = "FixedLogEntry"
         Me.Text = "Log Entry Form"

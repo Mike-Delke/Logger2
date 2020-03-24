@@ -23,6 +23,7 @@ Partial Class EditNetFrm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditNetFrm))
         Me.txtTime = New System.Windows.Forms.TextBox()
         Me.NetLogBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NetControlDataSet1 = New Road_Runner_Logger.NetControlDataSet1()
@@ -719,6 +720,7 @@ Partial Class EditNetFrm
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.txtTime)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EditNetFrm"
         Me.Text = "Edit Net Control Form"
         CType(Me.NetLogBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

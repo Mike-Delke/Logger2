@@ -311,8 +311,20 @@ Public Class NetControl
     End Sub
 
     Private Sub cmbMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMode.SelectedIndexChanged
+
+        'SETS THE FREQUENCY AND RST TO CORRECT FORMAT
+
         cmbFreq.Items.Clear()
         SetFrequency()
+
+        If cmbMode.Text = "SSB" Then
+            cmbMyrst.Text = "59"
+            cmbContactrst.Text = "59"
+        Else
+            cmbMode.Text = "CW"
+            cmbContactrst.Text = "559"
+            cmbMyrst.Text = "559"
+        End If
 
     End Sub
 
@@ -367,12 +379,13 @@ Public Class NetControl
 
     End Sub
 
-    Private Sub btnSpotMobile_Click(sender As Object, e As EventArgs) Handles btnSpotMobile.Click
+    Private Sub btnSpotMobile_Click(sender As Object, e As EventArgs) Handles btnSpotMobile.Click  ' SPOTS MOBILE TO W6RK
+
         Spotit()
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub BtnBkToMain_Click(sender As Object, e As EventArgs) Handles btnBkToMain.Click   'CLOSES NET CONTROL SCREEN 
 
         Me.Close()
 
@@ -435,7 +448,7 @@ Public Class NetControl
     Private Sub btnAddLog_Click(sender As Object, e As EventArgs) Handles btnPost.Click
 
         Post()
-        'PostLog()
+        PostLog()
 
     End Sub
 

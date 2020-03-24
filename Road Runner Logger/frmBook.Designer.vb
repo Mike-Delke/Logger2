@@ -24,6 +24,7 @@ Partial Class frmBook
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBook))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnViewMenu = New System.Windows.Forms.Button()
         Me.btnMainMenu = New System.Windows.Forms.Button()
@@ -107,6 +108,7 @@ Partial Class frmBook
         Me.Controls.Add(Me.btnMainMenu)
         Me.Controls.Add(Me.btnViewMenu)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmBook"
         Me.Text = "Book View / Edit"

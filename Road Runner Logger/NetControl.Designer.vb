@@ -23,9 +23,10 @@ Partial Class NetControl
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NetControl))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblCall = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnBkToMain = New System.Windows.Forms.Button()
         Me.lblClock = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.btnPost = New System.Windows.Forms.Button()
@@ -104,18 +105,18 @@ Partial Class NetControl
         Me.lblCall.Text = "CALL"
         Me.lblCall.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button1
+        'btnBkToMain
         '
-        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(947, 373)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(198, 45)
-        Me.Button1.TabIndex = 41
-        Me.Button1.Text = "Main Menu"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnBkToMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnBkToMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnBkToMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBkToMain.Location = New System.Drawing.Point(947, 373)
+        Me.btnBkToMain.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBkToMain.Name = "btnBkToMain"
+        Me.btnBkToMain.Size = New System.Drawing.Size(198, 45)
+        Me.btnBkToMain.TabIndex = 41
+        Me.btnBkToMain.Text = "Main Menu"
+        Me.btnBkToMain.UseVisualStyleBackColor = False
         '
         'lblClock
         '
@@ -690,10 +691,11 @@ Partial Class NetControl
         Me.Controls.Add(Me.DataGridV1)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblClock)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnBkToMain)
         Me.Controls.Add(Me.lblCall)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "NetControl"
         Me.Text = "NetControl"
@@ -707,7 +709,7 @@ Partial Class NetControl
 
     Friend WithEvents Label1 As Label
     Friend WithEvents lblCall As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBkToMain As Button
     Friend WithEvents lblClock As Label
     Friend WithEvents lblDate As Label
     Friend WithEvents btnPost As Button
