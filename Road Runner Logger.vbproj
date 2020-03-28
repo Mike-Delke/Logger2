@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C39BB98-7883-4AF4-981D-4D06EEAC249C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Road_Runner_Logger.My.MyApplication</StartupObject>
+    <RootNamespace>Road_Runner_Logger</RootNamespace>
+    <AssemblyName>Road Runner Logger</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Road Runner Logger.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Road Runner Logger.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Sykonist-Looney-Tunes-Roadrunner-1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Core.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Core.WinForms.17.4.0.51\lib\net451\Syncfusion.Core.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Data.WinForms.17.4.0.51\lib\net451\Syncfusion.Data.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DataSource.WinForms.17.4.0.51\lib\net451\Syncfusion.DataSource.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.GridCommon.WinForms.17.4.0.51\lib\net451\Syncfusion.GridCommon.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.4.0.51\lib\net451\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfDataGrid.WinForms.17.4.0.51\lib\net451\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfInput.WinForms.17.4.0.51\lib\net451\Syncfusion.SfInput.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.WinForms, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfListView.WinForms.17.4.0.51\lib\net451\Syncfusion.SfListView.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=17.4451.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.17.4.0.51\lib\net451\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsDatabase.vb" />
+    <Compile Include="clsCommonData.vb" />
+    <Compile Include="clsLog.vb" />
+    <Compile Include="clsPrimaryLog.vb" />
+    <Compile Include="clsNetControl.vb" />
+    <Compile Include="clsScreenUtilities.vb" />
+    <Compile Include="clsSecondaryLog.vb" />
+    <Compile Include="Net Control.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Net Control.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DBControl.vb" />
+    <Compile Include="EditFrm.Designer.vb">
+      <DependentUpon>EditFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNetFrm.Designer.vb">
+      <DependentUpon>EditNetFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditNetFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FixedLogEntry.Designer.vb">
+      <DependentUpon>FixedLogEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FixedLogEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeLoggingCalls.Designer.vb">
+      <DependentUpon>frmChangeLoggingCalls.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangeLoggingCalls.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogEntry.Designer.vb">
+      <DependentUpon>frmLogEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartScreen.Designer.vb">
+      <DependentUpon>frmStartScreen.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBook.Designer.vb">
+      <DependentUpon>frmBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMARAC.Designer.vb">
+      <DependentUpon>frmMARAC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMARAC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTools.Designer.vb">
+      <DependentUpon>frmTools.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTools.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NeedsAtGlance.Designer.vb">
+      <DependentUpon>NeedsAtGlance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NeedsAtGlance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetControl.Designer.vb">
+      <DependentUpon>NetControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NetControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetControlDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetControlDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NetControlDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetControlDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="printLogForm.Designer.vb">
+      <DependentUpon>printLogForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="printLogForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicVars.vb" />
+    <Compile Include="ViewEdit.Designer.vb">
+      <DependentUpon>ViewEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="Net Control.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Net Control.vb</LastGenOutput>
+    </AdditionalFiles>
+    <EmbeddedResource Include="EditFrm.resx">
+      <DependentUpon>EditFrm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNetFrm.resx">
+      <DependentUpon>EditNetFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixedLogEntry.resx">
+      <DependentUpon>FixedLogEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeLoggingCalls.resx">
+      <DependentUpon>frmChangeLoggingCalls.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogEntry.resx">
+      <DependentUpon>frmLogEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartScreen.resx">
+      <DependentUpon>frmStartScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBook.resx">
+      <DependentUpon>frmBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMARAC.resx">
+      <DependentUpon>frmMARAC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTools.resx">
+      <DependentUpon>frmTools.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NeedsAtGlance.resx">
+      <DependentUpon>NeedsAtGlance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetControl.resx">
+      <DependentUpon>NetControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printLogForm.resx">
+      <DependentUpon>printLogForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewEdit.resx">
+      <DependentUpon>ViewEdit.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NetControlDataSet.xsc">
+      <DependentUpon>NetControlDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NetControlDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NetControlDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NetControlDataSet.xss">
+      <DependentUpon>NetControlDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NetControlDataSet1.xsc">
+      <DependentUpon>NetControlDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="NetControlDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NetControlDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NetControlDataSet1.xss">
+      <DependentUpon>NetControlDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\imagesO7PSW12X.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marac _1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detective-in-bushes-with-dog2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-20.png" />
+    <None Include="Resources\road runner1.png" />
+    <None Include="Resources\Final-2.png" />
+    <None Include="Resources\FlatLine.png" />
+    <None Include="Resources\line1.png" />
+    <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sykonist-Looney-Tunes-Roadrunner-1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
