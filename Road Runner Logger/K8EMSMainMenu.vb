@@ -7,7 +7,7 @@ Public Enum ScreenType
     Mobile
 End Enum
 
-Public Class MainMenu
+Public Class K8EMSMainMenu
 
     Public _strPrimaryCall As String = ""
     Public _strSecondaryCall As String = ""

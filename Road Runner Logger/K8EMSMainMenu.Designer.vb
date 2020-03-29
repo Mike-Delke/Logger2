@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class MainMenu
+Partial Class K8EMSMainMenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(K8EMSMainMenu))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblCall = New System.Windows.Forms.Label()
         Me.btnLogEntryMenu = New System.Windows.Forms.Button()
@@ -37,7 +37,7 @@ Partial Class MainMenu
         Me.MobileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SwitchScreens = New System.Windows.Forms.Button()
         Me.btnNeeds = New System.Windows.Forms.Button()
         Me.MainMenuStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -47,7 +47,7 @@ Partial Class MainMenu
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Impact", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(34, 110)
+        Me.Label2.Location = New System.Drawing.Point(35, 89)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(271, 39)
@@ -70,7 +70,7 @@ Partial Class MainMenu
         '
         Me.btnLogEntryMenu.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnLogEntryMenu.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogEntryMenu.Location = New System.Drawing.Point(165, 162)
+        Me.btnLogEntryMenu.Location = New System.Drawing.Point(85, 142)
         Me.btnLogEntryMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogEntryMenu.Name = "btnLogEntryMenu"
         Me.btnLogEntryMenu.Size = New System.Drawing.Size(154, 46)
@@ -82,7 +82,7 @@ Partial Class MainMenu
         '
         Me.btnPrintMenu.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnPrintMenu.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrintMenu.Location = New System.Drawing.Point(19, 263)
+        Me.btnPrintMenu.Location = New System.Drawing.Point(19, 311)
         Me.btnPrintMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrintMenu.Name = "btnPrintMenu"
         Me.btnPrintMenu.Size = New System.Drawing.Size(129, 45)
@@ -94,7 +94,7 @@ Partial Class MainMenu
         '
         Me.btnViewEditMenu.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnViewEditMenu.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewEditMenu.Location = New System.Drawing.Point(165, 263)
+        Me.btnViewEditMenu.Location = New System.Drawing.Point(165, 311)
         Me.btnViewEditMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewEditMenu.Name = "btnViewEditMenu"
         Me.btnViewEditMenu.Size = New System.Drawing.Size(154, 45)
@@ -106,7 +106,7 @@ Partial Class MainMenu
         '
         Me.btnNetControl.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnNetControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNetControl.Location = New System.Drawing.Point(165, 212)
+        Me.btnNetControl.Location = New System.Drawing.Point(165, 260)
         Me.btnNetControl.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNetControl.Name = "btnNetControl"
         Me.btnNetControl.Size = New System.Drawing.Size(154, 47)
@@ -118,7 +118,7 @@ Partial Class MainMenu
         '
         Me.btnToolsMenu.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnToolsMenu.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnToolsMenu.Location = New System.Drawing.Point(19, 313)
+        Me.btnToolsMenu.Location = New System.Drawing.Point(19, 361)
         Me.btnToolsMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.btnToolsMenu.Name = "btnToolsMenu"
         Me.btnToolsMenu.Size = New System.Drawing.Size(129, 47)
@@ -131,7 +131,7 @@ Partial Class MainMenu
         Me.btnQuitLogger.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnQuitLogger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnQuitLogger.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuitLogger.Location = New System.Drawing.Point(165, 315)
+        Me.btnQuitLogger.Location = New System.Drawing.Point(165, 363)
         Me.btnQuitLogger.Margin = New System.Windows.Forms.Padding(2)
         Me.btnQuitLogger.Name = "btnQuitLogger"
         Me.btnQuitLogger.Size = New System.Drawing.Size(154, 45)
@@ -184,23 +184,23 @@ Partial Class MainMenu
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
-        'Button1
+        'SwitchScreens
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(19, 162)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(129, 44)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Not Used"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.SwitchScreens.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.SwitchScreens.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SwitchScreens.Location = New System.Drawing.Point(19, 192)
+        Me.SwitchScreens.Margin = New System.Windows.Forms.Padding(2)
+        Me.SwitchScreens.Name = "SwitchScreens"
+        Me.SwitchScreens.Size = New System.Drawing.Size(300, 64)
+        Me.SwitchScreens.TabIndex = 8
+        Me.SwitchScreens.Text = "Switch between OLD and NEW Screens"
+        Me.SwitchScreens.UseVisualStyleBackColor = False
         '
         'btnNeeds
         '
         Me.btnNeeds.BackColor = System.Drawing.SystemColors.ControlDark
         Me.btnNeeds.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNeeds.Location = New System.Drawing.Point(19, 212)
+        Me.btnNeeds.Location = New System.Drawing.Point(19, 260)
         Me.btnNeeds.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNeeds.Name = "btnNeeds"
         Me.btnNeeds.Size = New System.Drawing.Size(129, 44)
@@ -208,16 +208,16 @@ Partial Class MainMenu
         Me.btnNeeds.Text = "Needs"
         Me.btnNeeds.UseVisualStyleBackColor = False
         '
-        'MainMenu
+        'K8EMSMainMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.BackgroundImage = Global.Road_Runner_Logger.My.Resources.Resources.imagesO7PSW12X
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(354, 388)
+        Me.ClientSize = New System.Drawing.Size(354, 431)
         Me.Controls.Add(Me.btnNeeds)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.SwitchScreens)
         Me.Controls.Add(Me.btnQuitLogger)
         Me.Controls.Add(Me.btnViewEditMenu)
         Me.Controls.Add(Me.btnToolsMenu)
@@ -230,7 +230,7 @@ Partial Class MainMenu
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "MainMenu"
+        Me.Name = "K8EMSMainMenu"
         Me.Text = " "
         Me.MainMenuStrip.ResumeLayout(False)
         Me.MainMenuStrip.PerformLayout()
@@ -252,6 +252,6 @@ Partial Class MainMenu
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
     Public WithEvents FixedToolStripMenuItem As ToolStripMenuItem
     Public WithEvents MobileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
+    Friend WithEvents SwitchScreens As Button
     Friend WithEvents btnNeeds As Button
 End Class

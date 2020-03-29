@@ -105,7 +105,7 @@ Public Class frmStartScreen
         If RadioButtonCall1.Checked Then
             _commonData.Close()
 
-            Dim mainMenu As New MainMenu
+            Dim mainMenu As New K8EMSMainMenu
             mainMenu.StringPass = RadioButtonCall1.Text
             mainMenu._strPrimaryCall = RadioButtonCall1.Text
             mainMenu._strSecondaryCall = RadioButtonCall2.Text
@@ -124,7 +124,7 @@ Public Class frmStartScreen
         If RadioButtonCall2.Checked Then
             _commonData.Close()
 
-            Dim mainMenu As New MainMenu
+            Dim mainMenu As New K8EMSMainMenu
             mainMenu.StringPass = RadioButtonCall2.Text
             mainMenu._strPrimaryCall = RadioButtonCall2.Text
             mainMenu._strSecondaryCall = RadioButtonCall1.Text

@@ -9,7 +9,7 @@ Public Class frmLogEntry
     Public _logEntryType As ScreenType = ScreenType.None
     Public _locationLeftEdge As Integer = 0
 
-    Private _mainMenu As MainMenu
+    Private _mainMenu As K8EMSMainMenu
     Private _backColor As Color
     Private _informedMainMenuClosing As Boolean = False
 
@@ -29,7 +29,7 @@ Public Class frmLogEntry
 
         Me.KeyPreview = True    ' This allowing the form to break on a key push anywhere on form
 
-        _mainMenu = DirectCast(Me.MdiParent, MainMenu)
+        _mainMenu = DirectCast(Me.MdiParent, K8EMSMainMenu)
         Me.Left = _locationLeftEdge
         Me.Top = 0
 

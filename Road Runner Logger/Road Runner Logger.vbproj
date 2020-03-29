@@ -138,6 +138,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BupDataBase.vb" />
     <Compile Include="clsDatabase.vb" />
     <Compile Include="clsCommonData.vb" />
     <Compile Include="clsLog.vb" />
@@ -207,10 +208,10 @@
     <Compile Include="frmTools.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.vb">
-      <DependentUpon>MainMenu.vb</DependentUpon>
+    <Compile Include="K8EMSMainMenu.Designer.vb">
+      <DependentUpon>K8EMSMainMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.vb">
+    <Compile Include="K8EMSMainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -297,8 +298,8 @@
     <EmbeddedResource Include="frmTools.resx">
       <DependentUpon>frmTools.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.vb</DependentUpon>
+    <EmbeddedResource Include="K8EMSMainMenu.resx">
+      <DependentUpon>K8EMSMainMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
