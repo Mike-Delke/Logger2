@@ -1,0 +1,1092 @@
+﻿
+Imports System.Data.OleDb
+Imports System.IO
+Imports System.Net
+Imports System.Text
+
+Public Class FixedLogEntry
+    Public Property StringPass As String
+
+    Public _logEntryType As String = ""
+
+    Private _mainMenu As MainMenu
+
+    Private _primaryCallData As CallData
+    Private _secondryCallData As CallData
+
+    Private _commonData As clsCommonData = clsCommonData.GetInstance("CommonData")
+    Private _netComtrol As clsNetControl = clsNetControl.GetInstance("NetControl")
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+
+        ' This pass's the call back to the main menu lblCall
+        Dim obj As MainMenu
+        obj.StringPass = lblCall.Text
+        obj.Show()
+        Hide()
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+        'Clock timer.............................................................................................
+        Dim currenttime As DateTime = DateTime.UtcNow
+        lblTime.Text = DateTime.UtcNow.ToString("HH:mm:ss")
+
+    End Sub
+
+    Dim con As New OleDbConnection
+    Private Sub FixedLogEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        _mainMenu = DirectCast(Me.MdiParent, MainMenu)
+
+        _primaryCallData = _commonData.GetCallData(_mainMenu._strPrimaryCall)
+        If _mainMenu._blnTeam Then
+            _secondryCallData = _commonData.GetCallData(_mainMenu._strSecondaryCall)
+        End If
+
+        'THIS IS THE DATE IN TOP CENTER RIGHT CORNER
+        Dim currentDate As DateTime = DateTime.UtcNow
+        lblDate.Text = DateTime.UtcNow.ToString("MM/dd/yyyy")
+
+        'Set's the users call
+        lblCall.Text = StringPass
+
+        'This sets the datagrid to alternating colors
+        dataGrid1.RowsDefaultCellStyle.BackColor = Color.LightSkyBlue
+        dataGrid1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
+
+        'btnPost.Visible = False
+        btnMobilePost.Visible = False
+        gbxMobile.Visible = False
+        txtTime.Visible = False
+        lblFormat.Visible = False
+        lblTime2.Visible = False
+        LblDate2.Visible = False
+        lblDFormat.Visible = False
+        txtDate.Visible = False
+
+
+        'SETS THE COMBO BOX TO FIRST VALUE IN LIST...................................................
+        cmbxMode.Text = (cmbxMode.Items(0)).ToString
+        cmbxBand.Text = (cmbxBand.Items(0)).ToString
+
+        ' HomeCounty()
+
+        WebBrowser1.Navigate("http://ch.w6rk.com/")
+
+        GetState()
+        GetHState()
+
+    End Sub
+
+    Private Sub datagridshow()
+
+        ' This sets datagrid1 to the table and shows it for Logging Fixed Contacts
+        Dim mcall = lblCall.Text
+        'Dim ds As New DataSet
+        'Dim dt As New DataTable
+        'ds.Tables.Add(dt)
+        'Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        'Dim strFilePrefix = "County Hunter - "
+        'Dim strFileSuffix = ".accdb"
+        'Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        'Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        ' con.ConnectionString = conString
+        'dataGrid1.DataSource = dt.DefaultView
+        'con.Open()
+
+        'da = New OleDbDataAdapter("SELECT * FROM Log  ORDER BY ID DESC", con)
+
+        'da.Fill(dt)
+
+        Dim dt As DataTable = _netComtrol.Read("SELECT * FROM Log  ORDER BY ID DESC")
+
+
+        'con.Close()
+
+    End Sub
+
+    Public Sub MobileLogShow()
+
+        'This sub sets the datagrid to show the (Temp - QSO) table to show so the calls can be edited before posting to the Master QSO table
+
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "NetControl "
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"                                                  '& strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT * FROM TempLog", con)
+
+        da.Fill(dt)
+
+        dataGrid1.DataSource = dt.DefaultView
+
+        con.Close()
+    End Sub
+
+    Private Sub cmbMOperation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMOperation.SelectedIndexChanged
+
+        'Sets the screen to the type of logging doing with appropriate datagrid
+        'Set starting text for contacts operation
+        If cmbMOperation.Text = "F" And CheckBox1.Checked = True Then
+            cmbFixedOperation.Text = "M"
+            datagridshow()
+            btnMobilePost.Visible = False
+            btnLogIt.Visible = True
+            Button1.Visible = False
+            lblTime.Visible = True
+            txtTime.Visible = False
+            lblFormat.Visible = False
+            lblTime2.Visible = False
+            LblDate2.Visible = False
+            lblDFormat.Visible = False
+            txtDate.Visible = False
+            btnSpot.Visible = True
+            CheckBox1.Visible = True
+        Else
+            If cmbMOperation.Text = "F" And CheckBox1.Checked = False Then
+                cmbFixedOperation.Text = "M"
+                datagridshow()
+                btnMobilePost.Visible = False
+                btnLogIt.Visible = True
+                Button1.Visible = False
+                lblTime.Visible = False
+                txtTime.Visible = True
+                lblFormat.Visible = True
+                lblTime2.Visible = True
+                LblDate2.Visible = True
+                lblDFormat.Visible = True
+                txtDate.Visible = True
+                btnSpot.Visible = False
+                CheckBox1.Visible = False
+            Else
+                If cmbMOperation.Text = "M" Then
+                    cmbFixedOperation.Text = "F"
+                    MobileLogShow()
+                    Button1.Visible = False
+                    btnLogIt.Visible = False
+                    btnMobilePost.Visible = True
+                    lblTime.Visible = False
+                    txtTime.Visible = True
+                    lblFormat.Visible = True
+                    lblTime2.Visible = True
+                    LblDate2.Visible = True
+                    lblDFormat.Visible = True
+                    txtDate.Visible = True
+                    btnSpot.Visible = False
+                    CheckBox1.Visible = False
+                Else
+                    If cmbMOperation.Text = "P" Then
+                        cmbFixedOperation.Text = "M"
+                        datagridshow()
+                        btnMobilePost.Visible = False
+                        btnLogIt.Visible = True
+                        Button1.Visible = False
+                        lblTime.Visible = True
+                        txtTime.Visible = False
+                        lblFormat.Visible = False
+                        lblTime2.Visible = False
+                        LblDate2.Visible = False
+                        lblDFormat.Visible = False
+                        txtDate.Visible = False
+                        btnSpot.Visible = True
+
+                    End If
+                End If
+            End If
+        End If
+
+
+        ' Sets the Group Box for Mobile Logging to show when Mobile is choosen
+
+        If cmbMOperation.Text = "M" Then
+            gbxMobile.Visible = True
+        Else
+            gbxMobile.Visible = False
+
+
+        End If
+
+    End Sub
+
+    Private Sub txtTime_Click(sender As Object, e As EventArgs) Handles txtTime.Click
+
+        'Sets the screen to an entry box for the time for entering a mobile run
+        txtTime.Focus()
+
+    End Sub
+
+    Public Sub GetState()
+
+        Dim mcall = lblCall.Text
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "County Hunters - Common"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT [State ID] FROM States", con)
+
+        da.Fill(dt)
+
+        con.Close()
+
+
+
+
+        'CLEar combobox
+        cmbMState.Items.Clear()
+
+        'FILL COMBOBOX
+        For Each R As DataRow In dt.Rows
+            cmbMState.Items.Add(R("State ID"))
+
+        Next
+
+        'DISPLAY FIRST RECORD
+
+        'cmbMState.Text = CType(dt.Rows(0).Item(0), String)
+
+
+    End Sub
+
+    Public Sub GetHState()
+
+        'Gets the State's to show in comboBox his state
+
+        Dim mcall = lblCall.Text
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "County Hunters - Common"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT [State ID] FROM States", con)                    '
+
+        da.Fill(dt)
+
+        con.Close()
+
+
+        'CLEar combobox
+        cmbHState.Items.Clear()
+
+        'FILL COMBOBOX
+        For Each R As DataRow In dt.Rows
+            cmbHState.Items.Add(R("State ID"))
+
+        Next
+
+        'DISPLAY FIRST RECORD
+        cmbHState.Text = CType(dt.Rows(0).Item(0), String)
+
+
+    End Sub
+
+    Private Sub GetMCounty()
+
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "NetControl"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+        cmbMCounty.Items.Clear()
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT County FROM County WHERE State = '" & cmbMState.Text & "'", con)
+
+
+        da.Fill(dt)
+
+        con.Close()
+
+        cmbMCounty.Items.Clear()
+
+        For Each R As DataRow In dt.Rows
+            cmbMCounty.Items.Add(R("County"))
+        Next
+
+        'DISPLAY FIRST RECORD
+
+        'cmbMCounty.Text = CType(dt.Rows(0).Item(0), String)
+
+    End Sub
+
+    Private Sub GetHCounty()
+
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "NetControl"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+        cmbxHCounty.Items.Clear()
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT County FROM County WHERE State = '" & cmbHState.Text & "'", con)
+
+
+        da.Fill(dt)
+
+        con.Close()
+
+        cmbxHCounty.Items.Clear()
+
+        For Each R As DataRow In dt.Rows
+            cmbxHCounty.Items.Add(R("County"))
+        Next
+
+        'DISPLAY FIRST RECORD
+
+        cmbxHCounty.Text = CType(dt.Rows(0).Item(0), String)
+
+    End Sub
+
+    Private Sub GetMCLCounty()
+
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "NetControl"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT clCounty FROM CountyLine WHERE clState = '" & cmbMState.Text & "' And CountyLine = '" & cmbMCounty.Text & "'", con)
+
+
+        da.Fill(dt)
+
+        con.Close()
+
+        cmbxMCLine.Items.Clear()
+
+        For Each R As DataRow In dt.Rows
+            cmbxMCLine.Items.Add(R("clCounty"))
+        Next
+
+
+    End Sub
+
+    Private Sub GetHCLCounty()
+
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "NetControl"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT clCounty FROM CountyLine WHERE clState = '" & cmbHState.Text & "' And CountyLine = '" & cmbxHCounty.Text & "'", con)
+
+
+        da.Fill(dt)
+
+        con.Close()
+
+        cmbxCLine.Items.Clear()
+
+        For Each R As DataRow In dt.Rows
+            cmbxCLine.Items.Add(R("clCounty"))
+        Next
+
+
+    End Sub
+
+    Private Sub PostTemp()
+
+        Dim myConnection As OleDbConnection = New OleDbConnection
+
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        myConnection.ConnectionString = conString
+        myConnection.Open()
+        Dim str As String
+
+        str = "Insert into TempLog ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCountyLine])
+                 Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+
+        cmd.Parameters.Add(New OleDbParameter("Date", CType(txtDate.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Time", CType(txtTime.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCall", CType(txtCall.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HState", CType(cmbHState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCounty", CType(cmbxHCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCLine", CType(cmbxCLine.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Freq", CType(cmbxFrequency.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Band", CType(cmbxBand.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Mode", CType(cmbxMode.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MyCall", CType(lblCall.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HRST", CType(txtHrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MRST", CType(txtMrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HOper", CType(cmbFixedOperation.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Moper", CType(cmbMOperation.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MState", CType(cmbMState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCounty", CType(cmbMCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCLine", CType(cmbxMCLine.Text, String)))
+
+        Try
+            cmd.ExecuteNonQuery()
+            cmd.Dispose()
+            myConnection.Close()
+            txtTime.Clear()
+            txtCall.Clear()
+            txtHrst.Clear()
+            txtMrst.Clear()
+
+
+        Catch ex As Exception
+
+            MsgBox(ex.Message)
+
+        End Try
+
+        MobileLogShow()
+
+    End Sub
+
+    Private Sub cmbMState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMState.SelectedIndexChanged
+
+        GetMCounty()
+
+
+
+    End Sub
+
+    Private Sub cmbHState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbHState.SelectedIndexChanged
+
+        GetHCounty()
+
+    End Sub
+
+    Private Sub cmbMCounty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMCounty.SelectedIndexChanged
+
+        GetMCLCounty()
+
+    End Sub
+
+    Private Sub cmbHCounty_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbxHCounty.SelectedIndexChanged
+
+        GetHCLCounty()
+
+    End Sub
+
+    Private Sub dataGrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGrid1.CellContentClick
+
+        Dim form As New EditFrm
+        form.txtID.Text = dataGrid1.CurrentRow.Cells(0).Value.ToString()
+        form.txtDate.Text = dataGrid1.CurrentRow.Cells(1).Value.ToString()
+        form.txtTime.Text = dataGrid1.CurrentRow.Cells(2).Value.ToString()
+        form.txtHcall.Text = dataGrid1.CurrentRow.Cells(3).Value.ToString()
+        form.txtHstate.Text = dataGrid1.CurrentRow.Cells(4).Value.ToString()
+        form.txtHcounty.Text = dataGrid1.CurrentRow.Cells(5).Value.ToString()
+        form.txtHcntyLine.Text = dataGrid1.CurrentRow.Cells(6).Value.ToString()
+        form.txtFreq.Text = dataGrid1.CurrentRow.Cells(7).Value.ToString()
+        form.txtMode.Text = dataGrid1.CurrentRow.Cells(8).Value.ToString()
+        form.txtMycall.Text = dataGrid1.CurrentRow.Cells(9).Value.ToString()
+        form.txtHrst.Text = dataGrid1.CurrentRow.Cells(10).Value.ToString()
+        form.txtMrst.Text = dataGrid1.CurrentRow.Cells(11).Value.ToString()
+        form.txtMstate.Text = dataGrid1.CurrentRow.Cells(12).Value.ToString()
+        form.txtMcounty.Text = dataGrid1.CurrentRow.Cells(13).Value.ToString()
+        form.txtMcntyLine.Text = dataGrid1.CurrentRow.Cells(14).Value.ToString()
+
+        form.ShowDialog()
+
+        MobileLogShow()
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+
+        Dim a As String
+        Dim b As String
+        Dim split = txtCall.Text.Split("/"c)
+        If (split.Count = 2) Then
+            a = split(0).ToString
+            b = split(1).ToString
+
+            txtCall.Text = a
+            PostTemp()
+
+            txtCall.Text = b
+            PostTemp()
+
+            txtCall.Text = ""
+            txtHrst.Text = ""
+            txtMrst.Text = ""
+
+        ElseIf (split.Count = 0) Then
+
+            PostTemp()
+
+        End If
+        PostTemp()
+
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
+        Dim index As Integer
+        index = dataGrid1.CurrentCell.RowIndex
+        dataGrid1.Rows.RemoveAt(index)
+
+
+    End Sub
+
+    Private Sub PostLog()
+
+        Dim myConnection As OleDbConnection = New OleDbConnection
+
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        myConnection.ConnectionString = conString
+        myConnection.Open()
+        Dim str As String
+
+        str = "Insert into Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCntyLine])
+                 Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+
+        cmd.Parameters.Add(New OleDbParameter("Date", CType(lblDate.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Time", CType(lblTime.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCall", CType(txtCall.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HState", CType(cmbHState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCounty", CType(cmbxHCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCLine", CType(cmbxCLine.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Freq", CType(cmbxFrequency.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Band", CType(cmbxBand.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Mode", CType(cmbxMode.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MyCall", CType(lblCall.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HRST", CType(txtHrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MRST", CType(txtMrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HOper", CType(cmbFixedOperation.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Moper", CType(cmbMOperation.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MState", CType(cmbMState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCounty", CType(cmbMCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCLine", CType(cmbxMCLine.Text, String)))
+
+        Try
+            cmd.ExecuteNonQuery()
+            cmd.Dispose()
+            myConnection.Close()
+            txtTime.Clear()
+            txtCall.Clear()
+            txtHrst.Clear()
+            txtMrst.Clear()
+
+
+        Catch ex As Exception
+
+            MsgBox(ex.Message)
+
+        End Try
+
+        datagridshow()
+        myConnection.Close()
+    End Sub
+
+    Private Sub btnPost_Click(sender As Object, e As EventArgs)
+
+
+        Dim a As String
+        Dim b As String
+        Dim split = txtCall.Text.Split("/"c)
+        If (split.Count = 2) Then
+            a = split(0).ToString
+            b = split(1).ToString
+
+            txtCall.Text = a
+            PostLog()
+
+            txtCall.Text = b
+            PostLog()
+
+            txtCall.Text = ""
+            txtHrst.Text = ""
+            txtMrst.Text = ""
+
+        ElseIf (split.Count = 0) Then
+
+            PostLog()
+
+        End If
+
+
+    End Sub
+
+    Private Sub MobilePost()
+
+        Dim myConnection As OleDbConnection = New OleDbConnection
+
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        myConnection.ConnectionString = conString
+        myConnection.Open()
+        Dim str As String
+
+        str = "Insert INTO Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MYCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCntyLine])
+                SELECT [LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCountyLine]
+                FROM TempLog "
+
+
+        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+
+        cmd.ExecuteNonQuery()
+        cmd.Dispose()
+
+        myConnection.Close()
+
+        ClearTempTbl()
+
+        MobileLogShow()
+
+    End Sub
+
+    Private Sub btnMobilePost_Click(sender As Object, e As EventArgs) Handles btnMobilePost.Click
+
+
+
+        'THIS IS WHERE YOU EXECUTE THE MOBILE POST TO LOG SUB
+        MobilePost()
+
+    End Sub
+
+    Private Sub ClearTempTbl()
+
+        Dim myConnection As OleDbConnection = New OleDbConnection
+
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        myConnection.ConnectionString = conString
+        myConnection.Open()
+        Dim str As String
+
+        str = " DELETE * FROM Templog"
+
+        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+
+        cmd.ExecuteNonQuery()
+        cmd.Dispose()
+
+        myConnection.Close()
+
+    End Sub
+
+    Private Sub txtDate_Click(sender As Object, e As EventArgs) Handles txtDate.Click
+
+        DateTimePicker1.Visible = True
+
+    End Sub
+
+    Private Sub txtTime_LostFocus(sender As Object, e As EventArgs) Handles txtTime.LostFocus
+
+        Dim a As Double
+        a = CDbl(txtTime.Text)
+        txtTime.Text = a.ToString("##:##")
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+
+        txtDate.Text = DateTimePicker1.Value.ToShortDateString()
+
+        'DateTimePicker1.Visible = False
+
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+
+        If cmbMOperation.Text = "F" And CheckBox1.Checked = True Then
+            cmbFixedOperation.Text = "M"
+            datagridshow()
+            btnMobilePost.Visible = False
+            lblTime.Visible = True
+            txtTime.Visible = False
+            lblFormat.Visible = False
+            lblTime2.Visible = False
+            LblDate2.Visible = False
+            lblDFormat.Visible = False
+            txtDate.Visible = False
+            btnLogIt.Visible = False
+            btnSpot.Visible = True
+        Else
+            If cmbMOperation.Text = "F" And CheckBox1.Checked = False Then
+                cmbFixedOperation.Text = "M"
+                datagridshow()
+                btnMobilePost.Visible = False
+                lblTime.Visible = False
+                txtTime.Visible = True
+                lblFormat.Visible = True
+                lblTime2.Visible = True
+                LblDate2.Visible = True
+                lblDFormat.Visible = True
+                txtDate.Visible = True
+                btnLogIt.Visible = True
+                btnSpot.Visible = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub PostRunLog()
+
+        Dim myConnection As OleDbConnection = New OleDbConnection
+
+        Dim databaseFile As String = "C:\RRLogger Data\NetControl.accdb"
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+        myConnection.ConnectionString = conString
+        myConnection.Open()
+        Dim str As String
+
+        str = "Insert into Log ([LDate],[LTime],[HCall],[State],[County],[CountyLine],[Freq],[Band],[Mode],[MyCall],[HRST],[MRST],[Hoper],[Moper],[MState],[MCounty],[MCntyLine])
+                 Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+        Dim cmd As OleDbCommand = New OleDbCommand(str, myConnection)
+
+        cmd.Parameters.Add(New OleDbParameter("Date", CType(lblDate.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Time", CType(lblTime.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCall", CType(txtCall.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HState", CType(cmbHState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCounty", CType(cmbxHCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HCLine", CType(cmbxCLine.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Freq", CType(cmbxFrequency.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Band", CType(cmbxBand.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Mode", CType(cmbxMode.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MyCall", CType(lblCall.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HRST", CType(txtHrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MRST", CType(txtMrst.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("HOper", CType(cmbFixedOperation.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("Moper", CType(cmbMOperation.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MState", CType(cmbMState.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCounty", CType(cmbMCounty.Text, String)))
+        cmd.Parameters.Add(New OleDbParameter("MCLine", CType(cmbxMCLine.Text, String)))
+
+        Try
+            cmd.ExecuteNonQuery()
+            cmd.Dispose()
+            myConnection.Close()
+            txtTime.Clear()
+            txtCall.Clear()
+
+
+        Catch ex As Exception
+
+            MsgBox(ex.Message)
+
+        End Try
+
+        datagridshow()
+
+
+
+    End Sub
+
+    'Private Sub btnLogit_Click(sender As Object, e As EventArgs) Handles btnLogIt.Click
+
+
+    '    Dim a As String
+    '    Dim b As String
+    '    Dim split = txtCall.Text.Split("/"c)
+    '    If (split.Count = 2) Then
+    '        a = split(0).ToString
+    '        b = split(1).ToString
+
+    '        txtCall.Text = a
+    '        PostLog()
+
+    '        txtCall.Text = b
+    '        PostLog()
+
+    '        ' txtCall.Text = ""
+    '        ' txtHrst.Text = ""
+    '        ' txtMrst.Text = ""
+
+    '    ElseIf (split.Count = 0) Then
+
+    '        PostLog()
+
+    '    End If
+    '    'PostLog()
+    'End Sub
+
+    Private Sub txtTime_GotFocus(sender As Object, e As EventArgs) Handles txtTime.GotFocus
+
+        DateTimePicker1.Visible = False
+
+    End Sub
+
+    Private Sub lblDate_Click(sender As Object, e As EventArgs) Handles lblDate.Click
+
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
+
+        'EditFrm.Show()
+        'Hide()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim a As String
+        Dim b As String
+        Dim split = txtCall.Text.Split("/"c)
+        If (split.Count = 2) Then
+            a = split(0).ToString
+            b = split(1).ToString
+
+            txtCall.Text = a
+            PostRunLog()
+
+            txtCall.Text = b
+            PostRunLog()
+
+            ' txtCall.Text = ""
+            ' txtHrst.Text = ""
+            ' txtMrst.Text = ""
+
+        ElseIf (split.Count = 0) Then
+
+            PostRunLog()
+
+        End If
+        ' PostLog()
+
+    End Sub
+
+    Public Sub HomeCounty()
+
+        Dim mcall = lblCall.Text
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        ds.Tables.Add(dt)
+        Dim da As New OleDbDataAdapter
+
+        '------------ FROM HERE THE NEXT LINES SET UP THE CONNECTION STRING FOR USER'S DATABASE------------------
+
+        Dim strFilePrefix = "County Hunters - Common"
+        Dim strFileSuffix = ".accdb"
+        Dim databaseFile As String = "C:\RRLogger Data\" & strFilePrefix & strFileSuffix
+        Dim conString = "Provider = Microsoft.Ace.OLEDB.12.0; Data Source= " & databaseFile
+
+        '--------------------------------------------------------------------------------------------------------------
+        con.ConnectionString = conString
+
+        con.Open()
+
+        da = New OleDbDataAdapter("SELECT [Home County] FROM [County Hunters] Where Current Call = lblCall.text", con)
+        'ds.ToString()
+        cmbMCounty.Text = ds.ToString()
+
+        con.Close()
+
+
+    End Sub
+
+    Private Sub btnSpot_Click(sender As Object, e As EventArgs) Handles btnSpot.Click
+
+        '''NEXT STATEMENT IS THE POSTING
+        'Dim commentStr As String
+        'If cmbxMCLine.Text = "" Then
+        '    commentStr = cmbxHCounty.Text & "+" & cmbHState.Text
+        'Else
+        '    commentStr = cmbxHCounty.Text & "+" & cmbHState.Text & "+" & cmbxCLine.Text & "," & cmbHCLineState.Text
+        'End If
+
+        ''WebBrowser1.Document.GetElementById("Add Call").InvokeMember("click")
+        'Dim request As WebRequest = WebRequest.Create("http://ch.w6rk.com/add.php?add=1")
+        '' Set the Method property of the request to POST.  
+        'request.Method = "POST"
+        '' Create POST data and convert it to a byte array.  
+        'Dim postData As String = "redirect=&user=&code=&call=" & lblCall.Text & "&fq=" &
+        '    cmbxFrequency.Text & "&DXcall=" & txtCall.Text & "&comments=" & commentStr & "&submit=Add+spot"
+
+        'Dim byteArray As Byte() = Encoding.UTF8.GetBytes(postData)
+        '' Set the ContentType property of the WebRequest.  
+        'request.ContentType = "application/x-www-form-urlencoded"
+        '' Set the ContentLength property of the WebRequest.  
+        'request.ContentLength = byteArray.Length
+        '' Get the request stream.  
+        'Dim dataStream As Stream = request.GetRequestStream()
+        '' Write the data to the request stream.  
+        'dataStream.Write(byteArray, 0, byteArray.Length)
+        '' Close the Stream object.  
+        'dataStream.Close()
+        '' Get the response.  
+        'Dim response As WebResponse = request.GetResponse()
+        '' Display the status.  
+        'Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)
+        '' Get the stream containing content returned by the server.  
+        'dataStream = response.GetResponseStream()
+        '' Open the stream using a StreamReader for easy access.  
+        'Dim reader As New StreamReader(dataStream)
+        '' Read the content.  
+        'Dim responseFromServer As String = reader.ReadToEnd()
+        '' Display the content.  
+        'Console.WriteLine(responseFromServer)
+        '' Clean up the streams.  
+        'reader.Close()
+        'dataStream.Close()
+        'response.Close()
+        Spotit()
+    End Sub
+    Public Sub Spotit()
+
+        ''NEXT STATEMENT IS THE POSTING
+        Dim commentStr As String
+        If cmbxMCLine.Text = "" Then
+            commentStr = cmbxHCounty.Text & "," & cmbHState.Text & "+" & TextBox1.Text
+        Else
+            'commentStr = cmbxHCounty.Text & "," & cmbHState.Text & "/" & cmbxCLine.Text & "," & cmbHCLineState.Text & "+" & TextBox1.Text
+            commentStr = cmbxHCounty.Text & "," & cmbHState.Text & "/" & cmbxCLine.Text & "," & TextBox1.Text
+        End If
+
+        'WebBrowser1.Document.GetElementById("Add Call").InvokeMember("click")
+        Dim request As WebRequest = WebRequest.Create("http://ch.w6rk.com/add.php?add=1")
+        ' Set the Method property of the request to POST.  
+        request.Method = "POST"
+        ' Create POST data and convert it to a byte array.  
+        Dim postData As String = "redirect=&user=&code=&call=" & lblCall.Text & "&fq=" &
+            cmbxFrequency.Text & "&DXcall=" & txtCall.Text & "&comments=" & commentStr & "&submit=Add+spot"
+
+        Dim byteArray As Byte() = Encoding.UTF8.GetBytes(postData)
+        ' Set the ContentType property of the WebRequest.  
+        request.ContentType = "application/x-www-form-urlencoded"
+        ' Set the ContentLength property of the WebRequest.  
+        request.ContentLength = byteArray.Length
+        ' Get the request stream.  
+        Dim dataStream As Stream = request.GetRequestStream()
+        ' Write the data to the request stream.  
+        dataStream.Write(byteArray, 0, byteArray.Length)
+        ' Close the Stream object.  
+        dataStream.Close()
+        ' Get the response.  
+        Dim response As WebResponse = request.GetResponse()
+        ' Display the status.  
+        Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)
+        ' Get the stream containing content returned by the server.  
+        dataStream = response.GetResponseStream()
+        ' Open the stream using a StreamReader for easy access.  
+        Dim reader As New StreamReader(dataStream)
+        ' Read the content.  
+        Dim responseFromServer As String = reader.ReadToEnd()
+        ' Display the content.  
+        Console.WriteLine(responseFromServer)
+        ' Clean up the streams.  
+        reader.Close()
+        dataStream.Close()
+        response.Close()
+    End Sub
+
+    Private Sub btnLogIt_Click(sender As Object, e As EventArgs) Handles btnLogIt.Click
+
+        Dim a As String
+        Dim b As String
+        Dim split = txtCall.Text.Split("/"c)
+        If (split.Count = 2) Then
+            a = split(0).ToString
+            b = split(1).ToString
+
+            txtCall.Text = a
+            PostRunLog()
+
+            txtCall.Text = b
+            PostRunLog()
+
+            ' txtCall.Text = ""
+            ' txtHrst.Text = ""
+            ' txtMrst.Text = ""
+
+        ElseIf (split.Count = 0) Then
+
+            PostRunLog()
+
+        End If
+    End Sub
+
+    Private Sub cmbFixedOperation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbFixedOperation.SelectedIndexChanged
+        Select Case cmbFixedOperation.Text
+            Case "F"
+            Case "P"
+            Case "R"
+
+
+        End Select
+
+    End Sub
+End Class
