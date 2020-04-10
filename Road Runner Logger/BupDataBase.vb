@@ -27,7 +27,7 @@
         Dim intSequenceNumber As Integer
         Dim strNumberPlusPart As String
         Dim strNumberPart As String
-
+        Dim nFilename As String
         intMaxSequenceNumberFound = -1
 
         strFilePattern = strPath & strBaseName & strSeparator & "*" & "." & strExtension
@@ -57,7 +57,7 @@
 
         GenerateSequentialFileName = strPath & strBaseName & strSeparator &
             Format(intSequenceNumber, Left("000000", CInt(byteFormatDigits))) & "." & strExtension
-
+        Return CType(GenerateSequentialFileName = nFilename, String)
 
 ErrorHandler:
         Debug.Print("Function GenerateSequencialFileName encountered error" & Err.Description & "(#" & Err.Number & ")")
@@ -65,7 +65,7 @@ ErrorHandler:
         GenerateSequentialFileName = ""
 
 
-        BackupDB()
+
 
     End Function
 

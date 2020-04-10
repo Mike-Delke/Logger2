@@ -36,6 +36,7 @@ Partial Class frmTools
         Me.btnPrintLog = New System.Windows.Forms.Button()
         Me.cmdButton1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnNetControlLog = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -149,10 +150,10 @@ Partial Class frmTools
         Me.cmdButton7.AccessibleName = ""
         Me.cmdButton7.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmdButton7.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdButton7.Location = New System.Drawing.Point(243, 102)
+        Me.cmdButton7.Location = New System.Drawing.Point(174, 29)
         Me.cmdButton7.Margin = New System.Windows.Forms.Padding(2)
         Me.cmdButton7.Name = "cmdButton7"
-        Me.cmdButton7.Size = New System.Drawing.Size(205, 69)
+        Me.cmdButton7.Size = New System.Drawing.Size(115, 69)
         Me.cmdButton7.TabIndex = 5
         Me.cmdButton7.Text = "Needs"
         Me.cmdButton7.UseVisualStyleBackColor = False
@@ -162,10 +163,10 @@ Partial Class frmTools
         Me.cmdButton6.AccessibleName = ""
         Me.cmdButton6.BackColor = System.Drawing.SystemColors.ControlDark
         Me.cmdButton6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdButton6.Location = New System.Drawing.Point(243, 30)
+        Me.cmdButton6.Location = New System.Drawing.Point(321, 30)
         Me.cmdButton6.Margin = New System.Windows.Forms.Padding(2)
         Me.cmdButton6.Name = "cmdButton6"
-        Me.cmdButton6.Size = New System.Drawing.Size(205, 68)
+        Me.cmdButton6.Size = New System.Drawing.Size(127, 68)
         Me.cmdButton6.TabIndex = 6
         Me.cmdButton6.Text = "MRC"
         Me.cmdButton6.UseVisualStyleBackColor = False
@@ -178,7 +179,7 @@ Partial Class frmTools
         Me.btnPrintLog.Location = New System.Drawing.Point(20, 102)
         Me.btnPrintLog.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrintLog.Name = "btnPrintLog"
-        Me.btnPrintLog.Size = New System.Drawing.Size(212, 69)
+        Me.btnPrintLog.Size = New System.Drawing.Size(174, 69)
         Me.btnPrintLog.TabIndex = 7
         Me.btnPrintLog.Text = "Log"
         Me.btnPrintLog.UseVisualStyleBackColor = False
@@ -191,7 +192,7 @@ Partial Class frmTools
         Me.cmdButton1.Location = New System.Drawing.Point(20, 30)
         Me.cmdButton1.Margin = New System.Windows.Forms.Padding(2)
         Me.cmdButton1.Name = "cmdButton1"
-        Me.cmdButton1.Size = New System.Drawing.Size(212, 68)
+        Me.cmdButton1.Size = New System.Drawing.Size(127, 68)
         Me.cmdButton1.TabIndex = 8
         Me.cmdButton1.Text = "Book"
         Me.cmdButton1.UseVisualStyleBackColor = False
@@ -199,6 +200,7 @@ Partial Class frmTools
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.btnNetControlLog)
         Me.GroupBox2.Controls.Add(Me.btnPrintLog)
         Me.GroupBox2.Controls.Add(Me.cmdButton7)
         Me.GroupBox2.Controls.Add(Me.cmdButton6)
@@ -210,6 +212,19 @@ Partial Class frmTools
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Printing Group"
+        '
+        'btnNetControlLog
+        '
+        Me.btnNetControlLog.AccessibleName = ""
+        Me.btnNetControlLog.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnNetControlLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNetControlLog.Location = New System.Drawing.Point(274, 102)
+        Me.btnNetControlLog.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnNetControlLog.Name = "btnNetControlLog"
+        Me.btnNetControlLog.Size = New System.Drawing.Size(174, 69)
+        Me.btnNetControlLog.TabIndex = 9
+        Me.btnNetControlLog.Text = "Net Control" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Log"
+        Me.btnNetControlLog.UseVisualStyleBackColor = False
         '
         'frmTools
         '
@@ -247,4 +262,5 @@ Partial Class frmTools
     Friend WithEvents btnPrintLog As Button
     Friend WithEvents cmdButton1 As Button
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnNetControlLog As Button
 End Class

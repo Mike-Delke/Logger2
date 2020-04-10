@@ -146,6 +146,12 @@
     <Compile Include="clsNetControl.vb" />
     <Compile Include="clsScreenUtilities.vb" />
     <Compile Include="clsSecondaryLog.vb" />
+    <Compile Include="Log Book Report.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Log Book Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Net Control.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -264,6 +270,11 @@
     <Compile Include="ViewEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="_County_Hunter___K8EMSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_County_Hunter___K8EMSDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="Net Control.rpt">
@@ -301,6 +312,10 @@
     <EmbeddedResource Include="K8EMSMainMenu.resx">
       <DependentUpon>K8EMSMainMenu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Log Book Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Log Book Report.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -331,6 +346,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="_County_Hunter___K8EMSDataSet.xsc">
+      <DependentUpon>_County_Hunter___K8EMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_County_Hunter___K8EMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_County_Hunter___K8EMSDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_County_Hunter___K8EMSDataSet.xss">
+      <DependentUpon>_County_Hunter___K8EMSDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="NetControlDataSet.xsc">

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_County_Hunter___K8EMSDataSet" targetNamespace="http://tempuri.org/_County_Hunter___K8EMSDataSet.xsd" xmlns:mstns="http://tempuri.org/_County_Hunter___K8EMSDataSet.xsd" xmlns="http://tempuri.org/_County_Hunter___K8EMSDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="County_Hunter___K8EMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="County_Hunter___K8EMSConnectionString (MySettings)" PropertyReference="ApplicationSettings.Road_Runner_Logger.My.MySettings.GlobalReference.Default.County_Hunter___K8EMSConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="QSO - MasterTableAdapter" GeneratorDataComponentClassName="QSO___MasterTableAdapter" Name="QSO - Master" UserDataComponentName="QSO - MasterTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="County_Hunter___K8EMSConnectionString (MySettings)" DbObjectName="QSO - Master" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Call, [Date], [Time], Frequency, Mode, [Band], [RST - Mine], [RST - His], [Sub Mode] FROM [QSO - Master]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Call" DataSetColumn="Call" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Time" DataSetColumn="Time" />
+              <Mapping SourceColumn="Frequency" DataSetColumn="Frequency" />
+              <Mapping SourceColumn="Mode" DataSetColumn="Mode" />
+              <Mapping SourceColumn="Band" DataSetColumn="Band" />
+              <Mapping SourceColumn="RST - Mine" DataSetColumn="RST - Mine" />
+              <Mapping SourceColumn="RST - His" DataSetColumn="RST - His" />
+              <Mapping SourceColumn="Sub Mode" DataSetColumn="Sub Mode" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_County_Hunter___K8EMSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_County_Hunter___K8EMSDataSet" msprop:Generator_UserDSName="_County_Hunter___K8EMSDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="QSO_x0020_-_x0020_Master" msprop:Generator_TableClassName="_QSO___MasterDataTable" msprop:Generator_TableVarName="_tableQSO___Master" msprop:Generator_TablePropName="_QSO___Master" msprop:Generator_RowDeletingName="_QSO___MasterRowDeleting" msprop:Generator_RowChangingName="_QSO___MasterRowChanging" msprop:Generator_RowEvHandlerName="_QSO___MasterRowChangeEventHandler" msprop:Generator_RowDeletedName="_QSO___MasterRowDeleted" msprop:Generator_UserTableName="QSO - Master" msprop:Generator_RowChangedName="_QSO___MasterRowChanged" msprop:Generator_RowEvArgName="_QSO___MasterRowChangeEvent" msprop:Generator_RowClassName="_QSO___MasterRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Call" msprop:Generator_ColumnVarNameInTable="columnCall" msprop:Generator_ColumnPropNameInRow="_Call" msprop:Generator_ColumnPropNameInTable="CallColumn" msprop:Generator_UserColumnName="Call" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="_Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Frequency" msprop:Generator_ColumnVarNameInTable="columnFrequency" msprop:Generator_ColumnPropNameInRow="Frequency" msprop:Generator_ColumnPropNameInTable="FrequencyColumn" msprop:Generator_UserColumnName="Frequency" type="xs:float" minOccurs="0" />
+              <xs:element name="Mode" msprop:Generator_ColumnVarNameInTable="columnMode" msprop:Generator_ColumnPropNameInRow="Mode" msprop:Generator_ColumnPropNameInTable="ModeColumn" msprop:Generator_UserColumnName="Mode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Band" msprop:Generator_ColumnVarNameInTable="columnBand" msprop:Generator_ColumnPropNameInRow="Band" msprop:Generator_ColumnPropNameInTable="BandColumn" msprop:Generator_UserColumnName="Band" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RST_x0020_-_x0020_Mine" msprop:Generator_ColumnVarNameInTable="_columnRST___Mine" msprop:Generator_ColumnPropNameInRow="_RST___Mine" msprop:Generator_ColumnPropNameInTable="_RST___MineColumn" msprop:Generator_UserColumnName="RST - Mine" type="xs:short" minOccurs="0" />
+              <xs:element name="RST_x0020_-_x0020_His" msprop:Generator_ColumnVarNameInTable="_columnRST___His" msprop:Generator_ColumnPropNameInRow="_RST___His" msprop:Generator_ColumnPropNameInTable="_RST___HisColumn" msprop:Generator_UserColumnName="RST - His" type="xs:short" minOccurs="0" />
+              <xs:element name="Sub_x0020_Mode" msprop:Generator_ColumnVarNameInTable="columnSub_Mode" msprop:Generator_ColumnPropNameInRow="Sub_Mode" msprop:Generator_ColumnPropNameInTable="Sub_ModeColumn" msprop:Generator_UserColumnName="Sub Mode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

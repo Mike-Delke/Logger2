@@ -73,6 +73,28 @@ Namespace My
                 Return CType(Me("NetControlConnectionString1"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property Print_Log() As Object
+            Get
+                Return CType(Me("Print_Log"),Object)
+            End Get
+            Set
+                Me("Print_Log") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=""C:\RRLogger Data\County Hunter - K8"& _ 
+            "EMS.mdb""")>  _
+        Public ReadOnly Property County_Hunter___K8EMSConnectionString() As String
+            Get
+                Return CType(Me("County_Hunter___K8EMSConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
